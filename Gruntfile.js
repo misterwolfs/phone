@@ -14,11 +14,21 @@ module.exports = function(grunt) {
       }
     },
 
+    concat_css: {
+      options: {
+        // Task-specific options go here.
+      },
+      all: {
+        src: ["css/*.css"],
+        dest: "css/base-concat.css"
+      },
+    }, 
+
     cssmin: {
       minify: {
         expand: true,
         cwd: 'css/', // src matches relative to this path
-        src: ['*.css', '!*.min.css'],
+        src: ['base-concat.css', '!*.min.css'],
         dest: 'css/',
         ext: '.min.css'
       }
@@ -27,10 +37,10 @@ module.exports = function(grunt) {
     less: {
       development: {
         options: {
-          paths: ["css/less"]
+          paths: ["css/less/"]
         },
         files: {
-          "css/style.css": "css/less/style.less"
+          "css/base.css": "css/less/*.less"
         }
       },
       production: {
@@ -55,14 +65,14 @@ module.exports = function(grunt) {
         tasks: ['uglify']
       },
 
-      css : {
-        files: ['css/*.css'],
-        tasks: ['cssmin:minify']
-      },
+      // css : {
+      //   files: ['css/*.css'],
+      //   tasks: ['concat_css', 'cssmin:minify']
+      // },
       
       less : {
         files: ['css/less/*.less'],
-        tasks : ['less:development', 'cssmin:minify'],
+        tasks : ['less:development', 'concat_css', 'cssmin:minify'],
       },
 
       /* watch our files for change, reload */
