@@ -34,6 +34,14 @@ module.exports = function(grunt) {
       }
     },
 
+    uglify: {
+      my_target: { 
+        files: {
+          'js/base.min.js': 'js/*.js',
+        }
+      }
+    },
+
     less: {
       development: {
         options: {
@@ -55,13 +63,10 @@ module.exports = function(grunt) {
     },
 
     watch: {
-      sass: {
-        files: ['assets/sass/**/*.scss'],
-        tasks: ['compass:dev']
-      },
+
       /* watch and see if our javascript files change, or new packages are installed */
       js: {
-        files: ['assets/js/main.js', 'components/**/*.js'],
+        files: ['js/*.js'],
         tasks: ['uglify']
       },
 
