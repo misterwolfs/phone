@@ -37,7 +37,7 @@ module.exports = function(grunt) {
     uglify: {
       my_target: { 
         files: {
-          'js/base.min.js': 'js/*.js',
+          'js/base.min.js': 'js/*.js'
         }
       }
     },
@@ -45,19 +45,20 @@ module.exports = function(grunt) {
     less: {
       development: {
         options: {
-          paths: ["css/less/"]
+          paths: ["less/"]
         },
+        compress: true,
         files: {
-          "css/base.css": "css/less/*.less"
+          "css/base.css": "less/base.less"
         }
       },
       production: {
         options: {
-          paths: ["assets/css"],
-          yuicompress: true
+          paths: ["less/"]
         },
+        yuicompress: true,
         files: {
-          "path/to/result.css": "path/to/source.less"
+          "css/base.min.css": "less/base.less"
         }
       }
     },
@@ -65,19 +66,19 @@ module.exports = function(grunt) {
     watch: {
 
       /* watch and see if our javascript files change, or new packages are installed */
-      js: {
-        files: ['js/*.js'],
-        tasks: ['uglify']
-      },
+      // js: {
+      //   files: ['js/*.js'],
+      //   tasks: ['uglify']
+      // },
 
-      css : {
-        files: ['css/*.css'],
-        tasks: ['concat_css', 'cssmin:minify']
-      },
+      // css : {
+      //   files: ['css/*.css'],
+      //   tasks: ['concat_css', 'cssmin:minify']
+      // },
       
       less : {
-        files: ['css/less/*.less'],
-        tasks : ['less:development', 'concat_css', 'cssmin:minify'],
+        files: ['less/base.less'],
+        tasks : ['less:development', /* 'concat_css', 'cssmin:minify'*/],
       },
 
       /* watch our files for change, reload */

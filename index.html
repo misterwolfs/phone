@@ -1,56 +1,76 @@
 <!DOCTYPE html>
-<html>
-    <head>
-       <link rel="stylesheet" href="css/base-concat.min.css" type="text/css" /> 
-        <!--[if IE]>
-	       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-    </head>
-    <body>
-        
-        <aside>
-             <header id="top" role="banner">
-                <div class="block">
-                    <h1 class="block-title">Book Title</h1>
-                    <a class="nav-btn" id="nav-open-btn" href="#nav">Book Navigation</a>
-                </div>
-            </header>
+<html class="no-js">
+<head>
+    <meta charset="utf-8">
+    <!--
 
-            <nav id="nav" role="navigation">
-                <div class="block">
-                    <h2 class="block-title">Chapters</h2>
-                    <ul>
-                        <li class="is-active">
-                            <a href="#">Chapter 1</a>
-                        </li><!--
-                     --><li>
-                            <a href="#">Chapter 2</a>
-                        </li><!--
-                     --><li>
-                            <a href="#">Chapter 3</a>
-                        </li><!--
-                     --><li>
-                            <a href="#">Chapter 4</a>
-                        </li><!--
-                     --><li>
-                            <a href="#">Chapter 5</a>
-                        </li>
+    Copyright (c) David Bushell | http://dbushell.com/
+
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>2nd life</title>
+
+    <script src="js/modernizr.js"></script>
+
+    <!--[if (gt IE 8) | (IEMobile)]><!-->
+    <link rel="stylesheet" href="css/base.css" type="text/css" /> 
+    <!--<![endif]-->
+    <!--[if (lt IE 9) & (!IEMobile)]>
+    <link rel="stylesheet" href="css/ie.css">
+    <![endif]-->
+</head>
+<body>
+
+<div id="outer-wrap">
+<div id="inner-wrap">
+
+    <header id="top" role="banner">
+        <div class="block">
+            <h1 class="block-title">2nd life</h1>
+            <a class="nav-btn" id="nav-open-btn" href="#nav">Book Navigation</a>
+        </div>
+    </header>
+
+    <nav id="nav" role="navigation">
+        <div class="block">
+            <ul>
+                <li class="is-active">
+                    <a href="#">Find a phone</a>
+                    <ul class="subnav">
+                        <li>By brand</li>
+                        <li>By location</li>
+                        <li>Advanced search</li>
+                        <li>View all</li>
                     </ul>
-                    <a class="close-btn" id="nav-close-btn" href="#top">Return to Content</a>
-                </div>
-            </nav>
-        </aside>
+                </li><!--
+             --><li>
+                    <a href="#">Sell a phone</a>
+                </li><!--
+             --><li>
+                    <a href="#">Repair a phone</a>
+                </li>
+            </ul>
+            <a class="close-btn" id="nav-close-btn" href="#top">Return to Content</a>
+        </div>
+    </nav>
 
-        <section>
-            <div id="map">
-            </div>
-        </section>
 
-        
-        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpx1FOANjsAYRyGTXDYFGjSrwJ42R7-kA&sensor=false"></script>
-        <script src="js/map.js"></script>
-        <script src="js/base.js"></script>
-        
-    </body>
+    
+    <div id="map"></div>
+
+</div>
+<!--/#inner-wrap-->
+</div>
+<!--/#outer-wrap-->
+
+
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpx1FOANjsAYRyGTXDYFGjSrwJ42R7-kA&sensor=false"></script>
+<script src="js/map.js"></script>
+<script src="js/base.js"></script>
+<script src="js/main.js"></script>
+
+</body>
 </html>
