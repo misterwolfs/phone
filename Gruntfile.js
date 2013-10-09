@@ -70,10 +70,10 @@ module.exports = function(grunt) {
         tasks: ['uglify']
       },
 
-      // css : {
-      //   files: ['css/*.css'],
-      //   tasks: ['concat_css', 'cssmin:minify']
-      // },
+      css : {
+        files: ['css/*.css'],
+        tasks: ['concat_css', 'cssmin:minify']
+      },
       
       less : {
         files: ['css/less/*.less'],

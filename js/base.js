@@ -1,3 +1,4 @@
 $(function() {
   mapController.initialize();  
-}) 
+})
+ 
