@@ -39,3 +39,7 @@ $(".open-modal").on("click", function() {
 		modalController.create(id);
 	}
 });
+
+$("body").delegate(".close-modal", "click", function() {
+	modalController.hide($(this).parent());
+});

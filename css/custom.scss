@@ -54,7 +54,60 @@ a {
 	}
 }
 
-#user-panel {
+.logged-in {
+	background-color: $light-grey;
+	padding: 4em 0;
+	margin-bottom: 2.5em;
+	text-align: center;
+	position: relative;
+	font-size: 0.9em;
+
+	img {
+		border: 3px solid $facebook-blue;
+	}
+
+	h2 {
+		font-family: $proximaBold;
+		font-size: 1em;
+		color: $font-color;
+		text-transform: uppercase;
+		line-height: 1em;
+		margin:0;
+	}
+
+	.view-profile {
+		text-align: left;
+		background-color: $facebook-blue;
+		line-height: 35px;
+		text-indent: 2em;
+		position: absolute;
+	    cursor: pointer;
+	    bottom: 0;
+	    width: 100%;
+		font-family: $proximaBold;
+		text-transform: uppercase;
+		height: 35px;
+
+			&:after {
+				content: '';
+				background-image: url("../img/icons/icons_sprite.gif");
+				width: 11px;
+				height:16px;
+				background-size: 44px 16px;
+				position: absolute;
+				right: 2em;
+				top: 8px;
+			}
+
+			&:hover {
+				background-color: lighten($facebook-blue, 10%);
+			}
+
+	}
+
+}
+
+.logged-out {
 
 	text-align: center;
 	margin: 2em 0;
@@ -91,6 +144,8 @@ a {
 #navigation {
 
 	display: block;
+	font-size: 0.9em;
+
 	ul.nav-parent {
 		list-style-type: none;
 		font-family: $proximaBold;
@@ -111,6 +166,11 @@ a {
 			text-indent: 2em;
 			position: relative;
 		    cursor: pointer;
+
+		    a {
+		    	display: block;
+		    	text-decoration: none;
+		    }
 		    
 		    .subnav {
 		    	display: none;
@@ -133,10 +193,16 @@ a {
 				width: 17px;
 				right: 1.9em;
 			}
+
+			&:hover {
+				background-color: $green;
+			}
+
 		}
 
 		li.active {
 			@extend li.parent;
+			background-color: $green;
 			
 			.subnav {
 				display: block;
@@ -168,7 +234,7 @@ a {
 				text-indent: 5em;
 
 				&:hover {
-					background-color: $green;
+					background-color: lighten($light-grey, 3%);
 				}
 
 			}

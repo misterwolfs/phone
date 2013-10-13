@@ -1,3 +1,15 @@
+/** FONTS **/
+$proxima: "ProximaNova";
+$proximaBold: "ProximaNovaBold";
+
+/** COLORS **/
+$dark-grey: #252525;
+$light-grey: #373737;
+$font-color: #fafeff;
+$green: #24ac5d;
+$facebook-blue: #36538f;
+$twitter-blue: #00acec;
+
 /* ===== == = === 20em (320px) === = == ===== */
 @media only screen and (min-width : 20em) {
 
@@ -88,12 +100,12 @@
 
 @media only screen and (min-width : 75em) {
 
-#main-nav, .open-menu, .close-menu, #main-nav:target, .main-nav {
+.open-menu, .close-menu {
 	display: none;
 }
 
-#desktop {
-	display: block;
+header {
+	display: none;
 }
 
 #main-nav:target + .page-wrap {
@@ -106,30 +118,40 @@
   }
 }
 
-.page-wrap {
+#main-nav:target {
+  width: 275px;
+}
+
+#table-wrapper {
 	display: table;
+	height:100%;
+	width: 100%;
+}
+
+.page-wrap {
+	position: relative;
+	width: 100%;
 	height: 100%;
-	aside {
-		float:left;
-		width:275px;
-		display: table-cell;
-		height: 100%;
-		border-right: 1px solid #000;
-		font-size: 1em;
-		background-color: $dark-grey;
-	}
+	float:left;
+	display: table-cell;
+}
 
-	#main {
-		position: relative;
-		width: 100%;
-		display: table-cell;
-	}
+#main-nav {
+	width:275px;
+	display: table-cell;
+	height: 100%;
+	vertical-align: top;
+	position: relative;
+	border-right: 1px solid #000;
+	font-size: 1em;
+	background-color: $dark-grey;
+}
 
+.page-wrap {
 	#map {
 		top:0;
 		left:0;
 	}
-
 }
 
 }

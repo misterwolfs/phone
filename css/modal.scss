@@ -1,17 +1,17 @@
+/** FONTS **/
+$proximaBold: "ProximaNovaBold";
+
+
 .modal-window {
 	width:25%;
 	height:25%;
 	background-color: #000;
-	opacity: 0.80;
+	background-image: url("../img/grey_trans.png");
 	position: absolute;
 	z-index: 500;
 	left:50%;
 	top:50%;
 	margin: -12.5% 0 0 -12.5%;
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
-	filter: alpha(opacity=80);
-	-moz-opacity: 0.80;
-	-khtml-opacity: 0.80;
 	border: 1px solid #000;
 	-webkit-box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.35);
 	-moz-box-shadow:    0px 7px 9px rgba(0, 0, 0, 0.35);
@@ -22,7 +22,6 @@
 	}
 
 	.close-modal {
-		content: '';
 		background-image: url("../img/icons/icons_sprite.gif");
 		width: 16px;
 		height:16px;
