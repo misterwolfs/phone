@@ -7,4 +7,9 @@ class MainController extends BaseController {
 		return View::make('rephone');
 	}
 
+	public function addPhone()
+	{
+		return "added";
+	}
+
 }

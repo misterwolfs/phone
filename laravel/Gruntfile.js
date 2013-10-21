@@ -7,8 +7,16 @@ module.exports = function(grunt) {
 
     uglify: {
       my_target: {
-          src : 'public/resources/js/*.js',
-          dest : 'public/resources/js/base.min.js'
+         files: {
+          'public/resources/js/base.min.js': [
+            'public/resources/js/modernizer.js',
+            'public/resources/js/map.js',
+            'public/resources/js/callback.js',
+            'public/resources/js/navigation.js',
+            'public/resources/js/modalController.js',
+            'public/resources/js/sidebarController.js'
+            ]
+        }
       }
     },
 

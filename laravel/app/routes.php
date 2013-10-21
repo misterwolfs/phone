@@ -12,3 +12,18 @@
 */
 
 Route::get('/', 'MainController@showIndex');
+
+Route::group(array('prefix' => 'phone'), function() {
+
+	Route::get('add', 'MainController@addPhone');
+
+});
+
+Route::group(array('prefix' => 'embeds'), function() {
+
+	Route::get('form', function() {
+		return View::make('embeds/form');
+	});
+
+});
+

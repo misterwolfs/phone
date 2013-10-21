@@ -31,10 +31,7 @@
 					</li>
 					<li class="parent"><a href="#sell-a-phone">Sell a phone</a>
 						<ul class="subnav">
-							<li>By brand</li>
-							<li>By location</li>
-							<li>Advanded search</li>
-							<li>View all</li>
+							<li id="form">Add a phone</li>
 						</ul>
 					</li>
 					<li class="parent"><a href="#repair-a-phone">Repair a phone</a>
