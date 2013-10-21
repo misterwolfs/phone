@@ -1,0 +1,1194 @@
+/*! normalize.css v2.1.3 | MIT License | git.io/normalize */
+/* ==========================================================================
+   HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined in IE 8/9.
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block; }
+
+/**
+ * Correct `inline-block` display not defined in IE 8/9.
+ */
+audio,
+canvas,
+video {
+  display: inline-block; }
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9.
+ * Hide the `template` element in IE, Safari, and Firefox < 22.
+ */
+[hidden],
+template {
+  display: none; }
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/**
+ * Remove default margin.
+ */
+body {
+  margin: 0; }
+
+/* ==========================================================================
+   Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+a, a:hover {
+  background: transparent; }
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+a:focus {
+  outline: thin dotted; }
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a:active,
+a:hover {
+  outline: 0; }
+
+/* ==========================================================================
+   Typography
+   ========================================================================== */
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari 5, and Chrome.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+b,
+strong {
+  font-weight: bold; }
+
+/**
+ * Address styling not present in Safari 5 and Chrome.
+ */
+dfn {
+  font-style: italic; }
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0; }
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+mark {
+  background: #ff0;
+  color: #000; }
+
+/**
+ * Correct font family set oddly in Safari 5 and Chrome.
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, serif;
+  font-size: 1em; }
+
+/**
+ * Improve readability of pre-formatted text in all browsers.
+ */
+pre {
+  white-space: pre-wrap; }
+
+/**
+ * Set consistent quote types.
+ */
+q {
+  quotes: "\201C" "\201D" "\2018" "\2019"; }
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* ==========================================================================
+   Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9.
+ */
+img {
+  border: 0; }
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* ==========================================================================
+   Figures
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari 5.
+ */
+figure {
+  margin: 0; }
+
+/* ==========================================================================
+   Forms
+   ========================================================================== */
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * 1. Correct font family not being inherited in all browsers.
+ * 2. Correct font size not being inherited in all browsers.
+ * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
+ */
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 2 */
+  margin: 0;
+  /* 3 */ }
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+button,
+input {
+  line-height: normal; }
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
+ * Correct `select` style inheritance in Firefox 4+ and Opera.
+ */
+button,
+select {
+  text-transform: none; }
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled],
+html input[disabled] {
+  cursor: default; }
+
+/**
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  /* 2 */
+  box-sizing: content-box; }
+
+/**
+ * Remove inner padding and search cancel button in Safari 5 and Chrome
+ * on OS X.
+ */
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/**
+ * 1. Remove default vertical scrollbar in IE 8/9.
+ * 2. Improve readability and alignment in all browsers.
+ */
+textarea {
+  overflow: auto;
+  /* 1 */
+  vertical-align: top;
+  /* 2 */ }
+
+/* ==========================================================================
+   Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.animated {
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  -ms-animation-fill-mode: both;
+  -o-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -ms-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s; }
+
+.animated.hinge {
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration: 1s;
+  -ms-animation-duration: 1s;
+  -o-animation-duration: 1s;
+  animation-duration: 1s; }
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1); }
+
+  50% {
+    -webkit-transform: scale(1.1); }
+
+  100% {
+    -webkit-transform: scale(1); } }
+
+@-moz-keyframes pulse {
+  0% {
+    -moz-transform: scale(1); }
+
+  50% {
+    -moz-transform: scale(1.1); }
+
+  100% {
+    -moz-transform: scale(1); } }
+
+@-o-keyframes pulse {
+  0% {
+    -o-transform: scale(1); }
+
+  50% {
+    -o-transform: scale(1.1); }
+
+  100% {
+    -o-transform: scale(1); } }
+
+@keyframes pulse {
+  0% {
+    transform: scale(1); }
+
+  50% {
+    transform: scale(1.1); }
+
+  100% {
+    transform: scale(1); } }
+
+.pulse {
+  -webkit-animation-name: pulse;
+  -moz-animation-name: pulse;
+  -o-animation-name: pulse;
+  animation-name: pulse; }
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; }
+
+  100% {
+    opacity: 1; } }
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  -moz-animation-name: fadeIn;
+  -o-animation-name: fadeIn;
+  animation-name: fadeIn; }
+
+@-webkit-keyframes slideInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px); }
+
+  100% {
+    -webkit-transform: translateY(0); } }
+
+@-moz-keyframes slideInDown {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(-2000px); }
+
+  100% {
+    -moz-transform: translateY(0); } }
+
+@-o-keyframes slideInDown {
+  0% {
+    opacity: 0;
+    -o-transform: translateY(-2000px); }
+
+  100% {
+    -o-transform: translateY(0); } }
+
+@keyframes slideInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-2000px); }
+
+  100% {
+    transform: translateY(0); } }
+
+.slideInDown {
+  -webkit-animation-name: slideInDown;
+  -moz-animation-name: slideInDown;
+  -o-animation-name: slideInDown;
+  animation-name: slideInDown; }
+
+@-webkit-keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px); }
+
+  100% {
+    -webkit-transform: translateX(0); } }
+
+@-moz-keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    -moz-transform: translateX(-2000px); }
+
+  100% {
+    -moz-transform: translateX(0); } }
+
+@-o-keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    -o-transform: translateX(-2000px); }
+
+  100% {
+    -o-transform: translateX(0); } }
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-2000px); }
+
+  100% {
+    transform: translateX(0); } }
+
+.slideInLeft {
+  -webkit-animation-name: slideInLeft;
+  -moz-animation-name: slideInLeft;
+  -o-animation-name: slideInLeft;
+  animation-name: slideInLeft; }
+
+@-webkit-keyframes slideOutLeft {
+  0% {
+    -webkit-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px); } }
+
+@-moz-keyframes slideOutLeft {
+  0% {
+    -moz-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateX(-2000px); } }
+
+@-o-keyframes slideOutLeft {
+  0% {
+    -o-transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateX(-2000px); } }
+
+@keyframes slideOutLeft {
+  0% {
+    transform: translateX(0); }
+
+  100% {
+    opacity: 0;
+    transform: translateX(-2000px); } }
+
+.slideOutLeft {
+  -webkit-animation-name: slideOutLeft;
+  -moz-animation-name: slideOutLeft;
+  -o-animation-name: slideOutLeft;
+  animation-name: slideOutLeft; }
+
+@-webkit-keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px); }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(30px); }
+
+  80% {
+    -webkit-transform: translateY(-10px); }
+
+  100% {
+    -webkit-transform: translateY(0); } }
+
+@-moz-keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    -moz-transform: translateY(-2000px); }
+
+  60% {
+    opacity: 1;
+    -moz-transform: translateY(30px); }
+
+  80% {
+    -moz-transform: translateY(-10px); }
+
+  100% {
+    -moz-transform: translateY(0); } }
+
+@-o-keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    -o-transform: translateY(-2000px); }
+
+  60% {
+    opacity: 1;
+    -o-transform: translateY(30px); }
+
+  80% {
+    -o-transform: translateY(-10px); }
+
+  100% {
+    -o-transform: translateY(0); } }
+
+@keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-2000px); }
+
+  60% {
+    opacity: 1;
+    transform: translateY(30px); }
+
+  80% {
+    transform: translateY(-10px); }
+
+  100% {
+    transform: translateY(0); } }
+
+.bounceInDown {
+  -webkit-animation-name: bounceInDown;
+  -moz-animation-name: bounceInDown;
+  -o-animation-name: bounceInDown;
+  animation-name: bounceInDown; }
+
+@-webkit-keyframes bounceOutDown {
+  0% {
+    -webkit-transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: translateY(-20px); }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px); } }
+
+@-moz-keyframes bounceOutDown {
+  0% {
+    -moz-transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    -moz-transform: translateY(-20px); }
+
+  100% {
+    opacity: 0;
+    -moz-transform: translateY(2000px); } }
+
+@-o-keyframes bounceOutDown {
+  0% {
+    -o-transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    -o-transform: translateY(-20px); }
+
+  100% {
+    opacity: 0;
+    -o-transform: translateY(2000px); } }
+
+@keyframes bounceOutDown {
+  0% {
+    transform: translateY(0); }
+
+  20% {
+    opacity: 1;
+    transform: translateY(-20px); }
+
+  100% {
+    opacity: 0;
+    transform: translateY(2000px); } }
+
+.bounceOutDown {
+  -webkit-animation-name: bounceOutDown;
+  -moz-animation-name: bounceOutDown;
+  -o-animation-name: bounceOutDown;
+  animation-name: bounceOutDown; }
+
+/**
+* ProximaNova
+*/
+@font-face {
+  font-family: 'ProximaNova';
+  src: url("../fonts/proxima/proximanova-regular-webfont.eot");
+  src: url("../fonts/proxima/proximanova-regular-webfont.svg#proxima_nova_rgregular") format("svg"), url("../fonts/proxima/proximanova-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/proxima/proximanova-regular-webfont.woff") format("woff"), url("../fonts/proxima/proximanova-regular-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'ProximaNovaBold';
+  src: url("../fonts/proxima/proximanova-bold-webfont.eot");
+  src: url("../fonts/proxima/proximanova-bold-webfont.svg#proxima_nova_rgbold") format("svg"), url("../fonts/proxima/proximanova-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/proxima/proximanova-bold-webfont.woff") format("woff"), url("../fonts/proxima/proximanova-bold-webfont.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+/** FONTS **/
+/** COLORS **/
+body {
+  font-family: "ProximaNova";
+  font-size: 1em;
+  background-color: #252525;
+  color: #fafeff;
+  font-weight: normal; }
+
+html, body {
+  height: 100%;
+  overflow: hidden; }
+
+html, html a, html a:hover {
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004); }
+
+a, a:hover {
+  color: #fafeff;
+  text-decoration: none; }
+  a:hover {
+    text-decoration: underline; }
+
+#desktop {
+  display: none; }
+
+#main {
+  width: 100%;
+  height: 100%;
+  position: fixed; }
+  #main #map {
+    position: absolute;
+    width: 100%;
+    height: 100%; }
+
+.logged-in {
+  background-color: #373737;
+  padding: 4em 0;
+  margin-bottom: 2.5em;
+  text-align: center;
+  position: relative;
+  font-size: 0.9em; }
+  .logged-in img {
+    border: 3px solid #36538f; }
+  .logged-in h2 {
+    font-family: "ProximaNovaBold";
+    font-size: 1em;
+    color: #fafeff;
+    text-transform: uppercase;
+    line-height: 1em;
+    margin: 0; }
+  .logged-in .view-profile {
+    text-align: left;
+    background-color: #36538f;
+    line-height: 35px;
+    text-indent: 2em;
+    position: absolute;
+    cursor: pointer;
+    bottom: 0;
+    width: 100%;
+    font-family: "ProximaNovaBold";
+    text-transform: uppercase;
+    height: 35px; }
+    .logged-in .view-profile:after {
+      content: '';
+      background-image: url("../img/icons/icons_sprite.gif");
+      width: 11px;
+      height: 16px;
+      background-size: 44px 16px;
+      position: absolute;
+      right: 2em;
+      top: 8px; }
+    .logged-in .view-profile:hover {
+      background-color: #4468b4; }
+
+.logged-out {
+  text-align: center;
+  margin: 2em 0; }
+  .logged-out button {
+    background-color: #36538f;
+    width: 195px;
+    height: 35px;
+    border: none;
+    color: #fafeff;
+    text-align: left;
+    font-size: 0.9em;
+    line-height: 35px;
+    background-image: url("../img/icons/facebook.png");
+    -webkit-background-size: 22px 22px;
+    -moz-background-size: 22px 22px;
+    -o-background-size: 22px 22px;
+    background-size: 22px 22px;
+    background-position: 1em center;
+    background-repeat: no-repeat;
+    text-indent: 3em;
+    margin: 0 auto;
+    -webkit-box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.2); }
+    .logged-out button:hover {
+      background-color: #3d5ea2; }
+
+#navigation {
+  display: block;
+  font-size: 0.9em; }
+  #navigation ul.nav-parent {
+    list-style-type: none;
+    font-family: "ProximaNovaBold";
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0; }
+    #navigation ul.nav-parent li:last-child {
+      -webkit-box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.1);
+      -moz-box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.1);
+      box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.1); }
+    #navigation ul.nav-parent li.parent, #navigation ul.nav-parent li.active {
+      background-color: #373737;
+      border-top: 1px solid #000;
+      line-height: 33px;
+      text-indent: 2em;
+      position: relative;
+      cursor: pointer; }
+      #navigation ul.nav-parent li.parent a, #navigation ul.nav-parent li.active a {
+        display: block;
+        text-decoration: none; }
+      #navigation ul.nav-parent li.parent .subnav, #navigation ul.nav-parent li.active .subnav {
+        display: none; }
+      #navigation ul.nav-parent li.parent:after, #navigation ul.nav-parent li.active:after {
+        content: '';
+        background-image: url("../img/icons/icons_sprite.gif");
+        width: 11px;
+        height: 16px;
+        background-size: 44px 16px;
+        position: absolute;
+        right: 2em;
+        top: 8px; }
+      #navigation ul.nav-parent li.parent:hover:after, #navigation ul.nav-parent li.active:hover:after {
+        background-image: url("../img/icons/icons_sprite.gif");
+        background-position: -11px 0;
+        width: 17px;
+        right: 1.9em; }
+      #navigation ul.nav-parent li.parent:hover, #navigation ul.nav-parent li.active:hover {
+        background-color: #24ac5d; }
+    #navigation ul.nav-parent li.active {
+      background-color: #24ac5d; }
+      #navigation ul.nav-parent li.active .subnav {
+        display: block; }
+      #navigation ul.nav-parent li.active:after {
+        content: '';
+        background-image: url("../img/icons/icons_sprite.gif");
+        background-position: -11px 0;
+        width: 17px;
+        right: 1.9em;
+        height: 16px;
+        background-size: 44px 16px;
+        position: absolute;
+        top: 8px; }
+    #navigation ul.nav-parent ul.subnav {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      font-family: "ProximaNova";
+      text-transform: capitalize; }
+      #navigation ul.nav-parent ul.subnav li {
+        height: 34px;
+        text-indent: 5em; }
+        #navigation ul.nav-parent ul.subnav li:hover {
+          background-color: #3f3f3f; }
+      #navigation ul.nav-parent ul.subnav li:not(:last-child) {
+        border-bottom: 1px solid #373737; }
+  #navigation ul.subnav {
+    margin-top: 20px;
+    background-color: #252525; }
+
+#social {
+  position: absolute;
+  background-color: green;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid #000; }
+  #social button {
+    border: none;
+    float: left;
+    height: 34px;
+    color: #fafeff; }
+  #social #facebook {
+    width: 25%;
+    background-color: #36538f;
+    border-right: 1px solid #000;
+    background-image: url("../img/icons/facebook.png");
+    -webkit-background-size: 22px 22px;
+    -moz-background-size: 22px 22px;
+    -o-background-size: 22px 22px;
+    background-size: 22px 22px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    text-indent: 3em; }
+    #social #facebook:hover {
+      background-color: #3d5ea2; }
+  #social #twitter {
+    width: 75%;
+    background-color: #00acec;
+    background-image: url("../img/icons/twitter.png");
+    -webkit-background-size: 22px 22px;
+    -moz-background-size: 22px 22px;
+    -o-background-size: 22px 22px;
+    background-size: 22px 22px;
+    background-position: 1em center;
+    background-repeat: no-repeat;
+    text-indent: 3em;
+    text-align: left;
+    line-height: 31px; }
+    #social #twitter:hover {
+      background-color: #06bcff; }
+
+.page-wrap {
+  float: right;
+  width: 100%;
+  transition: width 0.3s ease; }
+
+.main-nav {
+  position: fixed;
+  top: 0;
+  width: 0;
+  height: 100%;
+  overflow-y: auto;
+  border-right: 1px solid #000;
+  transition: width 0.3s ease;
+  -webkit-transition: width 0.3s ease;
+  /* Chrome 1-25, Safari 3.2+ */
+  -moz-transition: width 0.3s ease;
+  /* Firefox 4-15 */
+  -o-transition: width 0.3s ease;
+  /* Opera 10.50–12.00 */ }
+  .main-nav:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 34px;
+    background: linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.4)); }
+
+header {
+  height: 50px;
+  line-height: 50px;
+  font-size: 2em; }
+  header #hamburger {
+    position: absolute;
+    left: 1em; }
+  header h1 {
+    text-align: center; }
+
+.content {
+  padding: 100px 20px 20px 20px; }
+
+.close-menu {
+  display: none; }
+
+#main-nav:target {
+  width: 61%; }
+
+#main-nav:target + .page-wrap {
+  width: 39%; }
+  #main-nav:target + .page-wrap .open-menu {
+    display: none; }
+  #main-nav:target + .page-wrap .close-menu {
+    display: block; }
+  #main-nav:target + .page-wrap .header {
+    width: 39%;
+    left: 61%; }
+
+/** FONTS **/
+/** COLORS **/
+/* ===== == = === 20em (320px) === = == ===== */
+@media only screen and (min-width: 20em) {
+  #main-nav:target {
+    width: 80%; }
+
+  #main-nav:target + .page-wrap {
+    width: 20%; }
+    #main-nav:target + .page-wrap .header {
+      width: 20%;
+      left: 80%; } }
+/* ===== == = === 30em (480px) === = == ===== */
+@media only screen and (min-width: 30em) {
+  #main-nav:target {
+    width: 60%; }
+
+  #main-nav:target + .page-wrap {
+    width: 40%; }
+    #main-nav:target + .page-wrap .header {
+      width: 40%;
+      left: 60%; } }
+/* ===== == = === 37.5em (600px) === = == ===== */
+@media only screen and (min-width: 37.5em) {
+  #main-nav:target {
+    width: 40%; }
+
+  #main-nav:target + .page-wrap {
+    width: 60%; }
+    #main-nav:target + .page-wrap .header {
+      width: 60%;
+      left: 40%; } }
+/* ===== == = === 48em (768px) === = == ===== */
+/* ===== == = === 56.25em (900px) === = == ===== */
+@media only screen and (min-width: 56.25em) {
+  #main-nav:target {
+    width: 28%; }
+
+  #main-nav:target + .page-wrap {
+    width: 72%; }
+    #main-nav:target + .page-wrap .header {
+      width: 72%;
+      left: 28%; } }
+/* ===== == = === 64em (1024) === = == ===== */
+/* ===== == = === 75em (1200px) === = == ===== */
+@media only screen and (min-width: 75em) {
+  .open-menu, .close-menu {
+    display: none; }
+
+  header {
+    display: none; }
+
+  #main-nav:target + .page-wrap {
+    width: 100%; }
+    #main-nav:target + .page-wrap .open-menu {
+      display: none; }
+    #main-nav:target + .page-wrap .close-menu {
+      display: none; }
+
+  #main-nav:target {
+    width: 275px; }
+
+  #table-wrapper {
+    display: table;
+    height: 100%;
+    width: 100%; }
+
+  .page-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    float: left;
+    display: table-cell; }
+
+  #main-nav {
+    width: 275px;
+    display: table-cell;
+    height: 100%;
+    vertical-align: top;
+    position: relative;
+    border-right: 1px solid #000;
+    font-size: 1em;
+    background-color: #252525; }
+
+  .page-wrap #map {
+    top: 0;
+    left: 0; } }
+/** RETINA **/
+@media screen and (-webkit-min-device-pixel-ratio: 1.3), screen and (min--moz-device-pixel-ratio: 1.3), screen and (-o-min-device-pixel-ratio: 2 / 1), screen and (min-device-pixel-ratio: 1.3), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
+  #logo {
+    background-image: url("../img/logo@2x.png");
+    -webkit-background-size: 92px 61px;
+    -moz-background-size: 92px 61px;
+    -o-background-size: 92px 61px;
+    background-size: 92px 61px; } }
+/** FONTS **/
+.modal-window {
+  width: 25%;
+  height: 25%;
+  background-color: #000;
+  background-image: url("../img/grey_trans.png");
+  position: absolute;
+  z-index: 500;
+  left: 50%;
+  top: 50%;
+  margin: -12.5% 0 0 -12.5%;
+  border: 1px solid #000;
+  -webkit-box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.35);
+  box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.35); }
+  .modal-window .content {
+    padding: 20px; }
+  .modal-window .close-modal {
+    background-image: url("../img/icons/icons_sprite.gif");
+    width: 16px;
+    height: 16px;
+    background-size: 44px 16px;
+    position: absolute;
+    right: 2em;
+    top: 8px;
+    background-position: -28px 0;
+    cursor: pointer; }
+
+h1 {
+  font-family: "ProximaNovaBold";
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  font-size: 1.2em; }
+
+/** FONTS **/
+/** COLORS **/
+#main .sidebar {
+  position: absolute;
+  height: 100%;
+  left: 0;
+  width: 509px;
+  border-right: 1px solid #000;
+  background-image: url("../img/grey_trans.png"); }
+  #main .sidebar .close-sidebar {
+    background-image: url("../img/icons/icons_sprite.gif");
+    width: 16px;
+    height: 16px;
+    background-size: 44px 16px;
+    position: absolute;
+    right: 2em;
+    top: 24px;
+    background-position: -28px 0;
+    cursor: pointer; }
+  #main .sidebar .content {
+    padding: 20px 40px; }
+  #main .sidebar h3 {
+    font-family: "ProximaNovaBold";
+    font-size: 1.2em;
+    color: #fafeff;
+    text-transform: uppercase;
+    line-height: 1.2em;
+    margin: 0; }
+
+@-webkit-keyframes sidebarIn {
+  0% {
+    width: 0; }
+
+  100% {
+    width: 509px; } }
+
+@-moz-keyframes sidebarIn {
+  0% {
+    width: 0; }
+
+  100% {
+    width: 509px; } }
+
+@-o-keyframes sidebarIn {
+  0% {
+    width: 0; }
+
+  100% {
+    width: 509px; } }
+
+@keyframes sidebarIn {
+  0% {
+    width: 0; }
+
+  100% {
+    width: 509px; } }
+
+.sidebarIn {
+  -webkit-animation-name: sidebarIn;
+  -moz-animation-name: sidebarIn;
+  -o-animation-name: sidebarIn;
+  animation-name: sidebarIn;
+  animation-duration: 0.5s;
+  -webkit-animation-duration: 0.5s;
+  /* Safari and Chrome */ }
+
+@-webkit-keyframes sidebarOut {
+  0% {
+    width: 509px; }
+
+  100% {
+    width: 0; } }
+
+@-moz-keyframes sidebarOut {
+  0% {
+    width: 509px; }
+
+  100% {
+    width: 0; } }
+
+@-o-keyframes sidebarOut {
+  0% {
+    width: 509px; }
+
+  100% {
+    width: 0; } }
+
+@keyframes sidebarOut {
+  0% {
+    width: 509px; }
+
+  100% {
+    width: 0; } }
+
+.sidebarOut {
+  -webkit-animation-name: sidebarOut;
+  -moz-animation-name: sidebarOut;
+  -o-animation-name: sidebarOut;
+  animation-name: sidebarOut;
+  animation-duration: 0.5s;
+  -webkit-animation-duration: 0.5s;
+  /* Safari and Chrome */ }

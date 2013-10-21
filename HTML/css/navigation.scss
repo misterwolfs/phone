@@ -1,0 +1,72 @@
+
+
+.page-wrap {
+  float: right;
+  width: 100%;
+  transition: width 0.3s ease;
+}
+
+.main-nav {
+  position: fixed;
+  top: 0;
+  width: 0;
+  height: 100%;
+  overflow-y: auto;
+  border-right: 1px solid #000;
+  transition: width 0.3s ease;
+  -webkit-transition: width 0.3s ease;  /* Chrome 1-25, Safari 3.2+ */
+     -moz-transition: width 0.3s ease; /* Firefox 4-15 */
+       -o-transition: width 0.3s ease;  /* Opera 10.50–12.00 */
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 34px;
+    background: linear-gradient(left, rgba(black, 0), rgba(black, 0.4));
+  }
+}
+
+header {
+  height:50px;
+  line-height: 50px;
+  font-size: 2em;
+
+  #hamburger {
+    position: absolute;
+    left: 1em;
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+}
+
+.content {
+  padding: 100px 20px 20px 20px;
+}
+
+.close-menu {
+  display: none;
+}
+
+#main-nav:target {
+  width: 61%;
+}
+
+#main-nav:target + .page-wrap {
+  width: 39%;
+  .open-menu {
+     display: none; 
+  }
+  .close-menu {
+     display: block;
+  }
+  .header {
+    width: 39%;
+    left: 61%;
+  }
+}

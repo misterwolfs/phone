@@ -1,0 +1,214 @@
+/** FONTS **/
+/** COLORS **/
+body {
+  font-family: "ProximaNova";
+  font-size: 1em;
+  background-color: #252525;
+  color: #fafeff;
+  font-weight: normal; }
+
+html, body {
+  height: 100%;
+  overflow: hidden; }
+
+html, html a, html a:hover {
+  -webkit-font-smoothing: antialiased;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004); }
+
+a, a:hover {
+  color: #fafeff;
+  text-decoration: none; }
+  a:hover {
+    text-decoration: underline; }
+
+#desktop {
+  display: none; }
+
+#main {
+  width: 100%;
+  height: 100%;
+  position: fixed; }
+  #main #map {
+    position: absolute;
+    width: 100%;
+    height: 100%; }
+
+.logged-in {
+  background-color: #373737;
+  padding: 4em 0;
+  margin-bottom: 2.5em;
+  text-align: center;
+  position: relative;
+  font-size: 0.9em; }
+  .logged-in img {
+    border: 3px solid #36538f; }
+  .logged-in h2 {
+    font-family: "ProximaNovaBold";
+    font-size: 1em;
+    color: #fafeff;
+    text-transform: uppercase;
+    line-height: 1em;
+    margin: 0; }
+  .logged-in .view-profile {
+    text-align: left;
+    background-color: #36538f;
+    line-height: 35px;
+    text-indent: 2em;
+    position: absolute;
+    cursor: pointer;
+    bottom: 0;
+    width: 100%;
+    font-family: "ProximaNovaBold";
+    text-transform: uppercase;
+    height: 35px; }
+    .logged-in .view-profile:after {
+      content: '';
+      background-image: url("../img/icons/icons_sprite.gif");
+      width: 11px;
+      height: 16px;
+      background-size: 44px 16px;
+      position: absolute;
+      right: 2em;
+      top: 8px; }
+    .logged-in .view-profile:hover {
+      background-color: #4468b4; }
+
+.logged-out {
+  text-align: center;
+  margin: 2em 0; }
+  .logged-out button {
+    background-color: #36538f;
+    width: 195px;
+    height: 35px;
+    border: none;
+    color: #fafeff;
+    text-align: left;
+    font-size: 0.9em;
+    line-height: 35px;
+    background-image: url("../img/icons/facebook.png");
+    -webkit-background-size: 22px 22px;
+    -moz-background-size: 22px 22px;
+    -o-background-size: 22px 22px;
+    background-size: 22px 22px;
+    background-position: 1em center;
+    background-repeat: no-repeat;
+    text-indent: 3em;
+    margin: 0 auto;
+    -webkit-box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.2); }
+    .logged-out button:hover {
+      background-color: #3d5ea2; }
+
+#navigation {
+  display: block;
+  font-size: 0.9em; }
+  #navigation ul.nav-parent {
+    list-style-type: none;
+    font-family: "ProximaNovaBold";
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0; }
+    #navigation ul.nav-parent li:last-child {
+      -webkit-box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.1);
+      -moz-box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.1);
+      box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.1); }
+    #navigation ul.nav-parent li.parent, #navigation ul.nav-parent li.active {
+      background-color: #373737;
+      border-top: 1px solid #000;
+      line-height: 33px;
+      text-indent: 2em;
+      position: relative;
+      cursor: pointer; }
+      #navigation ul.nav-parent li.parent a, #navigation ul.nav-parent li.active a {
+        display: block;
+        text-decoration: none; }
+      #navigation ul.nav-parent li.parent .subnav, #navigation ul.nav-parent li.active .subnav {
+        display: none; }
+      #navigation ul.nav-parent li.parent:after, #navigation ul.nav-parent li.active:after {
+        content: '';
+        background-image: url("../img/icons/icons_sprite.gif");
+        width: 11px;
+        height: 16px;
+        background-size: 44px 16px;
+        position: absolute;
+        right: 2em;
+        top: 8px; }
+      #navigation ul.nav-parent li.parent:hover:after, #navigation ul.nav-parent li.active:hover:after {
+        background-image: url("../img/icons/icons_sprite.gif");
+        background-position: -11px 0;
+        width: 17px;
+        right: 1.9em; }
+      #navigation ul.nav-parent li.parent:hover, #navigation ul.nav-parent li.active:hover {
+        background-color: #24ac5d; }
+    #navigation ul.nav-parent li.active {
+      background-color: #24ac5d; }
+      #navigation ul.nav-parent li.active .subnav {
+        display: block; }
+      #navigation ul.nav-parent li.active:after {
+        content: '';
+        background-image: url("../img/icons/icons_sprite.gif");
+        background-position: -11px 0;
+        width: 17px;
+        right: 1.9em;
+        height: 16px;
+        background-size: 44px 16px;
+        position: absolute;
+        top: 8px; }
+    #navigation ul.nav-parent ul.subnav {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      font-family: "ProximaNova";
+      text-transform: capitalize; }
+      #navigation ul.nav-parent ul.subnav li {
+        height: 34px;
+        text-indent: 5em; }
+        #navigation ul.nav-parent ul.subnav li:hover {
+          background-color: #3f3f3f; }
+      #navigation ul.nav-parent ul.subnav li:not(:last-child) {
+        border-bottom: 1px solid #373737; }
+  #navigation ul.subnav {
+    margin-top: 20px;
+    background-color: #252525; }
+
+#social {
+  position: absolute;
+  background-color: green;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid #000; }
+  #social button {
+    border: none;
+    float: left;
+    height: 34px;
+    color: #fafeff; }
+  #social #facebook {
+    width: 25%;
+    background-color: #36538f;
+    border-right: 1px solid #000;
+    background-image: url("../img/icons/facebook.png");
+    -webkit-background-size: 22px 22px;
+    -moz-background-size: 22px 22px;
+    -o-background-size: 22px 22px;
+    background-size: 22px 22px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    text-indent: 3em; }
+    #social #facebook:hover {
+      background-color: #3d5ea2; }
+  #social #twitter {
+    width: 75%;
+    background-color: #00acec;
+    background-image: url("../img/icons/twitter.png");
+    -webkit-background-size: 22px 22px;
+    -moz-background-size: 22px 22px;
+    -o-background-size: 22px 22px;
+    background-size: 22px 22px;
+    background-position: 1em center;
+    background-repeat: no-repeat;
+    text-indent: 3em;
+    text-align: left;
+    line-height: 31px; }
+    #social #twitter:hover {
+      background-color: #06bcff; }
