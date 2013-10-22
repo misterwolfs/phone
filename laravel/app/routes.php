@@ -39,9 +39,9 @@ Route::group(array('prefix' => 'login'), function() {
 	Route::get('/', function() {
 		$data = array();
 
-		if(Auth::check()) {
-			$data = Auth::user();
-		}
+		// if(Auth::check()) {
+		// 	$data = Auth::user();
+		// }
 		return View::make('logged_in', array('data' =>$data));
 	});
 
@@ -87,15 +87,15 @@ Route::group(array('prefix' => 'login'), function() {
 
     $user = $profile->user;
  
-    Auth::login($user);
+    //Auth::login($user);
      
-    return Redirect::to('/')->with('message', 'Logged in with Facebook');
+    return Redirect::to('login')->with('message', 'Logged in with Facebook');
 
 		});
 	});		
 });
 
 Route::get('logout', function() {
-	Auth::logout();
+	//Auth::logout();
 	return Redirect::to('login');
 });
