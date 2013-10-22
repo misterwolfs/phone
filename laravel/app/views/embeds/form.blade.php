@@ -5,7 +5,7 @@
 
 <div class="close-sidebar"></div>
 
-{{ 	Form::open(array('url' => 'phone/add', 'method' => 'POST')) }}
+{{ 	Form::open(array('id' => 'addPhone')) }}
 <p>
 	{{ Form::label('model', 'Model') }} <br />
 	{{ Form::text('model') }} 

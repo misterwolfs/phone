@@ -30,9 +30,7 @@ Route::get('form', function() {
 	return View::make('embeds/form');
 });
 
-/* AJAX POSTS */
-Route::post('addphone', 'MainController@addPhone');
-
+<<<<<<< HEAD
 
 Route::group(array('prefix' => 'login'), function() {
 
@@ -99,3 +97,7 @@ Route::get('logout', function() {
 	Auth::logout();
 	return Redirect::to('login');
 });
+=======
+/* AJAX POSTS */
+Route::post('addphone', 'MainController@addPhone');
+>>>>>>> 2eda63cfe60e3d8d1648c3b871938b4e471df629

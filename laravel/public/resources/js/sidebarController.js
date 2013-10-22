@@ -51,3 +51,10 @@ $("ul.subnav li a, .view-profile").on("click", function() {
 $("body").delegate(".close-sidebar", "click", function() {
 	sidebarController.hide($(this).parent());
 });
+
+$("body").delegate("#addPhone", "submit", function(e) {
+	e.preventDefault();
+	$.post('addphone', $(this).serialize(), alert("HipHoi, toegevoegd!"));
+	return false; 
+});
+
