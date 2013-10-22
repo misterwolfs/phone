@@ -27,8 +27,8 @@ class MainController extends BaseController {
 			'color' 		=> 		Input::get('color')
 		));
 
-		Session::flash('succes_phone', 'Succesfully added');
-		return Redirect::to('embeds/form');
+		// Session::flash('succes_phone', 'Succesfully added');
+		// return Redirect::to('embeds/form');
 	}
 
 	public function viewPhone() 

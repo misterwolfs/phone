@@ -29,3 +29,6 @@ Route::group(array('prefix' => 'embeds'), function() {
 Route::get('form', function() {
 	return View::make('embeds/form');
 });
+
+/* AJAX POSTS */
+Route::post('addphone', 'MainController@addPhone');
