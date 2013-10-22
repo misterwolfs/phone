@@ -25,4 +25,20 @@ class MainController extends BaseController {
 		Session::flash('succes_phone', 'Succesfully added');
 		return Redirect::to('embeds/form');
 	}
+
+	public function viewPhone() 
+	{
+		$phones = Phone::all();
+
+		
+
+		foreach ($phones as $phone)
+		{
+		    var_dump($phone->model);
+		    var_dump($phone->brand); 
+		    echo '<br />';
+		}
+
+ //View::make('phones', $data);
+	}
 }

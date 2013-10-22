@@ -15,6 +15,8 @@ Route::get('/', 'MainController@showIndex');
 
 Route::group(array('prefix' => 'phone'), function() {
 	Route::post('add', array('as' => 'add_phone', 'uses' => 'MainController@addPhone'));
+
+	Route::get('all', array('as' => 'all_phones', 'uses' => 'MainController@viewPhone'));
 });
 
 Route::group(array('prefix' => 'embeds'), function() {
