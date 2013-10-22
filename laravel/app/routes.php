@@ -29,3 +29,70 @@ Route::group(array('prefix' => 'embeds'), function() {
 Route::get('form', function() {
 	return View::make('embeds/form');
 });
+
+
+Route::group(array('prefix' => 'login'), function() {
+
+	Route::get('/', function() {
+		$data = array();
+
+		if(Auth::check()) {
+			$data = Auth::user();
+		}
+		return View::make('logged_in', array('data' =>$data));
+	});
+
+	Route::group(array('prefix' => 'fb'), function() {
+		Route::get('/', function() {
+			$facebook = new Facebook(Config::get('facebook'));
+			$params = array(
+				'redirect_uri'  => url('/login/fb/callback'),
+				'scope' => 'email',
+			);
+			return Redirect::to($facebook->getLoginUrl($params));
+		});
+
+		Route::get('/callback', function() {
+		    $code = Input::get('code');
+    if (strlen($code) == 0) return Redirect::to('/')->with('message', 'There was an error communicating with Facebook');
+    
+    $facebook = new Facebook(Config::get('facebook'));
+    $uid = $facebook->getUser();
+     
+    if ($uid == 0) return Redirect::to('/')->with('message', 'There was an error');
+     
+    $me = $facebook->api('/me');
+
+	$profile = FacebookProfile::whereUid($uid)->first();
+    if (empty($profile)) {
+
+    	$user = new FacebookUser;
+    	$user->name = $me['first_name'].' '.$me['last_name'];
+    	$user->email = $me['email'];
+    	$user->photo = 'https://graph.facebook.com/'.$me['username'].'/picture?type=large';
+
+        $user->save();
+
+        $profile = new FacebookProfile();
+        $profile->uid = $uid;
+    	$profile->username = $me['username'];
+    	$profile = $user->profiles()->save($profile);
+    }
+     
+    $profile->access_token = $facebook->getAccessToken();
+    $profile->save();
+
+    $user = $profile->user;
+ 
+    Auth::login($user);
+     
+    return Redirect::to('/')->with('message', 'Logged in with Facebook');
+
+		});
+	});		
+});
+
+Route::get('logout', function() {
+	Auth::logout();
+	return Redirect::to('login');
+});
