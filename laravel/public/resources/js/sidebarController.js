@@ -5,6 +5,7 @@ var sidebarController = {
 
 		sidebarController.open = true;
 		sidebarController.currentOpen = arg;
+		var content;
 
 		var close = $("<div/>")
 						.addClass("close-sidebar");
@@ -12,13 +13,17 @@ var sidebarController = {
 		var sidebar = $("<div/>")
 						.addClass("sidebar sidebarIn animated")
 						.attr("id", arg)
-						.append(close);	
+						.append(close);
+
+		$.get(arg, function(data){
+			$(".sidebar").html(data);
+		})
 
 		$("#main").append(sidebar);
 
 	},
 	hide: function(arg) {
-		$(".sidebar > *").hide();
+		$(".sidebar > *").fadeOut();
 		arg.animateCSS('sidebarOut', function() {
 				$(this).remove();
 				sidebarController.open = false;
@@ -26,8 +31,8 @@ var sidebarController = {
 	}
 }
 
-$("ul.subnav li, .view-profile").on("click", function() {
-	var id = $(this).text();
+$("ul.subnav li a, .view-profile").on("click", function() {
+	var id = $(this).parent().attr("id");
 	if(sidebarController.open) {
 		if(id != sidebarController.currentOpen) {
 			$(".sidebar > *").hide();

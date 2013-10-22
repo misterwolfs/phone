@@ -1,5 +1,5 @@
 
-$(".nav-parent li.parent a").on("click", function(e) {
+$(".toggle-menu").on("click", function(e) {
 	e.preventDefault();
 	if($(this).parent().hasClass("active")) {
 		$(".nav-parent li").removeClass("active");

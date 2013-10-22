@@ -13,6 +13,8 @@
 
 Route::get('/', 'MainController@showIndex');
 
+Route::get('/phone/add', 'MainController@showForm');
+
 Route::group(array('prefix' => 'phone'), function() {
 	Route::post('add', array('as' => 'add_phone', 'uses' => 'MainController@addPhone'));
 
@@ -23,3 +25,7 @@ Route::group(array('prefix' => 'embeds'), function() {
 	Route::get('form', array('as' => 'get_form', 'uses' => 'FormController@showForm'));
 });
 
+/* AJAX REQUESTS */
+Route::get('form', function() {
+	return View::make('embeds/form');
+});

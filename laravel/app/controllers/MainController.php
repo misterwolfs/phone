@@ -4,8 +4,13 @@ class MainController extends BaseController {
 
 	public function showIndex()
 	{
-		return View::make('rephone');
+		return View::make('master');
 	}
+
+	public function showForm()
+	{
+		return View::make('sidebar/sidebar_form');
+	}	
 
 	public function addPhone()
 	{	
