@@ -94,3 +94,10 @@ $("body").delegate("#addPhone", "submit", function(e) {
 	return false; 
 });
 
+$("body").delegate("#editUser", "submit", function(e) {
+	console.log('test clicked');
+	e.preventDefault();
+	$.post('user/edit', $(this).serialize(), alert("HipHoi, geedit!"));
+	return false; 
+});
+
