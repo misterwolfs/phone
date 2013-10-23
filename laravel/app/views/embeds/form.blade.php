@@ -1,9 +1,9 @@
-{{ $firsname }}
+
 <div class="close-sidebar"></div>
 
 <h4>Add a phone</h4>
 
-{{ 	Form::open(array('id' => 'addPhone')) }}
+{{ 	Form::open(array('url' => 'addphone', 'id' => 'addPhone')) }}
 <p>
 	{{ Form::label('model', 'Model') }} <br />
 	{{ Form::text('model') }} 

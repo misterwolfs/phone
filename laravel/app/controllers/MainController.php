@@ -22,6 +22,11 @@ class MainController extends BaseController {
 
 	public function addPhone()
 	{	
+
+		// $id = Auth::user()->id;
+
+		// $userID = User::find($id)->id;
+
 		$phone =  new Phone;
 
 		$phone::create(array(
@@ -35,8 +40,13 @@ class MainController extends BaseController {
 			'color' 		=> 		Input::get('color')
 		));
 
-		// Session::flash('succes_phone', 'Succesfully added');
-		// return Redirect::to('embeds/form');
+		//$user = new UserHasPhone;
+
+		// $user::create(array(
+		// 	'userID' 		=> 		$userID,
+		// 	'phoneID'		=>		$phone->id
+		// ));
+		
 	}
 
 	public function viewPhone() 

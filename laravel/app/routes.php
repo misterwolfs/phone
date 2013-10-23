@@ -13,7 +13,7 @@
 
 Route::get('/', 'MainController@showIndex');
 
-Route::get('/phone/add', 'MainController@showForm');
+//Route::get('/phone/add', 'MainController@showForm');
 
 Route::group(array('prefix' => 'phone'), function() {
 	Route::post('add', array('as' => 'add_phone', 'uses' => 'MainController@addPhone'));
