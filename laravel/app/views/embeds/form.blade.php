@@ -5,6 +5,8 @@
 
 <div class="close-sidebar"></div>
 
+<h4>Add a phone</h4>
+
 {{ 	Form::open(array('id' => 'addPhone')) }}
 <p>
 	{{ Form::label('model', 'Model') }} <br />
