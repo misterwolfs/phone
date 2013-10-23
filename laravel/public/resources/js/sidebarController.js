@@ -26,9 +26,9 @@ var sidebarController = {
 		$("#main").append(sidebar);
 
 	},
-	hide: function(arg) {
+	hide: function() {
 		$(".sidebar > *").fadeOut();
-		arg.animateCSS('sidebarOut', function() {
+		$(".sidebar").animateCSS('sidebarOut', function() {
 				$(this).remove();
 				sidebarController.open = false;
 		})
@@ -53,7 +53,7 @@ $("ul.subnav li a, .view-profile").on("click", function() {
 
 
 $("body").delegate(".close-sidebar", "click", function() {
-	sidebarController.hide($(this).parent().parent());
+	sidebarController.hide();
 });
 
 $("body").delegate("#addPhone", "submit", function(e) {
