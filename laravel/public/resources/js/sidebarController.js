@@ -10,13 +10,17 @@ var sidebarController = {
 		var close = $("<div/>")
 						.addClass("close-sidebar");
 
+		var content = $("<div/>")
+						.addClass("content");
+
 		var sidebar = $("<div/>")
 						.addClass("sidebar sidebarIn animated")
 						.attr("id", arg)
-						.append(close);
+						.append(close)
+						.append(content);
 
 		$.get(arg, function(data){
-			$(".sidebar").html(data);
+			$(".content").html(data);
 		})
 
 		$("#main").append(sidebar);
@@ -49,7 +53,7 @@ $("ul.subnav li a, .view-profile").on("click", function() {
 
 
 $("body").delegate(".close-sidebar", "click", function() {
-	sidebarController.hide($(this).parent());
+	sidebarController.hide($(this).parent().parent());
 });
 
 $("body").delegate("#addPhone", "submit", function(e) {
