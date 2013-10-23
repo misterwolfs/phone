@@ -57,12 +57,16 @@ Route::group(array('prefix' => 'login'), function() {
 		     
 		    $me = $facebook->api('/me');
 
+		    
+
 			$profile = Profile::whereUid($uid)->first();
 		    if (empty($profile)) {
 
 		    	$user = new User;
-		    	$user->name = $me['first_name'].' '.$me['last_name'];
+		    	$user->firstname = $me['first_name'];
+		    	$user->lastname = $me['last_name'];
 
+		    	
 		    	if(isset($me['email']))
 		    	{
 		    		$user->email = $me['email'];
@@ -93,10 +97,30 @@ Route::group(array('prefix' => 'login'), function() {
 		    
 		    Auth::login($user);
 		     
-		    return Redirect::to('/');
+		  return Redirect::to('/');
 
 		});
 	});		
+});
+
+Route::get('/getuserinfo', function() {
+	$id = Auth::user()->id;
+
+	$user = User::find($id)->toJson();
+
+	var_dump($user);
+	
+	// $info = array(
+	// 	'firsname'  => $user['firstname'],
+	// 	'lastname' => $user['lastname'],
+	// 	'email' => $user['email'],
+	// 	'adress' => $user['adress'],
+	// 	'photo' => $user['photo'],
+	// 	'is_repairder' => $user['is_repairder']
+	// );
+
+	// echo '<br /> <br />';
+	// var_dump($info);
 });
 
 Route::get('logout', function() {
