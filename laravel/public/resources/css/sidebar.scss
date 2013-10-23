@@ -11,14 +11,12 @@ $facebook-blue: #36538f;
 $twitter-blue: #00acec;
 
 #main {
-	
 	.sidebar {
 		position: absolute;
 		height: 100%;
 		left:0;
 		width:449px;
 		border-right: 1px solid #000;
-		padding: 24px 30px;
 		background-image: url("../img/grey_trans.png");
 
 		.close-sidebar {
@@ -33,10 +31,15 @@ $twitter-blue: #00acec;
 			cursor: pointer;
 		}
 
+		form {
+			textarea {
+				max-width: 100%;
+			}
+		}
+
 		.content {
 			padding: 24px 40px;
 		}
-
 		h3 {
 			font-family: $proximaBold;
 			font-size: 1.2em;
@@ -51,8 +54,27 @@ $twitter-blue: #00acec;
 		}
 	}
 
+
 }
 
+@media only screen and (min-width : 56.25em) { 
+	#main {
+	
+	.sidebar {
+		position: absolute;
+		height: 100%;
+		left:0;
+		width:449px;
+		border-right: 1px solid #000;
+		background-image: url("../img/grey_trans.png");
+
+		.content {
+			padding: 24px 40px;
+		}
+	}
+	}
+
+}
 @-webkit-keyframes sidebarIn {
 	0% {
 		width:0;
