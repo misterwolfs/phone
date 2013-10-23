@@ -64,6 +64,10 @@ $twitter-blue: #00acec;
     left: 40%;
   }
 }
+
+#social {
+	bottom: 0;
+}
 	
 }
 
@@ -94,9 +98,9 @@ header {
 }
 
 #main-nav:target + .page-wrap {
-  width: 72%;
+  width: 100%;
   .header {
-    width: 72%;
+    width: 100%;
     left: 28%;
   }
 }
@@ -132,10 +136,6 @@ header {
 		left:0;
 	}
 }
-
-#social {
-	bottom: 0;
-}
 	
 }
 
@@ -159,7 +159,7 @@ header {
 }
 
 #main-nav:target + .page-wrap {
-	width:275px;
+	width:100%;
   .open-menu {
      display: none; 
   }
