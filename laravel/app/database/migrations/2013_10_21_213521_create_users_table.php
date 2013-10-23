@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration {
 			$table->string('photo');
 			$table->string('email');
 			$table->string('facebook');
-			$table->integer('is_repairder');
+			$table->boolean('is_repairder');
 			$table->timestamps();
 
 		});

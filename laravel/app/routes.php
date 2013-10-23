@@ -72,11 +72,9 @@ Route::group(array('prefix' => 'login'), function() {
 		    		$user->email = $me['email'];
 		    	}
 		    	else {
-		    		$user->email = "false";
+		    		$user->email = "";
 		    	}
 		    	$user->photo = 'https://graph.facebook.com/'.$me['username'].'/picture?type=large';
-		    	
-
 		    	
 
 		  
@@ -103,15 +101,39 @@ Route::group(array('prefix' => 'login'), function() {
 	});		
 });
 
-Route::get('/getuserinfo', function() {
-	$id = Auth::user()->id;
 
-	$user = User::find($id)->toArray();
+Route::group(array('prefix' => 'user'), function() {
+	Route::get('info', function() {
+		$id = Auth::user()->id;
 
-	var_dump($user);
-	
-	return View::make('embeds/userform', $user);
+		$user = User::find($id)->toArray();
+
+		return View::make('embeds/userform', $user);
+	});
+
+	Route::post('edit', function() {
+		$user = User::find(1);
+
+		$user->firstname = Input::get('firstname');
+		$user->lastname = Input::get('lastname');
+		$user->email = Input::get('email');
+
+		$repairder = Input::get('repairder');
+
+		if($repairder == null)
+		{
+			$user->is_repairder = 0;
+		}
+		else {
+			$user->is_repairder = 1;
+		}
+
+		$user->save();
+
+		return Redirect::to('/')->with('message', 'successfully updated');
+	});
 });
+
 
 Route::get('logout', function() {
 	Auth::logout();

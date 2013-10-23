@@ -16,22 +16,13 @@
 	<div id="table-wrapper">
 	
 		<nav id="main-nav" class="main-nav slideInLeft animated">
-		
-			
-			@if(Session::has('message'))
-				<div class="model-window bouncdInDown animated" id="errorLogin">
-					<div class="close-modal"></div>
-					{{	Session::get('message')	}}
-				</div>
-			@endif
-			
 
 			@if (!empty($data))
 				<section id="user-panel" class='logged-in'>
 					
 					<img src="{{ $data['photo'] }}" alt="{{{ $data['name']	}}}">
 					<h2>Hi, {{{ $data['firstname']	}}}</h2>
-					<div class="view-profile" id="getuserinfo"><a href="#viewprofile">View your profile</a></div>
+					<div class="view-profile" id="user/info"><a href="#viewprofile">View your profile</a></div>
 				</section>
 			@else
 				<section id="user-panel" class='logged-out'>
@@ -75,7 +66,7 @@
 		</nav>
 
 		<div class="page-wrap">
-
+	
 			<header class="slideInDown animated">
 				<div id="hamburger">
 				    <a href="#main-nav" class="open-menu">
@@ -89,6 +80,14 @@
 			</header>
 
 			<section id="main" class="fadeIn animated">
+
+				@if(Session::has('message'))
+					<div class="modal-window bounceInDown animated" id="errorLogin">
+						<div class="close-modal"></div>
+						{{	Session::get('message')	}}
+					</div>
+				@endif
+			
 				 <div id="map"></div>
 			</section>
 		</div>

@@ -1,24 +1,34 @@
 
-
-
 <div class="close-sidebar"></div>
 
 <h4>UserInfo</h4>
 
-{{ 	Form::open(array('id' => 'editUser')) }}
+@if ($is_repairder == '0')
+   <?php  $is_repairder = false ?>
+@else
+  <?php $is_repairder = true ?>
+@endif
+
+
+{{ 	Form::open(array('url' => 'user/edit', 'id' => 'editUser')) }}
 <p>
 	{{ Form::label('firstname', 'Firstname') }} <br />
-	{{ Form::text('firstname') }} 
+	{{ Form::text('firstname', $firstname ); }} 
 </p>
 
 <p>
 	{{ Form::label('lastname', 'Lastname') }} <br />
-	{{ Form::text('lastname') }} 
+	{{ Form::text('lastname', $lastname) }} 
 </p>
 
 <p>
 	{{ Form::label('email', 'Email') }} <br />
-	{{ Form::text('email') }} 
+	{{ Form::email('email', $email) }} 
+</p>
+
+<p>
+	{{ Form::label('repairder', 'Are you a repairder?') }} <br />
+	{{ Form::checkbox('repairder', 'repairder', $is_repairder) }}
 </p>
 
 <p>
