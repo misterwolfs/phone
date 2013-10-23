@@ -19,11 +19,25 @@ var sidebarController = {
 						.append(close)
 						.append(content);
 
+		$("#main").append(sidebar);
+
 		$.get(arg, function(data){
-			$(".content").html(data);
+
+			// console.log(arg, data);
+
+			// if(arg == 'getuserinfo') 
+			// {
+			// 	console.log('userinfo');
+
+			// 	sidebarController.userInfo(data);
+				
+			// }
+			// else {
+				$(".content").html(data);
+			//}
 		})
 
-		$("#main").append(sidebar);
+		
 
 	},
 	hide: function() {
@@ -32,10 +46,28 @@ var sidebarController = {
 				$(this).remove();
 				sidebarController.open = false;
 		})
+	},
+	userInfo: function(user) {
+
+
+		sidebarController.create('userform');
+
+		// var user_name = $('<div/>')
+		// 				.text(user['firstname'] + " " + user['lastname'])
+		// 				.addClass('user_name');
+
+		// var user_photo = $('<img/>')
+		// 				.attr('src', user['photo'])
+		// 				.attr('alt', user['name'])
+		// 				.addClass('user_photo');			
+
+		// $(".content")
+		// 	.append(user_name)
+		// 	.append(user_photo);
 	}
 }
 
-$("ul.subnav li a, .view-profile").on("click", function() {
+$("ul.subnav li a, .view-profile a").on("click", function() {
 	var id = $(this).parent().attr("id");
 	if(sidebarController.open) {
 		if(id != sidebarController.currentOpen) {

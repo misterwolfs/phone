@@ -1,8 +1,4 @@
-
-@if(Session::has('succes_phone'))
-	<p>{{ Session::get('succes_phone') }}</p>
-@endif
-
+{{ $firsname }}
 <div class="close-sidebar"></div>
 
 <h4>Add a phone</h4>

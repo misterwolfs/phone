@@ -106,21 +106,11 @@ Route::group(array('prefix' => 'login'), function() {
 Route::get('/getuserinfo', function() {
 	$id = Auth::user()->id;
 
-	$user = User::find($id)->toJson();
+	$user = User::find($id)->toArray();
 
 	var_dump($user);
 	
-	// $info = array(
-	// 	'firsname'  => $user['firstname'],
-	// 	'lastname' => $user['lastname'],
-	// 	'email' => $user['email'],
-	// 	'adress' => $user['adress'],
-	// 	'photo' => $user['photo'],
-	// 	'is_repairder' => $user['is_repairder']
-	// );
-
-	// echo '<br /> <br />';
-	// var_dump($info);
+	return View::make('embeds/userform', $user);
 });
 
 Route::get('logout', function() {
