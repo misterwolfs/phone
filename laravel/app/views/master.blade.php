@@ -26,14 +26,12 @@
 			@endif
 			
 
-
-			
-
 			@if (!empty($data))
 				<section id="user-panel" class='logged-in'>
 					
 					<img src="{{ $data['photo'] }}" alt="{{{ $data['name']	}}}">
 					<h2>Hello, {{{ $data['name']	}}}</h2>
+					<div class="view-profile">View your profile</div>
 				</section>
 			@else
 				<section id="user-panel" class='logged-out'>
