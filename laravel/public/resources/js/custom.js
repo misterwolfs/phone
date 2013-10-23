@@ -2,7 +2,7 @@
 
 $(function() {
 	$('#login').on('click', function() {
-		window.location.href = "http://rephone.dev/facebook";
+		window.location.href = "http://rephone.dev/login/fb";
 	});
 })
 

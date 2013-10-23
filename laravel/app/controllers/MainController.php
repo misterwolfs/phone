@@ -4,7 +4,15 @@ class MainController extends BaseController {
 
 	public function showIndex()
 	{
-		return View::make('master');
+
+		$data = array();
+
+		if(Auth::check()) {
+			$data = Auth::user();
+		}
+		
+
+		return View::make('master', array('data' =>$data));
 	}
 
 	public function showForm()

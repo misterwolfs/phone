@@ -16,10 +16,33 @@
 	<div id="table-wrapper">
 	
 		<nav id="main-nav" class="main-nav slideInLeft animated">
+		
+			
+			@if(Session::has('message'))
+				<div class="model-window bouncdInDown animated" id="errorLogin">
+					<div class="close-modal"></div>
+					{{	Session::get('message')	}}
+				</div>
+			@endif
+			
 
-			<section id="user-panel" class="logged-out">
-				<button  id="login" class="open-modal">Login with facebook</button>
-			</section>
+
+			
+
+			@if (!empty($data))
+				<section id="user-panel" class='logged-in'>
+					
+					<img src="{{ $data['photo'] }}" alt="{{{ $data['name']	}}}">
+					<h2>Hello, {{{ $data['name']	}}}</h2>
+				</section>
+			@else
+				<section id="user-panel" class='logged-out'>
+					<button  id="login">Login with facebook</button>
+				</section>
+				
+			@endif
+			
+			
 
 			<section id="navigation">
 				<ul class="nav-parent">
@@ -86,6 +109,7 @@
 	{{ HTML::script('resources/js/navigation.js') }}
 	{{ HTML::script('resources/js/modalController.js') }}
 	{{ HTML::script('resources/js/sidebarController.js') }}
+	{{ HTML::script('resources/js/custom.js') }}
 
 	
 	<!-- {{ HTML::script('resources/js/base.min.js') }} -->
