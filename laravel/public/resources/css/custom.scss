@@ -106,6 +106,10 @@ a {
 		text-transform: uppercase;
 		height: 35px;
 
+			a {
+				display:block;
+			}
+
 			&:after {
 				content: '';
 				background-image: url("../img/icons/icons_sprite.gif");
@@ -249,7 +253,7 @@ a {
 			padding:0;
 			list-style-type: none;
 			font-family: $proxima;
-			text-transform: capitalize;
+			text-transform: none;
 
 			li {
 				height: 34px;

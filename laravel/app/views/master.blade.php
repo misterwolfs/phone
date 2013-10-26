@@ -37,10 +37,10 @@
 				<ul class="nav-parent">
 					<li class="parent active"><a href="#find-a-phone" class="toggle-menu">Find a phone</a>
 						<ul class="subnav">
-							<li>By brand</li>
-							<li>By location</li>
-							<li>Advanded search</li>
-							<li>View all</li>
+							<li id="brand"><a href="#bybrand">By brand</a></li>
+							<li id="location"><a href="#bylocation">By location</a></li>
+							<li id="advanded"><a href="#advanced-search">Advanded search</a></li>
+							<li id="view-all"><a href="#view-all">View all</a></li>
 						</ul>
 					</li>
 					<li class="parent"><a href="#sell-a-phone" class="toggle-menu">Sell a phone</a>
@@ -48,12 +48,9 @@
 							<li id="form"><a href="#add_phone">Add a phone</a></li>
 						</ul>
 					</li>
-					<li class="parent" class="toggle-menu"><a href="#repair-a-phone">Repair a phone</a>
+					<li class="parent"><a href="#repair-a-phone" class="toggle-menu">Repair a phone</a>
 						<ul class="subnav">
-							<li>By brand</li>
-							<li>By location</li>
-							<li>Advanded search</li>
-							<li>View all</li>
+							<li>nothing here yet</li>
 						</ul>
 					</li>
 				</ul>
@@ -93,6 +90,8 @@
 		</div>
 
 	</div>
+	
+	<input data-url="<?php echo public_path() ?>" id="base" type="hidden">
 
 	<!--CDN scripts-->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -101,7 +100,7 @@
 
 	<!--LOCAL scripts-->
 	{{ HTML::script('resources/js/modernizer.js') }}
-	{{ HTML::script('resources/js/map.js') }}
+	{{ HTML::script('resources/js/mapController.js') }}
 	{{ HTML::script('resources/js/callback.js') }}
 	{{ HTML::script('resources/js/navigation.js') }}
 	{{ HTML::script('resources/js/modalController.js') }}
@@ -110,12 +109,6 @@
 
 	
 	<!-- {{ HTML::script('resources/js/base.min.js') }} -->
-
-	<script>
-		$(function() {
-			mapController.initialize();
-		})
-	</script>
 
 </body>
 </html>
