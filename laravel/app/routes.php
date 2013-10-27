@@ -30,6 +30,10 @@ Route::get('form', function() {
 	return View::make('embeds/form');
 });
 
+Route::get('brand', function() {
+	return View::make('embeds/brand');
+});
+
 /* AJAX POSTS */
 Route::post('addphone', 'PhoneController@addPhone');
 

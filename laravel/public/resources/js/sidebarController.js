@@ -1,11 +1,24 @@
 var sidebarController = {
 	open: false,
 	currentOpen: 'default',
+	trigger: function(arg) {
+		if(sidebarController.open) {
+			if(arg != sidebarController.currentOpen) {
+				$(".sidebar > *").hide();
+				$(".sidebar").animateCSS('sidebarOut', function() {
+					$.when($(this).remove()).then(sidebarController.create(arg));
+				})
+			} else {
+				// $.when($(".sidebar").attr("class", "sidebar" )).then($(".sidebar").animateCSS('pulse'));
+			}
+		} else {
+			sidebarController.create(arg);
+		}
+	},
 	create: function(arg) {
 
 		sidebarController.open = true;
 		sidebarController.currentOpen = arg;
-		var content;
 
 		var close = $("<div/>")
 						.addClass("close-sidebar");
@@ -22,7 +35,6 @@ var sidebarController = {
 		$("#main").append(sidebar);
 
 		$.get(arg, function(data){
-
 			// console.log(arg, data);
 
 			// if(arg == 'getuserinfo') 
@@ -69,18 +81,7 @@ var sidebarController = {
 
 $("ul.subnav li a, .view-profile a").on("click", function() {
 	var id = $(this).parent().attr("id");
-	if(sidebarController.open) {
-		if(id != sidebarController.currentOpen) {
-			$(".sidebar > *").hide();
-			$(".sidebar").animateCSS('sidebarOut', function() {
-				$.when($(this).remove()).then(sidebarController.create(id));
-			})
-		} else {
-			$.when($(".sidebar").attr("class", "sidebar" )).then($(".sidebar").animateCSS('pulse'));
-		}
-	} else {
-		sidebarController.create(id);
-	}
+	sidebarController.trigger(id);
 });
 
 
