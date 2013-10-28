@@ -15,7 +15,7 @@ $(function() {
 		var id = $(this).parent().attr("id");
 		addPhoneController.reset();
 
-		if(id == "add-phone") {
+		if(id == "addphone") {
 			addPhoneController.initialize();
 		} else {
 			addPhoneController.reset();
@@ -49,5 +49,9 @@ $(function() {
 	$("body").delegate(".close-modal", "click", function() {
 		modalController.hide($(this).parent());
 	});
+
+	// $("#facebook").on("click", function() {
+	// 	modalController.trigger("add-phone-info");
+	// })
 
 })

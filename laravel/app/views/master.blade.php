@@ -38,12 +38,12 @@
 							<li id="brand"><a href="#bybrand">By brand</a></li>
 							<li id="location"><a href="#bylocation">By location</a></li>
 							<li id="advanded"><a href="#advanced-search">Advanded search</a></li>
-							<li id="view-all"><a href="#view-all">View all</a></li>
+							<li id="viewall"><a href="#view-all">View all</a></li>
 						</ul>
 					</li>
 					<li class="parent"><a href="#sell-a-phone" class="toggle-menu">Sell a phone</a>
 						<ul class="subnav">
-							<li id="add-phone"><a href="#add-phone">Add a phone</a></li>
+							<li id="addphone"><a href="#add-phone">Add a phone</a></li>
 						</ul>
 					</li>
 					<li class="parent"><a href="#repair-a-phone" class="toggle-menu">Repair a phone</a>
