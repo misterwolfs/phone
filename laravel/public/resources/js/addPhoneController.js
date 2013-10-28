@@ -20,7 +20,7 @@ var addPhoneController = {
 		if(addPhoneController.started) 
 		{
 			mapController.drawingManager.setDrawingMode(null);
-			$("button#form").animateCSS('bounceOutDown', function() {
+			$("button#form").animateCSS('slideOutUp', function() {
 				$(this).remove();
 			});
 		}
