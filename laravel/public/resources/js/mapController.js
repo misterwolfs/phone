@@ -72,6 +72,20 @@ var mapController = {
 	antwerpLng: 4.41799,
     phoneList: new Array(),
     markerIcon: "/resources/img/icons/phones/apple/5.png",
+    markerByUser: null,
+    drawingManager: new google.maps.drawing.DrawingManager({
+        drawingMode: null,
+        drawingControl: false,
+        drawingControlOptions: {
+            position: google.maps.ControlPosition.TOP_CENTER,
+            drawingModes: [
+                google.maps.drawing.OverlayType.MARKER,
+            ]
+        },
+        markerOptions: {
+            icon: ''
+        },
+    }),
     initialize: function() {
         var mapOptions = {
           center: new google.maps.LatLng(this.antwerpLat, this.antwerpLng),
@@ -87,6 +101,9 @@ var mapController = {
         });
         
         this.gmap = map;
+
+        mapController.drawingManager.setMap(mapController.gmap);
+
     },
     addMarkers: function(marker) {
           this.markerClickedHandler(marker);  
@@ -97,20 +114,18 @@ var mapController = {
             sidebarController.trigger(this.info);
         });     
     },	    
+    fitMarker: function() {
+        mapController.gmap.setZoom(17);
+        mapController.gmap.panTo(mapController.markerByUser.position);
+    }
 } //end of initGMaps
 
-$(function() {
-    mapController.initialize();
-
-    var beachMarker = new google.maps.Marker({
-      position: new google.maps.LatLng(mapController.antwerpLat, mapController.antwerpLng),
-      map: mapController.gmap,
-      icon: mapController.markerIcon,
-      info: "test"
+google.maps.event.addListener(mapController.drawingManager, 'markercomplete', function(marker) {
+    marker.setOptions({
+        draggable: true
     });
+    console.log(marker.position);
 
-    mapController.addMarkers(beachMarker);
-
-})
-
-console.log($("#base").attr("data-url"));
+    mapController.drawingManager.setDrawingMode(null)
+    mapController.markerByUser = marker;
+});

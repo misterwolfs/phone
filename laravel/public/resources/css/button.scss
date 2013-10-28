@@ -1,0 +1,77 @@
+/** FONTS **/
+$proxima: "ProximaNova";
+$proximaBold: "ProximaNovaBold";
+
+/** COLORS **/
+$dark-grey: #252525;
+$light-grey: #373737;
+$font-color: #fafeff;
+$green: #24ac5d;
+$facebook-blue: #36538f;
+$twitter-blue: #00acec;
+
+.bold {
+	font-family: $proximaBold;	
+}
+
+.btn {
+	border:none;
+	float:left;
+	height: 34px;
+	color: $font-color;
+	font-family: $proximaBold;
+}
+
+.btn.green {
+	background-color: $green;
+	&:hover {
+		background-color: lighten($green, 5);
+	}
+}
+
+.btn.round {
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.btn.margin {
+	margin-top: 1em;
+}
+
+.btn.icon {
+    background-position: 1em center;
+    background-repeat: no-repeat;
+    text-indent: 2.5em;
+    text-align:left;
+    line-height: 31px;
+    padding-right: 1.5em;
+}
+
+.btn.marker {
+	background-image: url("../img/icons/marker.png");
+    -webkit-background-size: 19px 24px;
+    -moz-background-size: 16px 24px;
+    -o-background-size: 16px 24px;
+    background-size: 16px 24px;
+}
+
+.btn.ready {
+	background-image: url("../img/icons/ready.png");
+    -webkit-background-size: 22px 22px;
+    -moz-background-size: 22px 22px;
+    -o-background-size: 22px 22px;
+    background-size: 22px 22px;
+}
+
+.btn.absolute {
+	position: absolute;
+	top:1em;
+	right: 2em;
+}
+
+.btn.shadow {
+	-webkit-box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow:    0px 7px 9px rgba(0, 0, 0, 0.1);
+	box-shadow:         0px 7px 9px rgba(0, 0, 0, 0.1);
+}

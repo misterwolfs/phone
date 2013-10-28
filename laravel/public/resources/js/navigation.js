@@ -1,4 +1,3 @@
-
 $(".toggle-menu").on("click", function(e) {
 	e.preventDefault();
 	if($(this).parent().hasClass("active")) {

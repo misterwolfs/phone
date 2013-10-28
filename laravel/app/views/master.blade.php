@@ -30,8 +30,6 @@
 				</section>
 				
 			@endif
-			
-			
 
 			<section id="navigation">
 				<ul class="nav-parent">
@@ -45,7 +43,7 @@
 					</li>
 					<li class="parent"><a href="#sell-a-phone" class="toggle-menu">Sell a phone</a>
 						<ul class="subnav">
-							<li id="form"><a href="#add_phone">Add a phone</a></li>
+							<li id="add-phone"><a href="#add-phone">Add a phone</a></li>
 						</ul>
 					</li>
 					<li class="parent"><a href="#repair-a-phone" class="toggle-menu">Repair a phone</a>
@@ -57,8 +55,8 @@
 			</section>
 
 			<section id="social">
-				<button id="facebook"></button>
-				<button id="twitter">Spread the love</button>
+				<button class="btn" id="facebook"></button>
+				<button class="btn" id="twitter">Spread the love</button>
 			</section>
 		</nav>
 
@@ -95,17 +93,19 @@
 
 	<!--CDN scripts-->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpx1FOANjsAYRyGTXDYFGjSrwJ42R7-kA&sensor=false"></script>
 	<script src="http://platform.twitter.com/anywhere.js?id=[361899175-JL9rfQJwKw4VGsbpvgnoPUGESTDLKXgYA1jT8hzP]&amp;v=1"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpx1FOANjsAYRyGTXDYFGjSrwJ42R7-kA&sensor=false"></script>
+	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=drawing&sensor=false"></script>
 
 	<!--LOCAL scripts-->
 	{{ HTML::script('resources/js/modernizer.js') }}
 	{{ HTML::script('resources/js/callback.js') }}
 	{{ HTML::script('resources/js/navigation.js') }}
 	{{ HTML::script('resources/js/modalController.js') }}
-	{{ HTML::script('resources/js/sidebarController.js') }}
 	{{ HTML::script('resources/js/mapController.js') }}
-	{{ HTML::script('resources/js/custom.js') }}
+	{{ HTML::script('resources/js/addPhoneController.js') }}
+	{{ HTML::script('resources/js/sidebarController.js') }}
+	{{ HTML::script('resources/js/triggers.js') }}
 
 	
 	<!-- {{ HTML::script('resources/js/base.min.js') }} -->

@@ -34,6 +34,19 @@ Route::get('brand', function() {
 	return View::make('embeds/brand');
 });
 
+Route::get('add-phone-info', function() {
+	return View::make('embeds/modal/add-phone-info');
+});
+
+Route::get('get-map-style', function() {
+	return View::make('embeds/mapstyle');
+});
+
+Route::get('marker-warning', function() {
+	return View::make('embeds/modal/marker-warning');
+});
+
+
 /* AJAX POSTS */
 Route::post('addphone', 'PhoneController@addPhone');
 

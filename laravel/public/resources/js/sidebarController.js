@@ -17,6 +17,9 @@ var sidebarController = {
 	},
 	create: function(arg) {
 
+		modalController.hide();
+		addPhoneController.reset();
+		
 		sidebarController.open = true;
 		sidebarController.currentOpen = arg;
 
@@ -53,11 +56,14 @@ var sidebarController = {
 
 	},
 	hide: function() {
-		$(".sidebar > *").fadeOut();
-		$(".sidebar").animateCSS('sidebarOut', function() {
-				$(this).remove();
-				sidebarController.open = false;
-		})
+		if(sidebarController.open)
+		{
+			$(".sidebar > *").fadeOut();
+			$(".sidebar").animateCSS('sidebarOut', function() {
+					$(this).remove();
+					sidebarController.open = false;
+			})
+		}
 	},
 	userInfo: function(user) {
 
@@ -78,27 +84,4 @@ var sidebarController = {
 		// 	.append(user_photo);
 	}
 }
-
-$("ul.subnav li a, .view-profile a").on("click", function() {
-	var id = $(this).parent().attr("id");
-	sidebarController.trigger(id);
-});
-
-
-$("body").delegate(".close-sidebar", "click", function() {
-	sidebarController.hide();
-});
-
-$("body").delegate("#addPhone", "submit", function(e) {
-	e.preventDefault();
-	$.post('addphone', $(this).serialize(), alert("HipHoi, toegevoegd!"));
-	return false; 
-});
-
-$("body").delegate("#editUser", "submit", function(e) {
-	console.log('test clicked');
-	e.preventDefault();
-	$.post('user/edit', $(this).serialize(), alert("HipHoi, geedit!"));
-	return false; 
-});
 
