@@ -60,6 +60,7 @@ $twitter-blue: #00acec;
 		/** Category **/
 		.category {
 			@extend h3;
+			font-size: 1em;
 			color: $green;
 			border-bottom: 2px solid $green;
 			width: 90%;

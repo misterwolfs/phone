@@ -46,7 +46,7 @@
 </p>
 
 <p>
-	{{ Form::submit('Add new phone') }}
+	{{Form::submit('Submit', ['class' => 'btn no-icon round green margin'])}}
 </p>
 
 {{ Form::close() }}
