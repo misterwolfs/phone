@@ -10,6 +10,12 @@ $green: #24ac5d;
 $facebook-blue: #36538f;
 $twitter-blue: #00acec;
 
+@mixin boxShadow() {
+	-webkit-box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow:    0px 7px 9px rgba(0, 0, 0, 0.1);
+	box-shadow:         0px 7px 9px rgba(0, 0, 0, 0.1);
+}
+
 body {
 	font-family: $proxima;
 	font-size: 1em;
@@ -180,9 +186,7 @@ a {
 		padding: 0;
 
 		li:last-child {
-			-webkit-box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.1);
-			-moz-box-shadow:    0px 7px 9px rgba(0, 0, 0, 0.1);
-			box-shadow:         0px 7px 9px rgba(0, 0, 0, 0.1);
+			@extend boxShadow();
 		}
 
 		li.parent {

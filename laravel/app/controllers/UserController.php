@@ -3,9 +3,11 @@
 class UserController extends BaseController {
 
 	public function userInfo() {
-		$id = Auth::user()->id;
+		$id = Auth::user()->userID;
 
-		$user = User::find($id)->toArray();
+		$user = User::find($id);
+
+		
 
 		return View::make('embeds/userform', $user);
 	}

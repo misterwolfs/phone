@@ -41,11 +41,19 @@
 							<li id="viewall"><a href="#view-all">View all</a></li>
 						</ul>
 					</li>
+					@if(Auth::check())
 					<li class="parent"><a href="#sell-a-phone" class="toggle-menu">Sell a phone</a>
 						<ul class="subnav">
 							<li id="addphone"><a href="#add-phone">Add a phone</a></li>
 						</ul>
 					</li>
+					@else 
+					<li class="parent"><a href="#sell-a-phone" class="toggle-menu">How it works</a>
+						<!-- <ul class="subnav">
+							<li id="addphone"><a href="#add-phone">Add a phone</a></li>
+						</ul> -->
+					</li>
+					@endif
 					<li class="parent"><a href="#repair-a-phone" class="toggle-menu">Repair a phone</a>
 						<ul class="subnav">
 							<li>nothing here yet</li>

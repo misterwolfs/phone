@@ -70,3 +70,17 @@ Route::group(array('prefix' => 'user'), function() {
 
 Route::get('logout', 'FacebookController@userLogout');
 
+
+Route::group(array('prefix' => 'search'), function() {
+	Route::group(array('prefix' => 'brand'), function() {
+		Route::get('/', 'SearchController@showBrands');
+
+		Route::get('/all', 'SearchController@searchAll');
+
+		Route::get('/{brand}', 'SearchController@searchByBrand');
+	});
+
+	Route::group(array('prefix' => 'location'), function() {
+
+	});
+});

@@ -3,12 +3,14 @@
 class Phone extends Eloquent {
 
 	protected $guarded = array('id', 'phoneID');
-	public $timestamps = false;
+	//public $timestamps = false;
 
 	protected $table = 'phones';
 
+	protected $primaryKey = 'phoneID';
+
 	public function user()
     {
-        return $this->belongsTo('User');
+        return $this->belongsToMany('User', 'users_has_phones', 'userID', 'phoneID');
     }
 }
