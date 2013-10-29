@@ -59,7 +59,7 @@ $(function() {
 	})
 
 	//Ready placed marker
-	$("body").delegate("#form", "click", function() {
+	$("body").delegate("button#form", "click", function() {
 		if(mapController.markerByUser == null) {
 			modalController.trigger("marker-warning");
 		} else {

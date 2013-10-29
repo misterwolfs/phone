@@ -186,7 +186,7 @@ a {
 		padding: 0;
 
 		li:last-child {
-			@extend boxShadow();
+			@extend boxShadow;
 		}
 
 		li.parent {

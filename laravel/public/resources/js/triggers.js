@@ -29,7 +29,7 @@ $(function() {
 		sidebarController.hide();
 	});
 
-	$("body").delegate("#addPhone", "submit", function(e) {
+	$("body").delegate("button#add-phone-form", "submit", function(e) {
 		e.preventDefault();
 		$.post('addphone', $(this).serialize(), alert("HipHoi, toegevoegd!"));
 		return false; 
