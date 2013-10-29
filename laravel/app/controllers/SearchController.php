@@ -3,11 +3,35 @@
 class SearchController extends BaseController {
 
 	public function showBrands() {
+		
 		$brands = Brand::all()->toArray();
+		$dataArray = array();
+		$firstLetters = array();
+		$data = array();
+		$i = 0;
 
-		echo '<pre>';
-		print_r($brands);
-		echo '</pre>';
+		foreach ($brands as $brand)
+		{	
+			$id = $brand['brandID'];
+			$name = $brand['brand'];
+			
+
+			if(!in_array($name[0], $firstLetters)) {
+			    $firstLetters = array_add($firstLetters, $i , $name[0]);
+			    $i++;
+			}
+
+			
+
+			$dataArray = array_add($dataArray, $id, $name);
+			
+		}
+
+
+		$data = array_add($data, 'firstLetters', $firstLetters);
+		$data = array_add($data, 'brands', $dataArray);
+
+		return View::make('embeds/brand', $data);
 	}
 
 	public function searchAll()

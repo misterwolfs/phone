@@ -13,7 +13,8 @@
 
 Route::get('/', 'PhoneController@showIndex');
 
-//Route::get('/phone/add', 'MainController@showForm');
+
+//Route::get(, 'MainController@showForm');
 
 Route::group(array('prefix' => 'phone'), function() {
 	Route::post('add', array('as' => 'add_phone', 'uses' => 'PhoneController@addPhone'));
@@ -30,9 +31,7 @@ Route::get('form', function() {
 	return View::make('embeds/form');
 });
 
-Route::get('brand', function() {
-	return View::make('embeds/brand');
-});
+
 
 Route::get('add-phone-info', function() {
 	return View::make('embeds/modal/add-phone-info');
@@ -83,4 +82,15 @@ Route::group(array('prefix' => 'search'), function() {
 	Route::group(array('prefix' => 'location'), function() {
 
 	});
+});
+
+
+/** REDIRECTS **/
+Route::get('form', function() {
+	return Redirect::to('/embeds/form');
+});
+
+Route::get('brand', function() {
+	// return View::make('embeds/brand');
+	return Redirect::to('search/brand');
 });

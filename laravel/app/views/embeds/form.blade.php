@@ -12,7 +12,9 @@
 
 <p>
 	{{ Form::label('brand', 'Brand') }} <br />
-	{{ Form::text('brand') }} 
+	
+	
+	{{ Form::select('brand', $brands) }}
 </p>
 
 <p>
