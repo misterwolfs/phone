@@ -11,7 +11,7 @@ class FormController extends BaseController {
 
 		foreach ($brands as $brand)
 		{	
-			$id = $brand['brandID'];
+			$id = $brand['brand'];
 			$name = $brand['brand'];
 
 			$dataArray = array_add($dataArray, $id, $name);	

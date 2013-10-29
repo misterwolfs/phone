@@ -29,9 +29,11 @@ class PhoneController extends BaseController {
 			'brand' 		=> 		Input::get('brand'),
 			'year' 			=> 		Input::get('year'),
 			'usage' 		=> 		Input::get('usage'),
-			'stage' 		=> 		Input::get('stage'),
+			'state' 		=> 		Input::get('stage'),
 			'price' 		=> 		Input::get('price'),
 			'description' 	=> 		Input::get('description'),
+			'lat'			=>		Input::get('lat'),
+			'long'			=>		Input::get('long'),
 			'color' 		=> 		Input::get('color')
 		));
 	}

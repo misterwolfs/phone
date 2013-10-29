@@ -124,8 +124,12 @@ google.maps.event.addListener(mapController.drawingManager, 'markercomplete', fu
     marker.setOptions({
         draggable: true
     });
-    console.log(marker.position);
+    console.log('marker', marker.position);
+
+    $('#lat').val(marker.position.lb);
+    $('#long').val(marker.position.mb);
 
     mapController.drawingManager.setDrawingMode(null)
     mapController.markerByUser = marker;
 });
+

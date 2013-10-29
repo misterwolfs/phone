@@ -17,7 +17,7 @@ Route::get('/', 'PhoneController@showIndex');
 //Route::get(, 'MainController@showForm');
 
 Route::group(array('prefix' => 'phone'), function() {
-	Route::post('add', array('as' => 'add_phone', 'uses' => 'PhoneController@addPhone'));
+	//Route::post('add', array('as' => 'add_phone', 'uses' => 'PhoneController@addPhone'));
 
 	Route::get('all', array('as' => 'all_phones', 'uses' => 'PhoneController@viewPhone'));
 });

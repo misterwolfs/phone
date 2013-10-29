@@ -46,6 +46,9 @@
 	{{ Form::label('description', 'Description') }} <br />
 	{{ Form::textarea('description') }} 
 </p>
+	
+	 <input type="hidden" id="lat" name="lat" />
+	<input type="hidden" id="long" name="long"  />
 
 <p>
 	{{Form::submit('Submit', ['class' => 'btn no-icon round green margin'])}}

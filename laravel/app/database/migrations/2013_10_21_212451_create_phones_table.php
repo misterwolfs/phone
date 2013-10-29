@@ -18,10 +18,12 @@ class CreatePhonesTable extends Migration {
 			$table->string('brand');
 			$table->integer('year');
 			$table->string('usage');
-			$table->string('stage');
+			$table->string('state');
 			$table->double('price');
 			$table->text('description');
 			$table->string('color');
+			$table->string('lat');
+			$table->string('long');
 			$table->timestamps();
 
 		});
