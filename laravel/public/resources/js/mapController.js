@@ -126,9 +126,6 @@ google.maps.event.addListener(mapController.drawingManager, 'markercomplete', fu
     });
     console.log('marker', marker.position);
 
-    $('#lat').val(marker.position.lb);
-    $('#long').val(marker.position.mb);
-
     mapController.drawingManager.setDrawingMode(null)
     mapController.markerByUser = marker;
 });

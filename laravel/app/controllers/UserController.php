@@ -13,7 +13,10 @@ class UserController extends BaseController {
 	}
 
 	public function userEdit() {
-		$user = User::find(1);
+
+		$id = Auth::user()->userID;
+
+		$user = User::find($id);
 
 		$user->firstname = Input::get('firstname');
 		$user->lastname = Input::get('lastname');

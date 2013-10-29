@@ -33,8 +33,8 @@
 </p>
 
 <p>
-	{{ Form::label('stage', 'Stage') }} <br />
-	{{ Form::text('stage') }} 
+	{{ Form::label('state', 'State') }} <br />
+	{{ Form::text('state') }} 
 </p>
 <div class="category">Price and details</div>
 <p>
@@ -47,8 +47,11 @@
 	{{ Form::textarea('description') }} 
 </p>
 	
-	 <input type="hidden" id="lat" name="lat" />
-	<input type="hidden" id="long" name="long"  />
+	{{ Form::hidden('lat', ' ', array('id' => 'lat')) }}
+	{{ Form::hidden('long', ' ', array('id' => 'long')) }}
+
+	<!--  <input type="hidden" id="lat" name="lat" />
+	<input type="hidden" id="long" name="long"  /> -->
 
 <p>
 	{{Form::submit('Submit', ['class' => 'btn no-icon round green margin'])}}

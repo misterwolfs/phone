@@ -29,13 +29,22 @@ class PhoneController extends BaseController {
 			'brand' 		=> 		Input::get('brand'),
 			'year' 			=> 		Input::get('year'),
 			'usage' 		=> 		Input::get('usage'),
-			'state' 		=> 		Input::get('stage'),
+			'state' 		=> 		Input::get('state'),
 			'price' 		=> 		Input::get('price'),
 			'description' 	=> 		Input::get('description'),
 			'lat'			=>		Input::get('lat'),
 			'long'			=>		Input::get('long'),
 			'color' 		=> 		Input::get('color')
 		));
+
+		$phoneID = Phone::orderBy('phoneID', 'DESC')->pluck('phoneID');
+		$userID = Auth::user()->userID;
+		
+	
+		
+		$phone->user()->attach(1, array('userID' => $userID, 'phoneID' => $phoneID, 'created_at' => date('Y-m-d H:m:s'), 'updated_at' => date('Y-m-d H:m:s')));
+
+		// return Redirect::to('/')->with('message', 'Succesfully added');
 	}
 
 	public function viewPhone() 

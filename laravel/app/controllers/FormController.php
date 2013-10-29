@@ -4,7 +4,7 @@ class FormController extends BaseController {
 
 	public function showForm()
 	{
-		$brands = Brand::all()->toArray();
+		$brands = Brand::orderBy('brand', 'asc')->get()->toArray();
 
 		$dataArray = array();
 		$data = array();

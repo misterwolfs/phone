@@ -50,6 +50,10 @@ var sidebarController = {
 			// else {
 				$(".content").html(data);
 			//}
+		}).success(function() {
+			//console.log()
+			$('#lat').val(mapController.markerByUser.position.lb);
+			$('#long').val(mapController.markerByUser.position.mb);
 		})
 
 		

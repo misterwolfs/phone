@@ -4,7 +4,7 @@ class SearchController extends BaseController {
 
 	public function showBrands() {
 		
-		$brands = Brand::all()->toArray();
+		$brands = Brand::orderBy('brand', 'asc')->get()->toArray();
 		$dataArray = array();
 		$firstLetters = array();
 		$data = array();
@@ -28,8 +28,10 @@ class SearchController extends BaseController {
 		}
 
 
-		$data = array_add($data, 'firstLetters', $firstLetters);
+	
+
 		$data = array_add($data, 'brands', $dataArray);
+		$data = array_add($data, 'firstLetters', $firstLetters);
 
 		return View::make('embeds/brand', $data);
 	}
