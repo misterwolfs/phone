@@ -2,14 +2,14 @@ $(function() {
 
     mapController.initialize();
 
-    var beachMarker = new google.maps.Marker({
-      position: new google.maps.LatLng(mapController.antwerpLat, mapController.antwerpLng),
-      map: mapController.gmap,
-      icon: mapController.markerIcon,
-      info: "test"
-    });
+    // var beachMarker = new google.maps.Marker({
+    //   position: new google.maps.LatLng(mapController.antwerpLat, mapController.antwerpLng),
+    //   map: mapController.gmap,
+    //   icon: mapController.markerIcon,
+    //   info: "test"
+    // });
 
-    mapController.addMarkers(beachMarker);
+    // mapController.addMarkers(beachMarker);
 
 	$("ul.subnav li a, .view-profile a").on("click", function() {
 		var id = $(this).parent().attr("id");
@@ -31,7 +31,7 @@ $(function() {
 
 	$("body").delegate("#addPhone", "submit", function(e) {
 		e.preventDefault();
-		$.post('addphone', $(this).serialize(), alert("HipHoi, toegevoegd!"));
+		$.post('addphone', $(this).serialize(), modalController.trigger("phone-added") /* alert("HipHoi, toegevoegd!") */ );
 		return false; 
 	});
 
@@ -50,6 +50,7 @@ $(function() {
 		modalController.hide($(this).parent());
 	});
 
+	
 
 	// $("#facebook").on("click", function() {
 	// 	modalController.trigger("add-phone-info");

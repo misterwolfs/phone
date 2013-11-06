@@ -89,7 +89,7 @@ var mapController = {
     initialize: function() {
         var mapOptions = {
           center: new google.maps.LatLng(this.antwerpLat, this.antwerpLng),
-          zoom: 16,
+          zoom: 10,
           disableDefaultUI: true,
           streetViewControl: true,
           mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -122,7 +122,7 @@ var mapController = {
 
 google.maps.event.addListener(mapController.drawingManager, 'markercomplete', function(marker) {
     marker.setOptions({
-        draggable: true
+        draggable: true,
     });
     console.log('marker', marker.position);
 

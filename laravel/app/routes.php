@@ -37,6 +37,10 @@ Route::get('add-phone-info', function() {
 	return View::make('embeds/modal/add-phone-info');
 });
 
+Route::get('phone-added', function() {
+	return View::make('embeds/modal/phone-added');
+});
+
 Route::get('get-map-style', function() {
 	return View::make('embeds/mapstyle');
 });

@@ -73,6 +73,10 @@ $twitter-blue: #00acec;
 			li {
 				line-height: 1.6em;
 				font-size: 1.1em;
+
+				&:hover {
+					text-decoration:underline;
+				}
 			}
 		}
 

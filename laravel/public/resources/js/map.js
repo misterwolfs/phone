@@ -66,25 +66,25 @@
         }]
     }]
 
-var mapController = {
-		gmap: null,
-		antwerpLat: 51.214263,
-		antwerpLng: 4.41799,
-	    initialize: function() {
-	        var mapOptions = {
-	          center: new google.maps.LatLng(this.antwerpLat, this.antwerpLng),
-	          zoom: 16,
-	          disableDefaultUI: true,
-	          streetViewControl: true,
-	          mapTypeId: google.maps.MapTypeId.ROADMAP
-	        };
+// var mapController = {
+// 		gmap: null,
+// 		antwerpLat: 51.214263,
+// 		antwerpLng: 4.41799,
+// 	    initialize: function() {
+// 	        var mapOptions = {
+// 	          center: new google.maps.LatLng(this.antwerpLat, this.antwerpLng),
+// 	          zoom: 16,
+// 	          disableDefaultUI: true,
+// 	          streetViewControl: true,
+// 	          mapTypeId: google.maps.MapTypeId.ROADMAP
+// 	        };
 	        
-	        var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-            map.setOptions({
-                styles: style
-            });
+// 	        var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+//             map.setOptions({
+//                 styles: style
+//             });
             
-	        this.gmap = map;
+// 	        this.gmap = map;
 	    
-	   }, //end of initGMaps
-};
+// 	   }, //end of initGMaps
+// };

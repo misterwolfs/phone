@@ -2,8 +2,11 @@ var sidebarController = {
 	open: false,
 	currentOpen: 'default',
 	trigger: function(arg) {
+		console.log('oke');
 		if(sidebarController.open) {
+
 			if(arg != sidebarController.currentOpen) {
+
 				$(".sidebar > *").hide();
 				$(".sidebar").animateCSS('sidebarOut', function() {
 					$.when($(this).remove()).then(sidebarController.create(arg));
@@ -49,11 +52,16 @@ var sidebarController = {
 			// }
 			// else {
 				$(".content").html(data);
+
+				if(arg == 'brand')
+				{
+					searchController.byBrand();
+				}
 			//}
 		}).success(function() {
 			//console.log()
-			$('#lat').val(mapController.markerByUser.position.lb);
-			$('#long').val(mapController.markerByUser.position.mb);
+			$('#lat').val(mapController.markerByUser.position.nb);
+			$('#long').val(mapController.markerByUser.position.ob);
 		})
 
 		

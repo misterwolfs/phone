@@ -54,10 +54,18 @@ class SearchController extends BaseController {
 			$phones = Phone::all();
 		}
 		
-		echo '<pre>';
-		print_r($phones->toJSON());
-		echo '</pre>';
-		
+		// print_r($phones->toArray());
 
+
+		// $phonessss = array (
+		// 	'phoneID' => $phones['0']['phoneID'], 
+		// 	'model' => 'test'
+		// );
+		
+		// print_r($phonessss->toJSON());
+
+		return $phones->tojson();
+		
+		//return View::make('embeds/search/brand', $phones);
 	}
 }
