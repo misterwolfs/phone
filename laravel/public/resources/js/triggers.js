@@ -11,6 +11,9 @@ $(function() {
 
     // mapController.addMarkers(beachMarker);
 
+    // add all markers
+   //searchController.all();
+
 	$("ul.subnav li a, .view-profile a").on("click", function() {
 		var id = $(this).parent().attr("id");
 		addPhoneController.reset();

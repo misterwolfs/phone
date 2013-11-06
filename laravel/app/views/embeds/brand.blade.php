@@ -2,10 +2,10 @@
 
 @foreach ($firstLetters as $letter)
    		<div class="category">{{ $letter }}</div>
-   		<ul>
+   		<ul class="brands">
 			@foreach ($brands as $brand)
 		   		@if($letter == $brand[0])
-		   			<li class='brand'> {{ $brand }}</li>
+		   			<li>{{ $brand }}</li>
 		   		@endif
 			@endforeach
 		</ul>

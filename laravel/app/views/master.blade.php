@@ -107,6 +107,7 @@
 
 	<!--LOCAL scripts-->
 	{{ HTML::script('resources/js/modernizer.js') }}
+	{{ HTML::script('resources/js/markerclusterer.js') }}
 	{{ HTML::script('resources/js/callback.js') }}
 	{{ HTML::script('resources/js/navigation.js') }}
 	{{ HTML::script('resources/js/modalController.js') }}

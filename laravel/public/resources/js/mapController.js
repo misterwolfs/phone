@@ -70,9 +70,12 @@ var mapController = {
 	gmap: null,
 	antwerpLat: 51.214263,
 	antwerpLng: 4.41799,
+    bounds: new google.maps.LatLngBounds(),
     phoneList: new Array(),
     markerIcon: "/resources/img/icons/phones/apple/5.png",
     markerByUser: null,
+    markers: [],
+    markerCluster: null,
     drawingManager: new google.maps.drawing.DrawingManager({
         drawingMode: null,
         drawingControl: false,
@@ -92,7 +95,9 @@ var mapController = {
           zoom: 10,
           disableDefaultUI: true,
           streetViewControl: true,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
+          mapTypeId: google.maps.MapTypeId.ROADMAP,
+          maxZoom: 10,
+          minZoom: 2,
         };
         
         var map = new google.maps.Map(document.getElementById("map"), mapOptions);
@@ -101,6 +106,7 @@ var mapController = {
         });
         
         this.gmap = map;
+
 
         mapController.drawingManager.setMap(mapController.gmap);
 
@@ -115,8 +121,18 @@ var mapController = {
         });     
     },	    
     fitMarker: function() {
-        mapController.gmap.setZoom(17);
+        mapController.gmap.setZoom(10);
         mapController.gmap.panTo(mapController.markerByUser.position);
+    },
+    removeMarkers: function() {
+        for (var i = 0; i < mapController.markers.length; i++ ) {
+            
+           mapController.markers[i].setMap(null);
+        }
+        
+        mapController.bounds =  new google.maps.LatLngBounds();
+
+        mapController.markers = [];
     }
 } //end of initGMaps
 
@@ -124,9 +140,15 @@ google.maps.event.addListener(mapController.drawingManager, 'markercomplete', fu
     marker.setOptions({
         draggable: true,
     });
+
     console.log('marker', marker.position);
+
+    console.log('complete', mapController.markers);
 
     mapController.drawingManager.setDrawingMode(null)
     mapController.markerByUser = marker;
 });
+
+
+
 

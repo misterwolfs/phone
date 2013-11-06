@@ -38,11 +38,9 @@ class SearchController extends BaseController {
 
 	public function searchAll()
 	{
-		$phones = Phone::all()->toJSON();
+		$phones = Phone::all();
 
-		echo '<pre>';
-		print_r($phones);
-		echo '</pre>';
+		return $phones->tojson();
 	}
 
 	public function searchByBrand($brand) {

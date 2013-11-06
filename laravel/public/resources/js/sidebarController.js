@@ -2,7 +2,7 @@ var sidebarController = {
 	open: false,
 	currentOpen: 'default',
 	trigger: function(arg) {
-		console.log('oke');
+
 		if(sidebarController.open) {
 
 			if(arg != sidebarController.currentOpen) {
@@ -51,14 +51,18 @@ var sidebarController = {
 				
 			// }
 			// else {
+
 				$(".content").html(data);
 
-				if(arg == 'brand')
-				{
-					searchController.byBrand();
-				}
+				
 			//}
 		}).success(function() {
+
+			if(arg == 'brand')
+			{
+				searchController.byBrand();
+			}
+
 			//console.log()
 			$('#lat').val(mapController.markerByUser.position.nb);
 			$('#long').val(mapController.markerByUser.position.ob);
