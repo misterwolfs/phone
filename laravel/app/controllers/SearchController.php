@@ -5,12 +5,7 @@ class SearchController extends BaseController {
 	public function showBrands() {
 		
 		$phone = Phone::orderBy('brand', 'asc')->distinct()->get(array('brand'))->toArray();
-
-
-		
-
-		
-
+	
 		$dataArray = array();
 		$firstLetters = array();
 		$data = array();
@@ -21,19 +16,20 @@ class SearchController extends BaseController {
 			//$id = $brand['brandID'];
 			$name = $brand['brand'];
 			
-
 			if(!in_array($name[0], $firstLetters)) {
 			    $firstLetters = array_add($firstLetters, $i , $name[0]);
-			    $i++;
+			   
 			}
 
-			
+			 $i++;
 
 			$dataArray = array_add($dataArray, $i, $name);
+
+
 			
 		}
 
-	
+		
 	
 
 		 $data = array_add($data, 'brands', $dataArray);

@@ -21,7 +21,7 @@ var searchController = {
 				      position: new google.maps.LatLng(branditem.lat, branditem.long),
 				      map: mapController.gmap,
 				      animation: google.maps.Animation.DROP,
-				      icon: mapController.markerIcon,
+				      icon: "/resources/img/icons/phones/" + branditem.brand + ".png",
 				      info: branditem.description,
 				      title: branditem.model + ' ' + branditem.brand + ' ' + branditem.description
 				    });
