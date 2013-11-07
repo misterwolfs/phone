@@ -3,6 +3,9 @@ var addPhoneController = {
 	initialize: function() {
 		addPhoneController.started = true;
 		// Display how to add a phone
+
+		mapController.removeMarkers();
+
 		modalController.trigger("add-phone-info");
 	},
 	placeMarker: function() {
