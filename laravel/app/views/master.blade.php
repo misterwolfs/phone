@@ -56,7 +56,8 @@
 					@endif
 					<li class="parent"><a href="#repair-a-phone" class="toggle-menu">Repair a phone</a>
 						<ul class="subnav">
-							<li>nothing here yet</li>
+							<li id="repaircafe">Find a repear café</li>
+							<li id="nearyou">Repairder near you</li>
 						</ul>
 					</li>
 				</ul>

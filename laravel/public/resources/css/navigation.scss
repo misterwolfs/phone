@@ -83,7 +83,7 @@ header {
       &:before {
         content: '';
         background-image: url("../img/icons/icon-grid.png");
-        background-size: 110px 15px;
+        background-size: 130px 15px;
         width:18px;
         height: 15px;
         position: absolute;
@@ -94,25 +94,38 @@ header {
 
     #location {
       &:before {
-        background-position: 42px 0;
+        background-position: 71px 0;
       }
     }
 
     #advanded {
       &:before {
-        background-position: 63px 0;
+        background-position: 90px 0;
       }
     }
 
     #viewall {
       &:before {
-        background-position: 87px 0;
+        background-position: 110px 0;
       }
     }
 
     #addphone {
       &:before {
-        background-position: 21px 0;
+        background-position: 55px 0;
+        width: 17px;
+      }
+    }
+
+    #repaircafe {
+      &:before {
+        background-position: 18px 0;
+      }
+    }
+
+    #nearyou {
+      &:before {
+        background-position: 37px 0;
       }
     }
 
