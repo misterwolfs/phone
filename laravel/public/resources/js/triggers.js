@@ -53,6 +53,10 @@ $(function() {
 		modalController.hide($(this).parent());
 	});
 
+	$("body").delegate(".dismiss", "click", function() {
+		modalController.hide($(this).parent());
+	});
+
 	
 
 	// $("#facebook").on("click", function() {

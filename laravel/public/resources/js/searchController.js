@@ -35,7 +35,7 @@ var searchController = {
 			}, 
 			'json'
 		).success(function() {
-			//console.log('markers', mapController.markers);
+			console.log('markers', mapController.markers);
 			mapController.gmap.fitBounds(mapController.bounds);
 			mapController.markerCluster = new MarkerClusterer(mapController.gmap, mapController.markers);
 		

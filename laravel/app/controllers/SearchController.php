@@ -47,10 +47,10 @@ class SearchController extends BaseController {
 		$phones = Phone::where('brand', '=', $brand)->get();
 
 
-		if($phones->isEmpty())
-		{
-			$phones = Phone::all();
-		}
+		// if($phones->isEmpty())
+		// {
+		// 	$phones = Phone::all();
+		// }
 		
 		// print_r($phones->toArray());
 
