@@ -98,3 +98,4 @@ Route::get('brand', function() {
 	// return View::make('embeds/brand');
 	return Redirect::to('search/brand');
 });
+

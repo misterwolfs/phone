@@ -58,10 +58,13 @@ var sidebarController = {
 			//}
 		}).success(function() {
 
-			if(arg == 'brand')
-			{
-				searchController.byBrand();
-			}
+			// if(arg == 'brand')
+			// {
+			// 	$(".brands li").on("click", function() {
+			// 		searchController.byBrand();
+			// 	});				
+			// }
+
 
 			//console.log()
 			$('#lat').val(mapController.markerByUser.position.nb);

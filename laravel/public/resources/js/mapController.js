@@ -74,21 +74,21 @@ var mapController = {
     phoneList: new Array(),
     markerIcon: "/resources/img/icons/phones/apple/5.png",
     markerByUser: null,
-    markers: [],
+    marker: null,
     markerCluster: null,
-    // drawingManager: new google.maps.drawing.DrawingManager({
-    //     drawingMode: null,
-    //     drawingControl: false,
-    //     drawingControlOptions: {
-    //         position: google.maps.ControlPosition.TOP_CENTER,
-    //         drawingModes: [
-    //             google.maps.drawing.OverlayType.MARKER,
-    //         ]
-    //     },
-    //     markerOptions: {
-    //         icon: ''
-    //     },
-    // }),
+    drawingManager: new google.maps.drawing.DrawingManager({
+        drawingMode: null,
+        drawingControl: false,
+        drawingControlOptions: {
+            position: google.maps.ControlPosition.TOP_CENTER,
+            drawingModes: [
+                google.maps.drawing.OverlayType.MARKER,
+            ]
+        },
+        markerOptions: {
+            icon: ''
+        },
+    }),
     initialize: function() {
         var mapOptions = {
           center: new google.maps.LatLng(this.antwerpLat, this.antwerpLng),
@@ -107,8 +107,9 @@ var mapController = {
         
         this.gmap = map;
 
+        this.markerCluster = new MarkerClusterer(this.gmap, this.phoneList)
 
-        //mapController.drawingManager.setMap(mapController.gmap);
+        mapController.drawingManager.setMap(mapController.gmap);
 
     },
     // addMarkers: function(marker) {
@@ -120,34 +121,45 @@ var mapController = {
     //         sidebarController.trigger(this.info);
     //     });     
     // },	    
-    // fitMarker: function() {
-    //     mapController.gmap.setZoom(10);
-    //     mapController.gmap.panTo(mapController.markerByUser.position);
-    // },
-    // removeMarkers: function() {
-    //     for (var i = 0; i < mapController.markers.length; i++ ) {
-            
-    //        mapController.markers[i].setMap(null);
-    //     }
-        
-    //     mapController.bounds =  new google.maps.LatLngBounds();
+    fitMarker: function() {
+        mapController.gmap.setZoom(10);
+        mapController.gmap.panTo(mapController.markerByUser.position);
+    },
 
-    //     mapController.markers = [];
-    // }
+    removeMarkers: function() {
+        //console.log('remove markers');
+        this.bounds = new google.maps.LatLngBounds();
+        console.log('empty', this.bounds.isEmpty());
+
+        
+        this.markerCluster.clearMarkers();
+        
+
+        for (var i = 0; i < this.phoneList.length; i++) {
+            //console.log('remove');
+
+
+            this.phoneList[i].setMap(null);
+        }
+
+        this.phoneList = new Array();
+    }
 } //end of initGMaps
 
-// google.maps.event.addListener(mapController.drawingManager, 'markercomplete', function(marker) {
-//     marker.setOptions({
-//         draggable: true,
-//     });
 
-//     console.log('marker', marker.position);
 
-//     console.log('complete', mapController.markers);
+google.maps.event.addListener(mapController.drawingManager, 'markercomplete', function(marker) {
+    marker.setOptions({
+        draggable: true,
+    });
 
-//     mapController.drawingManager.setDrawingMode(null)
-//     mapController.markerByUser = marker;
-// });
+    console.log('marker', marker.position);
+
+    console.log('complete', mapController.phoneList);
+
+    mapController.drawingManager.setDrawingMode(null)
+    mapController.markerByUser = marker;
+});
 
 
 

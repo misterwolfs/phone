@@ -57,7 +57,17 @@ $(function() {
 		modalController.hide($(this).parent());
 	});
 
-	
+	$("body").delegate(".brands li", "click", function() {
+		brand = $(this).text();
+		console.log('delegate brand', brand);
+		searchController.byBrand(brand);
+
+		sidebarController.hide(sidebarController.currentOpen);
+	});
+
+	// $(".brands li").on("click", function() {
+		
+	// });
 
 	// $("#facebook").on("click", function() {
 	// 	modalController.trigger("add-phone-info");
