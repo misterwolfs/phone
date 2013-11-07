@@ -6,4 +6,6 @@ class Brand extends Eloquent {
 	protected $primaryKey = 'brandID';
 
 
+
+
 }

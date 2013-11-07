@@ -5,7 +5,7 @@
    		<ul class="brands">
 			@foreach ($brands as $brand)
 		   		@if($letter == $brand[0])
-		   			<li>{{ $brand }}</li>
+		   			<li id="{{ $brand }}">{{ $brand }}</li>
 		   		@endif
 			@endforeach
 		</ul>

@@ -4,15 +4,21 @@ class SearchController extends BaseController {
 
 	public function showBrands() {
 		
-		$brands = Brand::orderBy('brand', 'asc')->get()->toArray();
+		$phone = Phone::orderBy('brand', 'asc')->distinct()->get(array('brand'))->toArray();
+
+
+		
+
+		
+
 		$dataArray = array();
 		$firstLetters = array();
 		$data = array();
 		$i = 0;
 
-		foreach ($brands as $brand)
+		foreach ($phone as $brand)
 		{	
-			$id = $brand['brandID'];
+			//$id = $brand['brandID'];
 			$name = $brand['brand'];
 			
 
@@ -23,15 +29,15 @@ class SearchController extends BaseController {
 
 			
 
-			$dataArray = array_add($dataArray, $id, $name);
+			$dataArray = array_add($dataArray, $i, $name);
 			
 		}
 
-
+	
 	
 
-		$data = array_add($data, 'brands', $dataArray);
-		$data = array_add($data, 'firstLetters', $firstLetters);
+		 $data = array_add($data, 'brands', $dataArray);
+		 $data = array_add($data, 'firstLetters', $firstLetters);
 
 		return View::make('embeds/brand', $data);
 	}
@@ -47,10 +53,10 @@ class SearchController extends BaseController {
 		$phones = Phone::where('brand', '=', $brand)->get();
 
 
-		// if($phones->isEmpty())
-		// {
-		// 	$phones = Phone::all();
-		// }
+		if($phones->isEmpty())
+		{
+			$phones = "";
+		}
 		
 		// print_r($phones->toArray());
 

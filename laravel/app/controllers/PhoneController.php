@@ -24,6 +24,12 @@ class PhoneController extends BaseController {
 	{	
 		$phone =  new Phone;
 
+		//$brand = Brand::where('brand', '=', Input::get('brand'))->get();
+
+
+		//$brand = $brand[0]['brandID'];
+
+
 		$phone::create(array(
 			'model' 		=> 		Input::get('model'),
 			'brand' 		=> 		Input::get('brand'),
@@ -39,8 +45,6 @@ class PhoneController extends BaseController {
 
 		$phoneID = Phone::orderBy('phoneID', 'DESC')->pluck('phoneID');
 		$userID = Auth::user()->userID;
-		
-	
 		
 		$phone->user()->attach(1, array('userID' => $userID, 'phoneID' => $phoneID, 'created_at' => date('Y-m-d H:m:s'), 'updated_at' => date('Y-m-d H:m:s')));
 

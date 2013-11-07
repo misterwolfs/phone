@@ -76,19 +76,19 @@ var mapController = {
     markerByUser: null,
     markers: [],
     markerCluster: null,
-    drawingManager: new google.maps.drawing.DrawingManager({
-        drawingMode: null,
-        drawingControl: false,
-        drawingControlOptions: {
-            position: google.maps.ControlPosition.TOP_CENTER,
-            drawingModes: [
-                google.maps.drawing.OverlayType.MARKER,
-            ]
-        },
-        markerOptions: {
-            icon: ''
-        },
-    }),
+    // drawingManager: new google.maps.drawing.DrawingManager({
+    //     drawingMode: null,
+    //     drawingControl: false,
+    //     drawingControlOptions: {
+    //         position: google.maps.ControlPosition.TOP_CENTER,
+    //         drawingModes: [
+    //             google.maps.drawing.OverlayType.MARKER,
+    //         ]
+    //     },
+    //     markerOptions: {
+    //         icon: ''
+    //     },
+    // }),
     initialize: function() {
         var mapOptions = {
           center: new google.maps.LatLng(this.antwerpLat, this.antwerpLng),
@@ -108,46 +108,46 @@ var mapController = {
         this.gmap = map;
 
 
-        mapController.drawingManager.setMap(mapController.gmap);
+        //mapController.drawingManager.setMap(mapController.gmap);
 
     },
-    addMarkers: function(marker) {
-          this.markerClickedHandler(marker);  
-          this.phoneList.push(marker);           
-    },
-    markerClickedHandler: function(marker) {
-        google.maps.event.addListener(marker, 'click', function() {
-            sidebarController.trigger(this.info);
-        });     
-    },	    
-    fitMarker: function() {
-        mapController.gmap.setZoom(10);
-        mapController.gmap.panTo(mapController.markerByUser.position);
-    },
-    removeMarkers: function() {
-        for (var i = 0; i < mapController.markers.length; i++ ) {
+    // addMarkers: function(marker) {
+    //       this.markerClickedHandler(marker);  
+    //       this.phoneList.push(marker);           
+    // },
+    // markerClickedHandler: function(marker) {
+    //     google.maps.event.addListener(marker, 'click', function() {
+    //         sidebarController.trigger(this.info);
+    //     });     
+    // },	    
+    // fitMarker: function() {
+    //     mapController.gmap.setZoom(10);
+    //     mapController.gmap.panTo(mapController.markerByUser.position);
+    // },
+    // removeMarkers: function() {
+    //     for (var i = 0; i < mapController.markers.length; i++ ) {
             
-           mapController.markers[i].setMap(null);
-        }
+    //        mapController.markers[i].setMap(null);
+    //     }
         
-        mapController.bounds =  new google.maps.LatLngBounds();
+    //     mapController.bounds =  new google.maps.LatLngBounds();
 
-        mapController.markers = [];
-    }
+    //     mapController.markers = [];
+    // }
 } //end of initGMaps
 
-google.maps.event.addListener(mapController.drawingManager, 'markercomplete', function(marker) {
-    marker.setOptions({
-        draggable: true,
-    });
+// google.maps.event.addListener(mapController.drawingManager, 'markercomplete', function(marker) {
+//     marker.setOptions({
+//         draggable: true,
+//     });
 
-    console.log('marker', marker.position);
+//     console.log('marker', marker.position);
 
-    console.log('complete', mapController.markers);
+//     console.log('complete', mapController.markers);
 
-    mapController.drawingManager.setDrawingMode(null)
-    mapController.markerByUser = marker;
-});
+//     mapController.drawingManager.setDrawingMode(null)
+//     mapController.markerByUser = marker;
+// });
 
 
 
