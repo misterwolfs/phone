@@ -3,6 +3,15 @@ var searchController = {
 		//console.log('by brand new');
 
 		//mapController.phoneList = new Array();
+
+		searchController.getPhones(brand);
+
+		
+	},
+	all: function() {
+		searchController.getPhones('all');
+	},
+	getPhones: function(brand) {
 		mapController.removeMarkers();
 
 		$.get('search/brand/'+brand, 
@@ -51,7 +60,7 @@ var searchController = {
 				console.log('full', mapController.bounds.isEmpty());
 				console.log(mapController.markerCluster);
 		});   
-	},
+	}
 }
 
 

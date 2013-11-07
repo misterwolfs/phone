@@ -99,3 +99,7 @@ Route::get('brand', function() {
 	return Redirect::to('search/brand');
 });
 
+Route::get('viewall', function() {
+	return Redirect::to('search/brand/all');
+});
+

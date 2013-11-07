@@ -96,7 +96,7 @@ var mapController = {
           disableDefaultUI: true,
           streetViewControl: true,
           mapTypeId: google.maps.MapTypeId.ROADMAP,
-          maxZoom: 10,
+          maxZoom: 15,
           minZoom: 2,
         };
         

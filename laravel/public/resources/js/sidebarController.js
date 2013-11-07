@@ -20,25 +20,33 @@ var sidebarController = {
 	},
 	create: function(arg) {
 
-		modalController.hide();
-		addPhoneController.reset();
+		console.log('arg', arg);
+
+		if(arg != 'viewall')
+		{
+
+			modalController.hide();
+			addPhoneController.reset();
 		
-		sidebarController.open = true;
-		sidebarController.currentOpen = arg;
+			sidebarController.open = true;
+			sidebarController.currentOpen = arg;
 
-		var close = $("<div/>")
-						.addClass("close-sidebar");
+		
+			var close = $("<div/>")
+							.addClass("close-sidebar");
 
-		var content = $("<div/>")
-						.addClass("content");
+			var content = $("<div/>")
+							.addClass("content");
 
-		var sidebar = $("<div/>")
-						.addClass("sidebar sidebarIn animated")
-						.attr("id", arg)
-						.append(close)
-						.append(content);
+			var sidebar = $("<div/>")
+							.addClass("sidebar sidebarIn animated")
+							.attr("id", arg)
+							.append(close)
+							.append(content);
 
-		$("#main").append(sidebar);
+			$("#main").append(sidebar);
+
+		}
 
 		$.get(arg, function(data){
 			// console.log(arg, data);
@@ -52,9 +60,13 @@ var sidebarController = {
 			// }
 			// else {
 
-				$(".content").html(data);
-
-				
+				if(arg != 'viewall')
+				{
+					$(".content").html(data);
+				}
+				else {
+					searchController.all();
+				}
 			//}
 		}).success(function() {
 
