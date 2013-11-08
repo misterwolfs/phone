@@ -34,16 +34,16 @@
 				<ul class="nav-parent">
 					<li class="parent active"><a href="#find-a-phone" class="toggle-menu">Find a phone</a>
 						<ul class="subnav">
-							<li id="brand"><a href="#bybrand">By brand</a></li>
-							<li id="location"><a href="#bylocation">By location</a></li>
-							<li id="advanded"><a href="#advanced-search">Advanded search</a></li>
-							<li id="viewall"><a href="#view-all">View all</a></li>
+							<li id="brand"><a class="open-sidebar" href="#bybrand">By brand</a></li>
+							<li id="location"><a class="open-sidebar" href="#bylocation">By location</a></li>
+							<li id="advanded"><a class="open-sidebar" href="#advanced-search">Advanded search</a></li>
+							<li id="viewall"><a class="view-all" href="#view-all">View all</a></li>
 						</ul>
 					</li>
 					@if(Auth::check())
 					<li class="parent"><a href="#sell-a-phone" class="toggle-menu">Sell a phone</a>
 						<ul class="subnav">
-							<li id="addphone"><a href="#add-phone">Add a phone</a></li>
+							<li id="addphone"><a class="open-sidebar" href="#add-phone">Add a phone</a></li>
 						</ul>
 					</li>
 					@else 
