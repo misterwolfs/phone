@@ -44,17 +44,6 @@ var sidebarController = {
 
 			$("#main").append(sidebar);
 
-			
-		
-	
-
-			
-			
-
-		
-			
-
-
 		$.get(arg, function(data){
 			// console.log(arg, data);
 
@@ -66,14 +55,8 @@ var sidebarController = {
 				
 			// }
 			// else {
+			$(".content").html(data);
 
-				if(arg != 'viewall')
-				{
-					$(".content").html(data);
-				}
-				else {
-					searchController.all();
-				}
 			//}
 		}).success(function() {
 

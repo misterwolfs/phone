@@ -13,7 +13,7 @@ $(function() {
 	});
 
 	/** Navivation **/
-	$("ul.subnav li a, .view-profile a").on("click", function() {
+	$(".open-sidebar").on("click", function() {
 		var id = $(this).parent().attr("id");
 		addPhoneController.reset();
 
@@ -23,8 +23,13 @@ $(function() {
 			addPhoneController.reset();
 			sidebarController.trigger(id);
 		}
-
 	});
+
+	$(".view-all").on("click", function() {
+		sidebarController.hide();
+		modalController.hide();
+		searchController.all();
+	})
 
 	$("body").delegate(".brands li", "click", function() {
 		brand = $(this).text();
