@@ -34,7 +34,8 @@ var searchController = {
 				      animation: google.maps.Animation.DROP,
 				      icon: "/resources/img/icons/phones/" + branditem.brand + ".png",
 				      info: branditem.description,
-				      title: branditem.model + ' ' + branditem.brand + ' ' + branditem.description
+				      title: branditem.model + ' ' + branditem.brand + ' ' + branditem.description,
+				      url : branditem.phoneID
 				    });
 
 				  //  console.log('marker', mapController.marker);
@@ -42,6 +43,7 @@ var searchController = {
 					 
 					mapController.bounds.extend(mapController.marker.position);
 					mapController.phoneList.push(mapController.marker);
+					mapController.markerClickedHandler(mapController.marker);  
 
 					//console.log('phonelist', mapController.phoneList);
 				// mapController.addMarkers(marker);

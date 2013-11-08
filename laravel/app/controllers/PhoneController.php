@@ -67,6 +67,13 @@ class PhoneController extends BaseController {
  //View::make('phones', $data);
 	}
 
+
+	public function getInfo($id) {
+
+		$phones = Phone::where('phoneID', '=', $id)->first();
+
+		return View::make('embeds/sidebar/phone-view', $phones);
+	}
 	
 
 	

@@ -111,16 +111,19 @@ var mapController = {
 
         mapController.drawingManager.setMap(mapController.gmap);
 
+
+        
+
     },
     // addMarkers: function(marker) {
     //       this.markerClickedHandler(marker);  
     //       this.phoneList.push(marker);           
     // },
-    // markerClickedHandler: function(marker) {
-    //     google.maps.event.addListener(marker, 'click', function() {
-    //         sidebarController.trigger(this.info);
-    //     });     
-    // },	    
+    markerClickedHandler: function(marker) {
+        google.maps.event.addListener(marker, 'click', function() {
+            sidebarController.trigger('phone/' + this.url);
+        });     
+    },	    
     fitMarker: function() {
         mapController.gmap.setZoom(10);
         mapController.gmap.panTo(mapController.markerByUser.position);
@@ -160,6 +163,5 @@ google.maps.event.addListener(mapController.drawingManager, 'markercomplete', fu
     mapController.drawingManager.setDrawingMode(null)
     mapController.markerByUser = marker;
 });
-
 
 
