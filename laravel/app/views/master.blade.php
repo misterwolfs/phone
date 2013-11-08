@@ -16,16 +16,16 @@
 	<div id="table-wrapper">
 	
 		<nav id="main-nav" class="main-nav slideInLeft animated">
-
 			@if (!empty($data))
 				<section id="user-panel" class='logged-in'>
-					
+					<h1>Phinder</h1>
 					<img src="{{ $data['photo'] }}" alt="{{{ $data['name']	}}}">
 					<h2>Hi, {{{ $data['firstname']	}}}</h2>
 					<div class="view-profile" id="user/info"><a href="#viewprofile">View your profile</a></div>
 				</section>
 			@else
 				<section id="user-panel" class='logged-out'>
+					<h1>Phinder</h1>
 					<button  id="login">Login with facebook</button>
 				</section>
 				
@@ -76,7 +76,7 @@
 				      ☰
 			    </a>		
 				</div>
-			    <h1>OURNAME</h1>
+			    <h1>Phinder</h1>
 			</header>
 
 			<section id="main" class="fadeIn animated">
