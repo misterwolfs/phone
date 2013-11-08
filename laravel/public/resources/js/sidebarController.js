@@ -22,17 +22,15 @@ var sidebarController = {
 
 		console.log('arg', arg);
 
-		if(arg != 'viewall')
-		{
-			modalController.hide();
+				modalController.hide();
 			addPhoneController.reset();
 			formController.reset();
 
-			sidebarController.open = true;
-			sidebarController.currentOpen = arg;
-
+			
+		sidebarController.open = true;
+		sidebarController.currentOpen = arg;
 		
-			var close = $("<div/>")
+		var close = $("<div/>")
 							.addClass("close-sidebar");
 
 			var content = $("<div/>")
@@ -46,7 +44,16 @@ var sidebarController = {
 
 			$("#main").append(sidebar);
 
-		}
+			
+		
+	
+
+			
+			
+
+		
+			
+
 
 		$.get(arg, function(data){
 			// console.log(arg, data);
