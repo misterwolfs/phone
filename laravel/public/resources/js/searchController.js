@@ -1,6 +1,6 @@
 var searchController = {
 	byBrand: function(brand) {
-		//console.log('by brand new');
+		console.log('by brand new');
 
 		//mapController.phoneList = new Array();
 
@@ -12,13 +12,15 @@ var searchController = {
 		searchController.getPhones('all');
 	},
 	getPhones: function(brand) {
+		console.log('getphones');
+
 		mapController.removeMarkers();
 
 		$.get('search/brand/'+brand, 
 			function(json)
 			{	
 
-				//console.log(json);
+				console.log('json', json);
 
 				for(objects in json)
 				{

@@ -30,7 +30,7 @@ $(function() {
 		brand = $(this).text();
 		console.log('delegate brand', brand);
 		searchController.byBrand(brand);
-
+		
 		sidebarController.hide();
 	});
 

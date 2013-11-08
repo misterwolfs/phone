@@ -109,9 +109,9 @@ Route::get('viewall', function() {
 
 
 // LOG QUERYS
-Event::listen('illuminate.query', function($sql)
-{
-    var_dump($sql);
-    echo '<br /> <br />';
-}); 
+// Event::listen('illuminate.query', function($sql)
+// {
+//     var_dump($sql);
+//     echo '<br /> <br />';
+// }); 
 

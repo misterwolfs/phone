@@ -7,9 +7,14 @@ class UserController extends BaseController {
 
 		$user = User::find($id);
 
-		
+		$repairder = RepairLocation::where('userID', '=', $id)->get();
 
-		return View::make('embeds/sidebar/userform', $user);
+		$data = array();
+
+		$data = array_add($data, 'user', $user);
+		$data = array_add($data, 'repairder', $repairder);
+
+		return View::make('embeds/sidebar/userform', $data);
 	}
 
 	public function userEdit() {
@@ -34,23 +39,20 @@ class UserController extends BaseController {
 
 		$user->save();
 
-		return Redirect::to('/')->with('message', 'successfully updated');
-	}
-
-	public function setRepairLocation() {
-		$id = Auth::user()->userID;
-
 		$repairder =  new RepairLocation;
 
-		$location = Input::get('location');
+		$lat = Input::get('lat');
+		$long = Input::get('long');
 
-		$repairder::create(array(
-			'userID' 		=> 		$id,
-			'location' 		=> 		$location,
-		));
+		$location = $lat . ', ' . $long;
+
+		$repairder->userID = $id;
+		$repairder->location = $location;
 		
 		$repairder->save();
 
-
+		return Redirect::to('/')->with('message', 'successfully updated');
 	}
+
+	
 }

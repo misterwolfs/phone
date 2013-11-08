@@ -77,7 +77,6 @@ $(function() {
 		} else {
 			sidebarController.trigger(arg);
 			mapController.fitMarker();
-
 		}
 	}
 
