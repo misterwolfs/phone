@@ -70,6 +70,9 @@ var sidebarController = {
 			
 
 			//console.log()
+			console.log(mapController.markerByUser.position);
+			
+
 			$('#lat').val(mapController.markerByUser.position.nb);
 			$('#long').val(mapController.markerByUser.position.ob);
 		})

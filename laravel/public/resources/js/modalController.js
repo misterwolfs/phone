@@ -68,7 +68,6 @@ $(function() {
 
 	$("body").delegate("button#ready-repair-location", "click", function() {
 		nextStep("user/info");
-
 	})
 
 	function nextStep(arg) {

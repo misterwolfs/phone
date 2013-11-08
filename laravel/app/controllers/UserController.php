@@ -29,29 +29,40 @@ class UserController extends BaseController {
 
 		$repairder = Input::get('repairder');
 
+		echo $repairder;
+
 		if($repairder == null)
 		{
 			$user->is_repairder = 0;
+
+			$repair = RepairLocation::where('userID', '=', $id)->delete();
 		}
 		else {
 			$user->is_repairder = 1;
+
+			
+				
+
+			$lat = Input::get('lat');
+			$long = Input::get('long');
+
+			$location = $lat . ', ' . $long;
+
+			if($lat != ' ' || $long != ' ')
+			{	
+				$repairder =  new RepairLocation;
+				$repairder->userID = $id;
+				$repairder->location = $location;
+				
+				$repairder->save();
+			}
 		}
 
 		$user->save();
 
-		$repairder =  new RepairLocation;
-
-		$lat = Input::get('lat');
-		$long = Input::get('long');
-
-		$location = $lat . ', ' . $long;
-
-		$repairder->userID = $id;
-		$repairder->location = $location;
 		
-		$repairder->save();
 
-		return Redirect::to('/')->with('message', 'successfully updated');
+		//return Redirect::to('/')->with('message', 'successfully updated');
 	}
 
 	
