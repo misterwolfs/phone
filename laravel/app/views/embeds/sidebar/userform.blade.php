@@ -11,6 +11,7 @@
 
 
 {{ 	Form::open(array('url' => 'user/edit', 'id' => 'editUser')) }}
+<div class="category">Personal information</div>
 <p>
 	{{ Form::label('firstname', 'Firstname') }} <br />
 	{{ Form::text('firstname', $firstname ); }} 
@@ -26,13 +27,14 @@
 	{{ Form::email('email', $email) }} 
 </p>
 
+<div class="category spacer">Repair information</div>
 <p>
-	{{ Form::label('repairder', 'Are you a repairder?') }} <br />
+	{{ Form::label('repairder', 'Can you repair broken stuff?') }} <br />
 	{{ Form::checkbox('repairder', 'repairder', $is_repairder) }}
 </p>
 
 <p>
-	{{ Form::submit('Edit!') }}
+	{{ Form::submit('Edit', ['class' => 'btn no-icon round green margin']) }}
 </p>
 
 {{ Form::close() }}

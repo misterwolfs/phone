@@ -26,7 +26,7 @@
 	{{ Form::label('year', 'Year') }} <br />
 	{{ Form::text('year') }} 
 </p>
-<div class="category">Condition</div>
+<div class="category spacer">Condition</div>
 <p>
 	{{ Form::label('usage', 'Usage') }} <br />
 	{{ Form::text('usage') }} 
@@ -36,7 +36,7 @@
 	{{ Form::label('state', 'State') }} <br />
 	{{ Form::text('state') }} 
 </p>
-<div class="category">Price and details</div>
+<div class="category spacer">Price and details</div>
 <p>
 	{{ Form::label('price', 'Price') }} <br />
 	{{ Form::text('price') }} 

@@ -2,18 +2,6 @@ $(function() {
 
     mapController.initialize();
 
-    // var beachMarker = new google.maps.Marker({
-    //   position: new google.maps.LatLng(mapController.antwerpLat, mapController.antwerpLng),
-    //   map: mapController.gmap,
-    //   icon: mapController.markerIcon,
-    //   info: "test"
-    // });
-
-    // mapController.addMarkers(beachMarker);
-
-    // add all markers
-   //searchController.all();
-
 	$("ul.subnav li a, .view-profile a").on("click", function() {
 		var id = $(this).parent().attr("id");
 		addPhoneController.reset();
@@ -27,7 +15,7 @@ $(function() {
 
 	});
 
-	$("body").delegate(".how-it-works", "click", function() {
+	$("body").delegate("a[href=#howitworks]", "click", function() {
 		sidebarController.trigger("how-it-works");
 	});
 
@@ -65,15 +53,7 @@ $(function() {
 		console.log('delegate brand', brand);
 		searchController.byBrand(brand);
 
-		sidebarController.hide(sidebarController.currentOpen);
+		sidebarController.hide();
 	});
-
-	// $(".brands li").on("click", function() {
-		
-	// });
-
-	// $("#facebook").on("click", function() {
-	// 	modalController.trigger("add-phone-info");
-	// })
 
 })

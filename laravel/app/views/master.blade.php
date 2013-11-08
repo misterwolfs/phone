@@ -48,7 +48,7 @@
 						</ul>
 					</li>
 					@else 
-					<li class="parent no-sub"><a href="#how-it-works" class="how-it-works">How it works</a></li>
+					<li class="parent no-sub"><a href="#howitworks" class="toggle-menu no-toggle">How it works</a></li>
 					@endif
 					<li class="parent" id="repair-a-hone"><a href="#repair-a-phone" class="toggle-menu">Repair a phone</a>
 						<ul class="subnav">
