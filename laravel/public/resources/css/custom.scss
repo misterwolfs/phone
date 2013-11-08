@@ -43,6 +43,13 @@ a {
 	}
 }
 
+.underline {
+	text-decoration: underline;
+	&:hover {
+		text-decoration: none;
+	}
+}
+
 #table-wrapper {
 	height: 100%;
 	overflow: hidden;
@@ -57,7 +64,7 @@ a {
 
 }
 
-#desktop {
+#desktop, .hidden {
 	display:none;
 }
 

@@ -25,14 +25,19 @@ $(function() {
 
 	$("body").delegate("#addPhone", "submit", function(e) {
 		e.preventDefault();
-		$.post('addphone', $(this).serialize(), modalController.trigger("phone-added") /* alert("HipHoi, toegevoegd!") */ );
+		$.post('addphone', $(this).serialize(), function() {
+			modalController.trigger("phone-added");
+			mapController.markerByUser.setMap(null);
+		});
 		return false; 
 	});
 
 	$("body").delegate("#editUser", "submit", function(e) {
-		console.log('test clicked');
 		e.preventDefault();
-		$.post('user/edit', $(this).serialize(), alert("HipHoi, geedit!"));
+		$.post('user/edit', $(this).serialize(), function() {
+			modalController.trigger("user-information-changed");
+			mapController.markerByUser.setMap(null);
+		});
 		return false; 
 	});
 

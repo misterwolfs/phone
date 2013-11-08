@@ -32,6 +32,11 @@
 	{{ Form::label('repairder', 'Can you repair broken stuff?') }} <br />
 	{{ Form::checkbox('repairder', 'repairder', $is_repairder) }}
 </p>
+@if ($is_repairder == '1')
+<p><a id="repair-location" class="underline" href="#set-repair-location">Set repair location</a></p>
+@else
+<p><a id="repair-location" class="underline hidden" href="#set-repair-location">Set repair location</a></p>
+@endif
 
 <p>
 	{{ Form::submit('Edit', ['class' => 'btn no-icon round green margin']) }}

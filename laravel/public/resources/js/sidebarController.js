@@ -24,10 +24,10 @@ var sidebarController = {
 
 		if(arg != 'viewall')
 		{
-
 			modalController.hide();
 			addPhoneController.reset();
-		
+			formController.reset();
+
 			sidebarController.open = true;
 			sidebarController.currentOpen = arg;
 

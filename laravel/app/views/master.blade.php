@@ -112,6 +112,7 @@
 	{{ HTML::script('resources/js/addPhoneController.js') }}
 	{{ HTML::script('resources/js/searchController.js') }}
 	{{ HTML::script('resources/js/sidebarController.js') }}
+	{{ HTML::script('resources/js/formController.js') }}
 	{{ HTML::script('resources/js/triggers.js') }}
 
 	

@@ -18,6 +18,7 @@ var modalController = {
 
 		sidebarController.hide();
 		addPhoneController.reset();
+		formController.reset();
 
 		modalController.open = true;
 		modalController.currentOpen = arg;
@@ -60,13 +61,21 @@ $(function() {
 
 	//Ready placed marker
 	$("body").delegate("button#form", "click", function() {
+		nextStep("form");
+	})
+
+	$("body").delegate("button#ready-repair-location", "click", function() {
+		nextStep("user/info");
+	})
+
+	function nextStep(arg) {
 		if(mapController.markerByUser == null) {
 			modalController.trigger("marker-warning");
 		} else {
-			sidebarController.trigger("form");
+			sidebarController.trigger(arg);
 			mapController.fitMarker();
 		}
-	})
+	}
 
 
 })
