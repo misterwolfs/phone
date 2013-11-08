@@ -13,3 +13,4 @@ and e-mail or facebook message.</p>
 <p>Well, that sucks. But, maybe you'r able to find a repair café here, or maybe someone who repairs stuff in his spare time ?</p>
 <p>Repair Cafés are free meeting places and they’re all about repairing things (together). In the place where a Repair Café is located, you’ll find tools and materials to help you make any repairs you need.<p>
 <p>The best part: it's free !</p>
+<br><br>

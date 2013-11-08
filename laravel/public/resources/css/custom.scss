@@ -39,7 +39,7 @@ a {
 	text-decoration: none;
 	&:hover {
 		@extend a;
-		text-decoration: underline;
+		// text-decoration: underline;
 	}
 }
 
@@ -180,7 +180,7 @@ h1 {
 	font-family: $proximaBold;
 	padding: 0.5em 0 1em 0;
 	margin: 0;
-	font-size: 1.8em;
+	font-size: 2em;
 }
 
 header {

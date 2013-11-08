@@ -28,7 +28,6 @@
 					<h1>Phinder</h1>
 					<button  id="login">Login with facebook</button>
 				</section>
-				
 			@endif
 
 			<section id="navigation">
