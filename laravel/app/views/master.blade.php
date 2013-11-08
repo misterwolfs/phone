@@ -21,7 +21,7 @@
 					<h1>Phinder</h1>
 					<img src="{{ $data['photo'] }}" alt="{{{ $data['name']	}}}">
 					<h2>Hi, {{{ $data['firstname']	}}}</h2>
-					<div class="view-profile" id="user/info"><a href="#viewprofile">View your profile</a></div>
+					<div class="view-profile" id="user/info"><a href="#viewprofile" class="open-sidebar">View your profile</a></div>
 				</section>
 			@else
 				<section id="user-panel" class='logged-out'>
