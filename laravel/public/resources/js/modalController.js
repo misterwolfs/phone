@@ -2,6 +2,7 @@ var modalController = {
 	open: false,
 	currentOpen: 'default',
 	trigger: function(arg) {
+		console.log('trigger modal');
 		if(modalController.open) {
 			if(arg != modalController.currentOpen) {
 				$(".modal-window").animateCSS('bounceOutDown', function() {
@@ -15,7 +16,7 @@ var modalController = {
 		}
 	},
 	create: function(arg) {
-
+		console.log('create modal');
 		sidebarController.hide();
 		addPhoneController.reset();
 		formController.reset();
@@ -43,6 +44,7 @@ var modalController = {
 
 	},
 	hide: function() {
+		console.log('hide modal');
 		if(modalController.open)
 		{
 			$(".modal-window").animateCSS('bounceOutDown', function() {
@@ -66,6 +68,7 @@ $(function() {
 
 	$("body").delegate("button#ready-repair-location", "click", function() {
 		nextStep("user/info");
+
 	})
 
 	function nextStep(arg) {
@@ -74,6 +77,7 @@ $(function() {
 		} else {
 			sidebarController.trigger(arg);
 			mapController.fitMarker();
+
 		}
 	}
 

@@ -32,7 +32,7 @@
 </p>
 
 <p>
-	{{ Form::submit('Edit!') }}
+	{{ Form::submit('Save!') }}
 </p>
 
 {{ Form::close() }}

@@ -77,6 +77,7 @@ var sidebarController = {
 			// 	});				
 			// }
 
+			
 
 			//console.log()
 			$('#lat').val(mapController.markerByUser.position.nb);

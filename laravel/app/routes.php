@@ -60,6 +60,8 @@ Route::group(array('prefix' => 'user'), function() {
 	Route::get('info', 'UserController@userInfo');
 
 	Route::post('edit', 'UserController@userEdit');
+
+	Route::post('repairlocation', 'UserController@setRepairLocation');
 });
 
 
@@ -95,4 +97,11 @@ Route::get('viewall', function() {
 	return Redirect::to('search/brand/all');
 });
 
+
+
+// LOG QUERYS
+Event::listen('illuminate.query', function($sql)
+{
+    var_dump($sql);
+}); 
 

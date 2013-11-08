@@ -39,7 +39,7 @@
 @endif
 
 <p>
-	{{ Form::submit('Edit', ['class' => 'btn no-icon round green margin']) }}
+	{{ Form::submit('Save', ['class' => 'btn no-icon round green margin']) }}
 </p>
 
 {{ Form::close() }}

@@ -36,4 +36,21 @@ class UserController extends BaseController {
 
 		return Redirect::to('/')->with('message', 'successfully updated');
 	}
+
+	public function setRepairLocation() {
+		$id = Auth::user()->userID;
+
+		$repairder =  new RepairLocation;
+
+		$location = Input::get('location');
+
+		$repairder::create(array(
+			'userID' 		=> 		$id,
+			'location' 		=> 		$location,
+		));
+		
+		$repairder->save();
+
+
+	}
 }
