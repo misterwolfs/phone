@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Project</title>
+	<title>Phinder</title>
 	
 
 	{{	HTML::style('resources/css/base.css') }}
