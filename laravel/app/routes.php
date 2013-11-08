@@ -83,6 +83,15 @@ Route::group(array('prefix' => 'search'), function() {
 });
 
 
+Route::group(array('prefix' => 'repaircafe'), function() {
+
+	Route::get('/', 'SearchController@allCafes');
+
+	Route::get('{cafe}', 'SearchController@showCafe');
+
+});
+
+
 /** REDIRECTS **/
 Route::get('form', function() {
 	return Redirect::to('/embeds/form');
@@ -103,5 +112,6 @@ Route::get('viewall', function() {
 Event::listen('illuminate.query', function($sql)
 {
     var_dump($sql);
+    echo '<br /> <br />';
 }); 
 

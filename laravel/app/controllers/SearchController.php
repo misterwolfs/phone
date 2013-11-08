@@ -68,4 +68,21 @@ class SearchController extends BaseController {
 		
 		//return View::make('embeds/search/brand', $phones);
 	}
+
+
+	public function allCafes() {
+		$cafes = Repaircafe::all(array('cafeID','lat', 'long'));
+
+		return $cafes->tojson();
+
+	}
+
+	public function showCafe($cafeID) {
+		$cafes = Repaircafe::where('cafeID', '=', $cafeID)->get(array('lat', 'long', 'cafeID'));
+
+		return $cafes->tojson();
+	}
+
+
+
 }
