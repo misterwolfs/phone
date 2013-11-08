@@ -26,29 +26,21 @@ Route::group(array('prefix' => 'embeds'), function() {
 	Route::get('form', array('as' => 'get_form', 'uses' => 'FormController@showForm'));
 });
 
-/* AJAX REQUESTS */
-Route::get('form', function() {
-	return View::make('embeds/form');
+/* AJAX REQUESTS FOR VIEWS */
+Route::group(array('prefix' => 'embeds'), function() {
+
+	Route::group(array('prefix' => 'modal'), function() {
+		Route::get('/{modal}', function($modal) 
+		{
+			return View::make('embeds/modal/'.$modal);
+		});
+	});
 });
 
-
-
-Route::get('add-phone-info', function() {
-	return View::make('embeds/modal/add-phone-info');
+Route::get('how-it-works', function() 
+{
+	return View::make('embeds/sidebar/how-it-works');
 });
-
-Route::get('phone-added', function() {
-	return View::make('embeds/modal/phone-added');
-});
-
-Route::get('get-map-style', function() {
-	return View::make('embeds/mapstyle');
-});
-
-Route::get('marker-warning', function() {
-	return View::make('embeds/modal/marker-warning');
-});
-
 
 /* AJAX POSTS */
 Route::post('addphone', 'PhoneController@addPhone');
@@ -102,4 +94,5 @@ Route::get('brand', function() {
 Route::get('viewall', function() {
 	return Redirect::to('search/brand/all');
 });
+
 

@@ -9,7 +9,7 @@ class UserController extends BaseController {
 
 		
 
-		return View::make('embeds/userform', $user);
+		return View::make('embeds/sidebar/userform', $user);
 	}
 
 	public function userEdit() {

@@ -34,7 +34,7 @@ var modalController = {
 						.append(close)
 						.append(content);
 
-		$.get(arg, function(data){
+		$.get("embeds/modal/"+arg, function(data){
 			$(".modal-window .content").html(data);
 		})				
 

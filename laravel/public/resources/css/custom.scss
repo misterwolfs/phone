@@ -217,7 +217,7 @@ a {
 				top: 8px;
 			}
 
-			&:hover:after {
+			&:not(.no-sub):hover:after {
 				background-image: url("../img/icons/icons_sprite.gif");
 				background-position: -11px 0;
 				width: 17px;
@@ -238,7 +238,7 @@ a {
 				display: block;
 			}
 
-			&:after {
+			&:not(.no-sub):after {
 				content: '';
 				background-image: url("../img/icons/icons_sprite.gif");
 				background-position: -11px 0;

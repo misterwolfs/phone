@@ -49,9 +49,6 @@ var searchController = {
 			}, 
 			'json'
 		).success(function () {
-				
-				
-
 				mapController.gmap.fitBounds(mapController.bounds);
 				console.log('succes', mapController.phoneList);
 				mapController.markerCluster = new MarkerClusterer(mapController.gmap, mapController.phoneList);

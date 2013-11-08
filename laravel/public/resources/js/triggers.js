@@ -27,6 +27,9 @@ $(function() {
 
 	});
 
+	$("body").delegate(".how-it-works", "click", function() {
+		sidebarController.trigger("how-it-works");
+	});
 
 	$("body").delegate(".close-sidebar", "click", function() {
 		sidebarController.hide();

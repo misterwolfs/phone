@@ -35,7 +35,7 @@ class SearchController extends BaseController {
 		 $data = array_add($data, 'brands', $dataArray);
 		 $data = array_add($data, 'firstLetters', $firstLetters);
 
-		return View::make('embeds/brand', $data);
+		return View::make('embeds/sidebar/brand', $data);
 	}
 
 	public function searchAll()

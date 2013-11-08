@@ -17,7 +17,7 @@ class PhoneController extends BaseController {
 
 	public function showForm()
 	{
-		return View::make('sidebar/sidebar_form');
+		return View::make('embeds/sidebar/form');
 	}	
 
 	public function addPhone()

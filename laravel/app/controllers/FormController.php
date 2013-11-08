@@ -19,7 +19,7 @@ class FormController extends BaseController {
 
 		$data = array_add($data, 'brands', $dataArray);
 
-		return View::make('embeds/form', $data);
+		return View::make('embeds/sidebar/form', $data);
 	}
 
 }

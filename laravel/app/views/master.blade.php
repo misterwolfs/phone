@@ -48,13 +48,9 @@
 						</ul>
 					</li>
 					@else 
-					<li class="parent"><a href="#sell-a-phone" class="toggle-menu">How it works</a>
-						<!-- <ul class="subnav">
-							<li id="addphone"><a href="#add-phone">Add a phone</a></li>
-						</ul> -->
-					</li>
+					<li class="parent no-sub"><a href="#how-it-works" class="how-it-works">How it works</a></li>
 					@endif
-					<li class="parent"><a href="#repair-a-phone" class="toggle-menu">Repair a phone</a>
+					<li class="parent" id="repair-a-hone"><a href="#repair-a-phone" class="toggle-menu">Repair a phone</a>
 						<ul class="subnav">
 							<li id="repaircafe">Find a repear café</li>
 							<li id="nearyou">Repairder near you</li>

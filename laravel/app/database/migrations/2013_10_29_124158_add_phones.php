@@ -22,6 +22,8 @@ class AddPhones extends Migration {
 			'color' => 'SpaceGray',
 			'created_at' => date('Y-m-d H:m:s'),
 			'updated_at' => date('Y-m-d H:m:s'),
+			'lat' => '51.24',
+			'long' => '4.41799',
 		));
 
 		DB::table('phones')->insert(array(
@@ -35,6 +37,8 @@ class AddPhones extends Migration {
 			'color' => 'Black',
 			'created_at' => date('Y-m-d H:m:s'),
 			'updated_at' => date('Y-m-d H:m:s'),
+			'lat' => '51.214266',
+			'long' => '4.44',
 		));
 
 		DB::table('phones')->insert(array(
@@ -47,7 +51,8 @@ class AddPhones extends Migration {
 			'description' => 'Still 1 year garuantee',
 			'color' => 'White',
 			'created_at' => date('Y-m-d H:m:s'),
-			'updated_at' => date('Y-m-d H:m:s'),
+			'lat' => '51.214265',
+			'long' => '4.51798',
 		));
 
 		DB::table('phones')->insert(array(
@@ -60,7 +65,8 @@ class AddPhones extends Migration {
 			'description' => 'Best cellphone ever!',
 			'color' => 'blue',
 			'created_at' => date('Y-m-d H:m:s'),
-			'updated_at' => date('Y-m-d H:m:s'),
+			'lat' => '51.914250',
+			'long' => '4.41780',
 		));
 	}
 
