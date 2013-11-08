@@ -30,7 +30,7 @@ $(function() {
 		brand = $(this).text();
 		console.log('delegate brand', brand);
 		searchController.byBrand(brand);
-		
+
 		sidebarController.hide();
 	});
 
@@ -55,6 +55,11 @@ $(function() {
 			modalController.trigger("user-information-changed");
 			mapController.markerByUser.setMap(null);
 		});
+
+		$formname = $('#firstname').val();
+
+		$('#user-panel h2').text('Hi, ' + $formname);
+
 		return false; 
 	});
 
