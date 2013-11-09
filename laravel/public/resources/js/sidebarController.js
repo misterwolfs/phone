@@ -2,9 +2,7 @@ var sidebarController = {
 	open: false,
 	currentOpen: 'default',
 	trigger: function(arg) {
-
 		if(sidebarController.open) {
-
 			if(arg != sidebarController.currentOpen) {
 
 				$(".sidebar > *").hide();
@@ -22,9 +20,9 @@ var sidebarController = {
 
 		console.log('arg', arg);
 
-				modalController.hide();
-			addPhoneController.reset();
-			formController.reset();
+		modalController.hide();
+		addPhoneController.reset();
+		formController.reset();
 
 			
 		sidebarController.open = true;
@@ -45,40 +43,14 @@ var sidebarController = {
 			$("#main").append(sidebar);
 
 		$.get(arg, function(data){
-			// console.log(arg, data);
-
-			// if(arg == 'getuserinfo') 
-			// {
-			// 	console.log('userinfo');
-
-			// 	sidebarController.userInfo(data);
-				
-			// }
-			// else {
 			$(".content").html(data);
-
-			//}
 		}).success(function() {
-
-			// if(arg == 'brand')
-			// {
-			// 	$(".brands li").on("click", function() {
-			// 		searchController.byBrand();
-			// 	});				
-			// }
-
-			
-
-			//console.log()
-			console.log(mapController.markerByUser.position);
-			
-
-			$('#lat').val(mapController.markerByUser.position.nb);
-			$('#long').val(mapController.markerByUser.position.ob);
+			if(arg=='form') {
+				$('#lat').val(mapController.markerByUser.position.nb);
+				$('#long').val(mapController.markerByUser.position.ob);
+				addPhoneController.startForm();
+			}
 		})
-
-		
-
 	},
 	hide: function() {
 		if(sidebarController.open)
@@ -91,22 +63,7 @@ var sidebarController = {
 		}
 	},
 	userInfo: function(user) {
-
-
 		sidebarController.create('userform');
-
-		// var user_name = $('<div/>')
-		// 				.text(user['firstname'] + " " + user['lastname'])
-		// 				.addClass('user_name');
-
-		// var user_photo = $('<img/>')
-		// 				.attr('src', user['photo'])
-		// 				.attr('alt', user['name'])
-		// 				.addClass('user_photo');			
-
-		// $(".content")
-		// 	.append(user_name)
-		// 	.append(user_photo);
 	}
 }
 

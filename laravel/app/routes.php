@@ -11,6 +11,12 @@
 |
 */
 
+// CATCH ERROR PAGES
+App::missing(function($exception)
+{
+    return View::make('404');
+});
+
 Route::get('/', 'PhoneController@showIndex');
 
 

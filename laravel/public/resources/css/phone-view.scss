@@ -1,0 +1,73 @@
+/** FONTS **/
+$proxima: "ProximaNova";
+$proximaBold: "ProximaNovaBold";
+
+/** COLORS **/
+$dark-grey: #252525;
+$light-grey: #373737;
+$font-color: #fafeff;
+$green: #24ac5d;
+$facebook-blue: #36538f;
+$twitter-blue: #00acec;
+
+.sidebar {
+	#phone-view {
+		.category {
+			width: 100%;
+		}
+		p {
+			margin-top: 0.4em;
+		}
+		.image-holder {
+			overflow: hidden;
+			img {
+				float:left;
+				border: 3px solid $dark-grey;
+				&:not(:first-child) {
+					margin-left: 0.8em;
+				}
+			}
+			&:after {
+				clear:both;
+			}
+		}
+
+		.wrapper-button {
+			margin-top: 1.5em;
+			overflow: hidden;
+		}
+
+		.wrapper-phone {
+			overflow: hidden;
+			.spacer {
+				padding-top: 1.5em;
+			}
+		}
+
+		table {
+			border: none;
+			margin: 0;
+			padding: 0;
+			float:left;
+			margin-top: 0.3em;
+			overflow: hidden;
+			line-height: 1.4em;
+		}
+		.three-column, .two-column-float {
+			width: 100%;
+			tr {
+				td:first-child {
+					font-family: $proximaBold;
+					width: 45%;
+					vertical-align: top;
+				}
+			}
+		}
+
+		.two-column-float {
+			float:left;
+			width: 50%;
+		}
+
+	}
+}

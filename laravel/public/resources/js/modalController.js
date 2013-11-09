@@ -8,8 +8,6 @@ var modalController = {
 				$(".modal-window").animateCSS('bounceOutDown', function() {
 					$.when($(this).remove()).then(modalController.create(arg));
 				})
-			} else {
-				// $.when($(".sidebar").attr("class", "sidebar" )).then($(".sidebar").animateCSS('pulse'));
 			}
 		} else {
 			modalController.create(arg);
@@ -17,6 +15,7 @@ var modalController = {
 	},
 	create: function(arg) {
 		console.log('create modal');
+
 		sidebarController.hide();
 		addPhoneController.reset();
 		formController.reset();
@@ -75,7 +74,7 @@ $(function() {
 			modalController.trigger("marker-warning");
 		} else {
 			sidebarController.trigger(arg);
-			mapController.fitMarker();
+			mapController.zoom(mapController.markerByUser.position);
 		}
 	}
 

@@ -16,6 +16,7 @@
 	<div id="table-wrapper">
 	
 		<nav id="main-nav" class="main-nav slideInLeft animated">
+		<div class="scroll">
 			@if (!empty($data))
 				<section id="user-panel" class='logged-in'>
 					<h1>Phinder</h1>
@@ -58,10 +59,7 @@
 				</ul>
 			</section>
 
-			<section id="social">
-				<button class="btn" id="facebook"></button>
-				<button class="btn" id="twitter">Spread the love</button>
-			</section>
+			</div>
 		</nav>
 
 		<div class="page-wrap">
@@ -103,6 +101,7 @@
 
 	<!--LOCAL scripts-->
 	{{ HTML::script('resources/js/modernizer.js') }}
+	{{ HTML::script('resources/js/mapstyle.js') }}
 	{{ HTML::script('resources/js/markerclusterer.js') }}
 	{{ HTML::script('resources/js/callback.js') }}
 	{{ HTML::script('resources/js/navigation.js') }}
@@ -113,6 +112,7 @@
 	{{ HTML::script('resources/js/sidebarController.js') }}
 	{{ HTML::script('resources/js/formController.js') }}
 	{{ HTML::script('resources/js/triggers.js') }}
+	{{ HTML::script('resources/js/masterController.js') }}
 
 	
 	<!-- {{ HTML::script('resources/js/base.min.js') }} -->

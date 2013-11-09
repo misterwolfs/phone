@@ -6,7 +6,7 @@ $(".toggle-menu").on("click", function(e) {
 	if($(this).parent().hasClass("active")) {
 		$(".nav-parent li").removeClass("active");
 	} else {
-		sidebarController.hide();
+		masterController.reset();
 		$(".nav-parent li").removeClass("active");
 		$(this).parent().addClass("active");
 	}

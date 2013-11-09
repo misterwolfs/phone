@@ -1,12 +1,7 @@
 var searchController = {
 	byBrand: function(brand) {
 		console.log('by brand new');
-
-		//mapController.phoneList = new Array();
-
-		searchController.getPhones(brand);
-
-		
+		searchController.getPhones(brand);		
 	},
 	all: function() {
 		searchController.getPhones('all');

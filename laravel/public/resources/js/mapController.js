@@ -1,71 +1,3 @@
-    var style = [{
-        "stylers": [{
-            "visibility": "off"
-        }]
-    }, {
-        "featureType": "road",
-            "stylers": [{
-            "visibility": "on"
-        }, {
-            "color": "#ffffff"
-        }]
-    }, {
-        "featureType": "road.arterial",
-            "stylers": [{
-            "visibility": "on"
-        }, {
-            "color": "#fee379"
-        }]
-    }, {
-        "featureType": "road.highway",
-            "stylers": [{
-            "visibility": "on"
-        }, {
-            "color": "#fee379"
-        }]
-    }, {
-        "featureType": "landscape",
-            "stylers": [{
-            "visibility": "on"
-        }, {
-            "color": "#f3f4f4"
-        }]
-    }, {
-        "featureType": "water",
-            "stylers": [{
-            "visibility": "on"
-        }, {
-            "color": "#7fc8ed"
-        }]
-    }, {}, {
-        "featureType": "road",
-            "elementType": "labels",
-            "stylers": [{
-            "visibility": "off"
-        }]
-    }, {
-        "featureType": "poi.park",
-            "elementType": "geometry.fill",
-            "stylers": [{
-            "visibility": "on"
-        }, {
-            "color": "#83cead"
-        }]
-    }, {
-        "elementType": "labels",
-            "stylers": [{
-            "visibility": "on"
-        }]
-    }, {
-        "featureType": "landscape.man_made",
-            "elementType": "geometry",
-            "stylers": [{
-            "weight": 0.9
-        }, {
-            "visibility": "off"
-        }]
-    }]
-
 var mapController = {
 	gmap: null,
 	antwerpLat: 51.214263,
@@ -92,7 +24,7 @@ var mapController = {
     initialize: function() {
         var mapOptions = {
           center: new google.maps.LatLng(this.antwerpLat, this.antwerpLng),
-          zoom: 10,
+          zoom: 12,
           disableDefaultUI: true,
           streetViewControl: true,
           mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -111,44 +43,29 @@ var mapController = {
 
         mapController.drawingManager.setMap(mapController.gmap);
 
-
-        
-
     },
-    // addMarkers: function(marker) {
-    //       this.markerClickedHandler(marker);  
-    //       this.phoneList.push(marker);           
-    // },
     markerClickedHandler: function(marker) {
         google.maps.event.addListener(marker, 'click', function() {
             sidebarController.trigger('phone/' + this.url);
         });     
     },	    
-    fitMarker: function() {
-        mapController.gmap.setZoom(10);
-        mapController.gmap.panTo(mapController.markerByUser.position);
+    zoom: function(position) {
+        mapController.gmap.setZoom(16);
+        mapController.gmap.panTo(position);
     },
-
     removeMarkers: function() {
-        //console.log('remove markers');
         this.bounds = new google.maps.LatLngBounds();
         console.log('empty', this.bounds.isEmpty());
 
-        
         this.markerCluster.clearMarkers();
         
-
         for (var i = 0; i < this.phoneList.length; i++) {
-            //console.log('remove');
-
-
             this.phoneList[i].setMap(null);
         }
 
         this.phoneList = new Array();
     }
-} //end of initGMaps
-
+}
 
 
 google.maps.event.addListener(mapController.drawingManager, 'markercomplete', function(marker) {

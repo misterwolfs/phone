@@ -1,10 +1,19 @@
 $(function() {
 
+	/** PRODUCTION**/
+	// console.log = function(){};
+
     mapController.initialize();
+
+    /** Prevent anchors **/
+    $("body").delegate("a:not(.open-menu, .close-menu)", "click", function(e) {
+    	e.preventDefault();
+    	return false;
+    })
 
     /** Modal **/
 	$("body").delegate(".close-modal, .dismiss", "click", function() {
-		modalController.hide($(this).parent());
+		modalController.hide();
 	});
 
 	/** Sidebar **/
@@ -12,8 +21,13 @@ $(function() {
 		sidebarController.hide();
 	});
 
+	$("body").delegate("#zoom-phone", "click", function() {
+		mapController.zoom(new google.maps.LatLng($("input[name=lat]").val(),$("input[name=long]").val()));
+	});
+
 	/** Navivation **/
-	$(".open-sidebar").on("click", function() {
+	$(".open-sidebar").on("click", function(e) {
+
 		var id = $(this).parent().attr("id");
 		addPhoneController.reset();
 
@@ -23,11 +37,14 @@ $(function() {
 			addPhoneController.reset();
 			sidebarController.trigger(id);
 		}
+
+	   	masterController.mobileNavigation();
+
 	});
 
-	$(".view-all").on("click", function() {
-		sidebarController.hide();
-		modalController.hide();
+	$(".view-all").on("click", function(e) {
+		masterController.mobileNavigation();
+		masterController.reset();
 		searchController.all();
 	})
 
@@ -39,20 +56,17 @@ $(function() {
 		sidebarController.hide();
 	});
 
-	$("body").delegate("a[href=#howitworks]", "click", function() {
+	$("body").delegate("a[href=#howitworks]", "click", function(e) {
 		sidebarController.trigger("how-it-works");
 	});
 
 
 	/** Forms and submit buttons **/
-	$("body").delegate("#addPhone", "submit", function(e) {
+	$("body").delegate(".check-step", "click", function(e) {
 		e.preventDefault();
-		$.post('addphone', $(this).serialize(), function() {
-			modalController.trigger("phone-added");
-			mapController.markerByUser.setMap(null);
-		});
-		return false; 
-	});
+		addPhoneController.checkEmpty($(this).parent().attr("id"));
+		return false;
+	})
 
 	$("body").delegate("#editUser", "submit", function(e) {
 		e.preventDefault();
@@ -69,7 +83,6 @@ $(function() {
 	});
 
 	/** Facebook login **/
-
 	$('#login').on('click', function() {
 		window.location.href = "http://rephone.dev/login/fb";
 	});

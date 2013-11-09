@@ -93,6 +93,10 @@ header {
 	display: none;
 }
 
+#navigation {
+	margin-bottom: 2em;
+}
+
 #main-nav:target {
   width: 28%;
 }
@@ -136,7 +140,11 @@ header {
 		left:0;
 	}
 }
-	
+
+.scroll {
+	overflow-y: scroll;
+}
+
 }
 
 /* ===== == = === 64em (1024) === = == ===== */

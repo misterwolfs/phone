@@ -29,6 +29,13 @@ $twitter-blue: #00acec;
 	}
 }
 
+.btn.blue {
+	background-color: $facebook-blue;
+	&:hover {
+		background-color: lighten($facebook-blue, 5);
+	}
+} 
+
 .btn.round {
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -50,28 +57,44 @@ $twitter-blue: #00acec;
     text-align:left;
     line-height: 31px;
     padding-right: 1.5em;
-}
-
-.btn.marker {
-	background-image: url("../img/icons/marker.png");
-    -webkit-background-size: 19px 24px;
-    -moz-background-size: 16px 24px;
-    -o-background-size: 16px 24px;
-    background-size: 16px 24px;
-}
-
-.btn.ready {
-	background-image: url("../img/icons/ready.png");
     -webkit-background-size: 22px 22px;
     -moz-background-size: 22px 22px;
     -o-background-size: 22px 22px;
     background-size: 22px 22px;
 }
 
+.btn.marker {
+	background-image: url("../img/icons/marker.png");
+    -webkit-background-size: 19px 24px;
+    -moz-background-size: 19px 24px;
+    -o-background-size: 19px 24px;
+    background-size: 19px 24px;
+}
+
+.btn.facebook {
+	background-image: url("../img/icons/facebook.png");
+}
+
+.btn.mail {
+	background-image: url("../img/icons/mail.png");
+    -webkit-background-size: 22px 16px;
+    -moz-background-size: 22px 16px;
+    -o-background-size: 22px 16px;
+    background-size: 22px 16px;
+}
+
+.btn.ready {
+	background-image: url("../img/icons/ready.png");
+}
+
 .btn.absolute {
 	position: absolute;
 	top:1em;
 	right: 2em;
+}
+
+.btn.right {
+	float:right;
 }
 
 .btn.shadow {
