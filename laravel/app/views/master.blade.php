@@ -107,6 +107,7 @@
 	{{ HTML::script('resources/js/markerclusterer.js') }}
 	{{ HTML::script('resources/js/callback.js') }}
 	{{ HTML::script('resources/js/navigation.js') }}
+	
 	{{ HTML::script('resources/js/modalController.js') }}
 	{{ HTML::script('resources/js/mapController.js') }}
 	{{ HTML::script('resources/js/addPhoneController.js') }}

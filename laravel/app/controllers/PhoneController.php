@@ -24,37 +24,37 @@ class PhoneController extends BaseController {
 	public function addPhone()
 	{	
 		$phone =  new Phone;
-		$images = new Images;
+		// $images = new Images;
 
-		$file = Input::file('image');
+		// $file = Input::file('image');
 		
 		
 		
 
-		$type = $file->getMimeType();
-		$size = $file->getSize();
-		$error_message = 'Something went wrong while uploading your file, please try again';
+		// $type = $file->getMimeType();
+		// $size = $file->getSize();
+		// $error_message = 'Something went wrong while uploading your file, please try again';
 
 		
-		if($type == 'image/jpg' || $type == 'image/png' || $type == 'image/gif' || $type == 'image/jpeg') 
-		{
-			if($size < 4000000)
-			{
-				$filename  = date("Ymd") . '_' . date("His")  . '_' . $file->getClientOriginalName();
-				$image = Image::make($file->getRealPath())->resize(110, 110)->save('storage/uploaded/' . $filename);
+		// if($type == 'image/jpg' || $type == 'image/png' || $type == 'image/gif' || $type == 'image/jpeg') 
+		// {
+		// 	if($size < 4000000)
+		// 	{
+		// 		$filename  = date("Ymd") . '_' . date("His")  . '_' . $file->getClientOriginalName();
+		// 		$image = Image::make($file->getRealPath())->resize(110, 110)->save('storage/uploaded/' . $filename);
 
 				
 
-				$images->name = $filename;
-				$images->save();
-			}
-			else {
-				echo $error_message;
-			}
-		}
-		else {
-			echo $error_message;
-		}
+		// 		$images->name = $filename;
+		// 		$images->save();
+		// 	}
+		// 	else {
+		// 		echo $error_message;
+		// 	}
+		// }
+		// else {
+		// 	echo $error_message;
+		// }
 
 
 		$phone::create(array(
@@ -78,7 +78,7 @@ class PhoneController extends BaseController {
 		$userID = Auth::user()->userID;
 		
 		$phone->user()->attach(1, array('userID' => $userID, 'phoneID' => $phoneID, 'created_at' => date('Y-m-d H:m:s'), 'updated_at' => date('Y-m-d H:m:s')));
-		$phone->images()->attach(1, array('imageID' => $imageID, 'phoneID' => $phoneID, 'created_at' => date('Y-m-d H:m:s'), 'updated_at' => date('Y-m-d H:m:s')));
+		//$phone->images()->attach(1, array('imageID' => $imageID, 'phoneID' => $phoneID, 'created_at' => date('Y-m-d H:m:s'), 'updated_at' => date('Y-m-d H:m:s')));
 
 
 		return Redirect::to('/')->with('message', 'Succesfully added');
@@ -106,8 +106,8 @@ class PhoneController extends BaseController {
 		$phones = Phone::where('phones.phoneID', '=', $id)
 					->join('users_has_phones', 'phones.phoneID', '=', 'users_has_phones.phoneID')
 		            ->join('users', 'users.userID', '=', 'users_has_phones.userID')
-		            ->join('phones_has_images', 'phones.phoneID', '=', 'phones_has_images.phoneID')
-		            ->join('images', 'images.imageID', '=', 'phones_has_images.imageID')
+		            // ->join('phones_has_images', 'phones.phoneID', '=', 'phones_has_images.phoneID')
+		            // ->join('images', 'images.imageID', '=', 'phones_has_images.imageID')
 		            ->first();
 
 		// var_dump($phones->toArray());

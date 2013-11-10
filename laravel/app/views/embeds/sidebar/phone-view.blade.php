@@ -1,12 +1,11 @@
 <h4>{{ $model }}</h4>
 
 <div id="phone-view">
-	<div class="image-holder">
-		{{	HTML::image('storage/uploaded/' . $name) }}
+<!-- 	<div class="image-holder">
 		<img src="http://placehold.it/110x110">
 		<img src="http://placehold.it/110x110">
 		<img src="http://placehold.it/110x110">
-	</div>
+	</div> -->
 
 	<div class="wrapper-phone">
 		<div class="category spacer">The seller</div>

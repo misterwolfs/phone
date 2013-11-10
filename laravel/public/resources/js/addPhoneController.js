@@ -45,7 +45,7 @@ var addPhoneController = {
 	},
 	nextStep: function() {
 		if(addPhoneController.currentStep == 3) 
-		{
+		{	
 			$.post('addphone', $("#addPhone").serialize(), function() {
 				modalController.trigger("phone-added");
 				mapController.markerByUser.setMap(null);

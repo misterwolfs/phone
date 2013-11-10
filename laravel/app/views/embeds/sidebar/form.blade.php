@@ -56,10 +56,7 @@
 		{{ Form::textarea('description') }} 
 	</p>
 
-	<p>
-		{{ Form::label('image', 'Image') }} <br />
-		{{ Form::file('image') }} 
-	</p>
+	
 		
 		{{ Form::hidden('lat', ' ', array('id' => 'lat')) }}
 		{{ Form::hidden('long', ' ', array('id' => 'long')) }}
