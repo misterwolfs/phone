@@ -8,6 +8,8 @@ var mapController = {
     markerByUser: null,
     marker: null,
     markerCluster: null,
+    input: null,
+    autocomplete: null,
     drawingManager: new google.maps.drawing.DrawingManager({
         drawingMode: null,
         drawingControl: false,
@@ -73,6 +75,21 @@ var mapController = {
         }
 
         this.phoneList = new Array();
+    },
+    checkLocation:function() {
+        console.log('checkLocation');
+
+        mapController.input = /** @type {HTMLInputElement} */(document.getElementById('location-search'));
+        mapController.autocomplete = new google.maps.places.Autocomplete(mapController.input);
+        
+        mapController.autocomplete.bindTo('bounds', mapController.gmap);
+        
+        google.maps.event.addListener(mapController.autocomplete, 'place_changed', function() {
+            
+            searchController.searchLocation();
+
+        });
+
     }
 }
 

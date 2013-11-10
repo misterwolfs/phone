@@ -96,9 +96,11 @@
 	<!--CDN scripts-->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="http://platform.twitter.com/anywhere.js?id=[361899175-JL9rfQJwKw4VGsbpvgnoPUGESTDLKXgYA1jT8hzP]&amp;v=1"></script>
-	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpx1FOANjsAYRyGTXDYFGjSrwJ42R7-kA&sensor=false"></script>
-	<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=drawing&sensor=false"></script>
+	<!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpx1FOANjsAYRyGTXDYFGjSrwJ42R7-kA&sensor=false"></script> -->
+	<!-- <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=drawing,places&sensor=false"></script> -->
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpx1FOANjsAYRyGTXDYFGjSrwJ42R7-kA&libraries=drawing,places&sensor=false"></script>	
 
+	
 	<!--LOCAL scripts-->
 	{{ HTML::script('resources/js/modernizer.js') }}
 	{{ HTML::script('resources/js/mapstyle.js') }}

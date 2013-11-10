@@ -9,13 +9,13 @@ var searchController = {
 	getData: function($type, $item) {
 		// console.log('getphones');
 
-		mapController.removeMarkers();
+	
 
 		$.get('search/' + $type + '/'+ $item, 
 			function(json)
 			{	
 
-				console.log('json', json);
+				console.log('json2', json);
 
 				for(objects in json)
 				{
@@ -48,11 +48,13 @@ var searchController = {
 
 					
 
-					 
-					mapController.bounds.extend(mapController.marker.position);
+					
+						mapController.bounds.extend(mapController.marker.position);
+				
 					mapController.phoneList.push(mapController.marker);
 					mapController.markerClickedHandler($type, mapController.marker);  
 
+						console.log('markers', mapController.phonelist);
 					//console.log('phonelist', mapController.phoneList);
 				// mapController.addMarkers(marker);
 				}
@@ -61,6 +63,7 @@ var searchController = {
 			}, 
 			'json'
 		).success(function () {
+
 				mapController.gmap.fitBounds(mapController.bounds);
 				console.log('succes', mapController.phoneList);
 				mapController.markerCluster = new MarkerClusterer(mapController.gmap, mapController.phoneList);
@@ -120,33 +123,80 @@ var searchController = {
 
 		
 	},
-	searchLocation: function($form) {
-		 var location = $form.find('#location').val();
-
+	searchLocation: function() {
 		
+		sidebarController.hide();
 
-		$.get('http://maps.googleapis.com/maps/api/geocode/json?address='+location+'&sensor=true', function(location) {
-				console.log(location);
+		mapController.removeMarkers();
+		
+		$.get('search/brand/all', 
+			function(json)
+			{	
 
-				sidebarController.hide();
+				console.log('json4', json);
 
-				if(location.status == 'OK')
+				for(objects in json)
 				{
-					var location_lat = location.results[0].geometry.location.lat;
-					var location_long = location.results[0].geometry.location.lng;
+					branditem = json[objects];	
 
-					var location = new google.maps.LatLng(location_lat, location_long);
+					//console.log(branditem);
 
-					mapController.gmap.setZoom(13);
-					mapController.gmap.setCenter(location);
-    				
+					mapController.marker = new google.maps.Marker({
+				      position: new google.maps.LatLng(branditem.lat, branditem.long),
+				      map: mapController.gmap,
+				      animation: google.maps.Animation.DROP,
+				      icon : "/resources/img/icons/phones/" + branditem.brand + ".png" ,
+				      title : branditem.model + ' ' + branditem.brand + ' ' + branditem.description,
+				      url : branditem.phoneID
+				    });
 
+				
 
+					
+
+					
+
+					
+					// 	mapController.bounds.extend(mapController.marker.position);
+				
+					 mapController.phoneList.push(mapController.marker);
+					 mapController.markerClickedHandler('brand', mapController.marker);  
+
+					 console.log('logs', mapController.phoneList);
+
+					// 	console.log('markers', mapController.phonelist);
+					//console.log('phonelist', mapController.phoneList);
+					// mapController.addMarkers(marker);
 				}
-				else {
-					alert('Deze locatie werd niet gevonden');
-				}
-		}, 'json');
+
+				
+			}, 
+			'json'
+		).success(function () {
+
+				// mapController.gmap.fitBounds(mapController.bounds);
+				// console.log('succes', mapController.phoneList);
+				mapController.markerCluster = new MarkerClusterer(mapController.gmap, mapController.phoneList);
+
+				// console.log(mapController.bounds);
+				// console.log('full', mapController.bounds.isEmpty());
+				// console.log(mapController.markerCluster);
+		});   	
+	
+		
+		var place = mapController.autocomplete.getPlace();
+
+		console.log('place', place);
+	    // if (!place.geometry) {
+	    //   // Inform the user that the place was not found and return.
+	    //   alert('not found');
+	    // }
+
+	   
+	      mapController.gmap.setCenter(place.geometry.location);
+	      mapController.gmap.setZoom(13);  // Why 17? Because it looks good.
+	 
+
 	},
 	allCafes: function() {
 		searchController.getData('repaircafe', 'all');

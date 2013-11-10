@@ -51,6 +51,10 @@ var sidebarController = {
 				addPhoneController.startForm();
 			}
 
+			if(arg == 'location')
+			{
+				mapController.checkLocation();
+			}
 
 		})
 	},

@@ -6,13 +6,13 @@
 {{ 	Form::open(array('url' => 'search/location/current', 'id' => 'searchLocation')) }}
 	
 <p>
-	{{	Form::label('location', 'Location') }}
-	{{	Form::text('location')	}}
+	{{	Form::label('location-search', 'Location') }}
+	{{	Form::text('location-search')	}}
 </p>
 
-<p>
+<!-- <p>
 	{{Form::submit('Search', ['class' => 'btn no-icon round green margin'])}}
 </p>
-
+ -->
 {{ Form::close() }}
 <br><br>
