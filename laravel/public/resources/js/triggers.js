@@ -69,9 +69,8 @@ $(function() {
 
 	$(".repair-cafe-all").on("click", function(e) {
 		//modalController.create()
-
 		sidebarController.hide();
-
+		masterController.mobileNavigation();
 		searchController.allCafes();
 	})
 
