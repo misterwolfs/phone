@@ -181,40 +181,46 @@ var searchController = {
 				// console.log(mapController.bounds);
 				// console.log('full', mapController.bounds.isEmpty());
 				// console.log(mapController.markerCluster);
+
+					var place = mapController.autocomplete.getPlace();
+
+				console.log('place', place);
+			    // if (!place.geometry) {
+			    //   // Inform the user that the place was not found and return.
+			    //   alert('not found');
+			    // }
+
+			   
+			      mapController.gmap.setCenter(place.geometry.location);
+			     
+			     var zoom = 0;
+
+			      if(place.types[0] == 'country')
+			      {
+						zoom = 6;
+			      }
+			      else if(place.types[0] == 'route')
+			      {
+						zoom = 17;
+			      }
+			      else if(place.types[0] == 'locality')
+			      {
+			      		zoom = 13;
+			      }
+
+			      mapController.gmap.setZoom(zoom); 
+
+			      console.log('searchLocation', mapController.phoneList);
 		});   	
 	
 		
-		var place = mapController.autocomplete.getPlace();
-
-		console.log('place', place);
-	    // if (!place.geometry) {
-	    //   // Inform the user that the place was not found and return.
-	    //   alert('not found');
-	    // }
-
-	   
-	      mapController.gmap.setCenter(place.geometry.location);
-	     
-	     var zoom = 0;
-
-	      if(place.types[0] == 'country')
-	      {
-				zoom = 6;
-	      }
-	      else if(place.types[0] == 'route')
-	      {
-				zoom = 17;
-	      }
-	      else if(place.types[0] == 'locality')
-	      {
-	      		zoom = 13;
-	      }
-
-	      mapController.gmap.setZoom(zoom); 
+	
 	 
 
 	},
 	allCafes: function() {
+
+		// console.log('allCafes', mapController.phoneList);
 		// mapController.removeMarkers();
 		searchController.getData('repaircafe', 'all');
 	},

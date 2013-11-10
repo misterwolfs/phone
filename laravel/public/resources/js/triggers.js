@@ -118,9 +118,9 @@ $(function() {
 	$("body").delegate('#searchLocation', "submit", function(e) {
 		e.preventDefault();
 
-		searchController.searchLocation($(this));
+		//searchController.searchLocation();
 
-		return false;
+		//return false;
 	});
 
 
