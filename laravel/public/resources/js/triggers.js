@@ -20,6 +20,9 @@ $(function() {
 		searchController.all();
 	})
 
+	$('body').delegate(".open-modal", "click", function() {
+		modalController.trigger($(this).parent().attr("id"));
+	})
 
 
 	/** Sidebar **/
@@ -35,8 +38,6 @@ $(function() {
 
 	/** Navivation **/
 	$(".open-sidebar").on("click", function(e) {
-
-
 		var id = $(this).parent().attr("id");
 		addPhoneController.reset();
 
