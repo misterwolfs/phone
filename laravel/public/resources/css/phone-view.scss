@@ -69,5 +69,15 @@ $twitter-blue: #00acec;
 			width: 50%;
 		}
 
+		.one-column {
+			tr {
+				td:first-child {
+					font-family: $proximaBold;
+					width: 40%;
+					vertical-align: top;
+				}
+			}	
+		}
+
 	}
 }
