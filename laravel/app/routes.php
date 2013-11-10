@@ -86,7 +86,7 @@ Route::group(array('prefix' => 'search'), function() {
 	});
 
 	Route::group(array('prefix' => 'location'), function() {
-
+		Route::get('/', 'SearchController@byLocation');
 	});
 
 	Route::group(array('prefix' => 'advanced'), function() {
@@ -122,6 +122,10 @@ Route::get('viewall', function() {
 
 Route::get('advanced', function() {
 	return Redirect::to('search/advanced');
+});
+
+Route::get('location', function() {
+	return Redirect::to('search/location');
 });
 
 

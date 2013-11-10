@@ -31,15 +31,21 @@ $(function() {
 		mapController.zoom(new google.maps.LatLng($("input[name=lat]").val(),$("input[name=long]").val()));
 	});
 
+
+
 	/** Navivation **/
 	$(".open-sidebar").on("click", function(e) {
+
 
 		var id = $(this).parent().attr("id");
 		addPhoneController.reset();
 
 		if(id == "addphone") {
 			addPhoneController.initialize();
-		} else {
+		} 
+
+		else {
+			console.log('else', id);
 			addPhoneController.reset();
 			sidebarController.trigger(id);
 		}
@@ -49,10 +55,9 @@ $(function() {
 	});
 
 	$(".view-all").on("click", function(e) {
-		masterController.mobileNavigation();
-		masterController.reset();
-		searchController.all();
+		modalController.create()
 	})
+
 
 	$("body").delegate(".brands li", "click", function() {
 		brand = $(this).text();
@@ -93,9 +98,14 @@ $(function() {
 
 		searchController.getAdvancedSearch($(this))
 
-		// $.post('search/advanced/get', $(this).serialize(), function($data) {
-		// 	searchController.getAdvancedSearch($data)
-		// }, 'json');
+		return false;
+	});
+
+
+	$("body").delegate('#searchLocation', "submit", function(e) {
+		e.preventDefault();
+
+		searchController.searchLocation($(this))
 
 		return false;
 	});

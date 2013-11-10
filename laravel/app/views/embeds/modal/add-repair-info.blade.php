@@ -3,3 +3,4 @@
 <p>The location can be your house, a public area or maybe your school.</p>
 <p class="bold">When you're ready: press the button in the top right corner ! </p>
 <button id="add-repair-location" class="btn icon round green marker margin">Place your marker !</button>
+

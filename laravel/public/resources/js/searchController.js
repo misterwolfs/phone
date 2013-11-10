@@ -106,6 +106,9 @@ var searchController = {
 		});
 
 		
+	},
+	searchByLocation: function() {
+		modalController.trigger("location-search");
 	}
 }
 

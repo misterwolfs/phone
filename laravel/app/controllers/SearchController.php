@@ -128,6 +128,13 @@ class SearchController extends BaseController {
 		
 	}
 
+	public function byLocation() {
+
+		
+
+		return View::make('embeds/location');
+	}
+
 
 
 }

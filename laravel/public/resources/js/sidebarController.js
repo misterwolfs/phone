@@ -50,6 +50,8 @@ var sidebarController = {
 				$('#long').val(mapController.markerByUser.position.ob);
 				addPhoneController.startForm();
 			}
+
+
 		})
 	},
 	hide: function() {
