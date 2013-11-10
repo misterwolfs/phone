@@ -14,5 +14,7 @@ class Phone extends Eloquent {
         return $this->belongsToMany('User', 'users_has_phones', 'users_has_phonesID', 'userID', 'phoneID');
     }
 
- 
+ 	public function images() {
+ 		return $this->belongsToMany('Images', 'phones_has_images', 'phones_has_imagesID', 'imageID', 'phoneID');
+ 	}
 }

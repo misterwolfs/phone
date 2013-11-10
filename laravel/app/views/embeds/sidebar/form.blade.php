@@ -3,7 +3,7 @@
 
 <h4>Add a phone</h4>
 
-{{ 	Form::open(array('url' => 'addphone', 'id' => 'addPhone')) }}
+{{ 	Form::open(array('url' => 'addphone', 'id' => 'addPhone', 'enctype' => 'multipart/form-data')) }}
 <div id="step1" class="step">
 	<div class="category">Step 1: The phone</div>
 	<p>
@@ -54,6 +54,11 @@
 	<p>
 		{{ Form::label('description', 'Description') }} <br />
 		{{ Form::textarea('description') }} 
+	</p>
+
+	<p>
+		{{ Form::label('image', 'Image') }} <br />
+		{{ Form::file('image') }} 
 	</p>
 		
 		{{ Form::hidden('lat', ' ', array('id' => 'lat')) }}

@@ -14,7 +14,6 @@ class CreateImagesTable extends Migration {
 		Schema::create('images', function($table) {
 
 			$table->increments('imageID');
-			$table->string('url');
 			$table->string('name');
 			$table->timestamps();
 

@@ -2,6 +2,7 @@
 
 <div id="phone-view">
 	<div class="image-holder">
+		{{	HTML::image('storage/uploaded/' . $name) }}
 		<img src="http://placehold.it/110x110">
 		<img src="http://placehold.it/110x110">
 		<img src="http://placehold.it/110x110">
