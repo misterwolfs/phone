@@ -44,9 +44,18 @@ var mapController = {
         mapController.drawingManager.setMap(mapController.gmap);
 
     },
-    markerClickedHandler: function(marker) {
+    markerClickedHandler: function(type, marker) {
+        console.log('clicked', type);
         google.maps.event.addListener(marker, 'click', function() {
-            sidebarController.trigger('phone/' + this.url);
+            switch(type)
+            {
+                case 'brand' :
+                    sidebarController.trigger('phone/' + this.url);
+                    break;
+                case 'repaircafe' :
+                    sidebarController.trigger('search/repaircafe/' + this.url);
+                    break;
+            }
         });     
     },	    
     zoom: function(position) {

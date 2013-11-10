@@ -76,9 +76,9 @@ class SearchController extends BaseController {
 	}
 
 	public function showCafe($cafeID) {
-		$cafes = Repaircafe::where('cafeID', '=', $cafeID)->get(array('lat', 'long', 'cafeID'));
+		$cafes = Repaircafe::where('cafeID', '=', $cafeID)->first();
 
-		return $cafes->tojson();
+		return View::make('embeds/sidebar/repair-cafe', $cafes);
 	}
 
 	public function showAdvancedForm() {
@@ -129,9 +129,6 @@ class SearchController extends BaseController {
 	}
 
 	public function byLocation() {
-
-		
-
 		return View::make('embeds/location');
 	}
 

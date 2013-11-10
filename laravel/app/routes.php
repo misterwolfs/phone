@@ -94,16 +94,18 @@ Route::group(array('prefix' => 'search'), function() {
 
 		Route::post('/get', 'SearchController@getAdvancedSearch');
 	});
+
+	Route::group(array('prefix' => 'repaircafe'), function() {
+
+		Route::get('/all', 'SearchController@allCafes');
+
+		Route::get('{cafe}', 'SearchController@showCafe');
+
+	});
 });
 
 
-Route::group(array('prefix' => 'repaircafe'), function() {
 
-	Route::get('/', 'SearchController@allCafes');
-
-	Route::get('{cafe}', 'SearchController@showCafe');
-
-});
 
 
 /** REDIRECTS **/

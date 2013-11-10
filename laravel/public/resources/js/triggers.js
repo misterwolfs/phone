@@ -55,7 +55,19 @@ $(function() {
 	});
 
 	$(".view-all").on("click", function(e) {
-		modalController.create()
+		//modalController.create()
+
+		sidebarController.hide();
+
+		searchController.all();
+	})
+
+	$(".repair-cafe-all").on("click", function(e) {
+		//modalController.create()
+
+		sidebarController.hide();
+
+		searchController.allCafes();
 	})
 
 
@@ -96,7 +108,7 @@ $(function() {
 	$("body").delegate('#searchPhone', "submit", function(e) {
 		e.preventDefault();
 
-		searchController.getAdvancedSearch($(this))
+		searchController.getAdvancedSearch($(this));
 
 		return false;
 	});
@@ -105,7 +117,7 @@ $(function() {
 	$("body").delegate('#searchLocation', "submit", function(e) {
 		e.preventDefault();
 
-		searchController.searchLocation($(this))
+		searchController.searchLocation($(this));
 
 		return false;
 	});

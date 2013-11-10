@@ -1,17 +1,17 @@
 var searchController = {
 	byBrand: function(brand) {
 		console.log('by brand new');
-		searchController.getPhones(brand);		
+		searchController.getData('brand', brand);		
 	},
 	all: function() {
-		searchController.getPhones('all');
+		searchController.getData('brand', 'all');
 	},
-	getPhones: function(brand) {
-		console.log('getphones');
+	getData: function($type, $item) {
+		// console.log('getphones');
 
 		mapController.removeMarkers();
 
-		$.get('search/brand/'+brand, 
+		$.get('search/' + $type + '/'+ $item, 
 			function(json)
 			{	
 
@@ -23,22 +23,35 @@ var searchController = {
 
 					//console.log(branditem);
 
-					mapController.marker = new google.maps.Marker({
-				      position: new google.maps.LatLng(branditem.lat, branditem.long),
-				      map: mapController.gmap,
-				      animation: google.maps.Animation.DROP,
-				      icon: "/resources/img/icons/phones/" + branditem.brand + ".png",
-				      info: branditem.description,
-				      title: branditem.model + ' ' + branditem.brand + ' ' + branditem.description,
-				      url : branditem.phoneID
-				    });
+					if ($type == 'brand')
+					{	
+						mapController.marker = new google.maps.Marker({
+					      position: new google.maps.LatLng(branditem.lat, branditem.long),
+					      map: mapController.gmap,
+					      animation: google.maps.Animation.DROP,
+					      icon : "/resources/img/icons/phones/" + branditem.brand + ".png" ,
+					      title : branditem.model + ' ' + branditem.brand + ' ' + branditem.description,
+					      url : branditem.phoneID
+					    });
 
-				  //  console.log('marker', mapController.marker);
+					}
+
+					if ($type == 'repaircafe')
+					{
+						mapController.marker = new google.maps.Marker({
+					      position: new google.maps.LatLng(branditem.lat, branditem.long),
+					      map: mapController.gmap,
+					      animation: google.maps.Animation.DROP,
+					      url : branditem.cafeID
+					    });
+					};
+
+					
 
 					 
 					mapController.bounds.extend(mapController.marker.position);
 					mapController.phoneList.push(mapController.marker);
-					mapController.markerClickedHandler(mapController.marker);  
+					mapController.markerClickedHandler($type, mapController.marker);  
 
 					//console.log('phonelist', mapController.phoneList);
 				// mapController.addMarkers(marker);
@@ -107,8 +120,36 @@ var searchController = {
 
 		
 	},
-	searchByLocation: function() {
-		modalController.trigger("location-search");
-	}
+	searchLocation: function($form) {
+		 var location = $form.find('#location').val();
+
+		
+
+		$.get('http://maps.googleapis.com/maps/api/geocode/json?address='+location+'&sensor=true', function(location) {
+				console.log(location);
+
+				sidebarController.hide();
+
+				if(location.status == 'OK')
+				{
+					var location_lat = location.results[0].geometry.location.lat;
+					var location_long = location.results[0].geometry.location.lng;
+
+					var location = new google.maps.LatLng(location_lat, location_long);
+
+					mapController.gmap.setZoom(13);
+					mapController.gmap.setCenter(location);
+    				
+
+
+				}
+				else {
+					alert('Deze locatie werd niet gevonden');
+				}
+		}, 'json');
+	},
+	allCafes: function() {
+		searchController.getData('repaircafe', 'all');
+	},
 }
 
