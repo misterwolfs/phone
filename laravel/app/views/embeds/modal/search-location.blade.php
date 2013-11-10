@@ -6,11 +6,4 @@
 	{{	Form::label('location-search', 'Location') }} <br>
 	{{	Form::text('location-search')	}}
 </p>
-
-<!-- <p>
-	{{Form::submit('Search', ['class' => 'btn no-icon round green margin'])}}
-</p>
- -->
- <button class="btn no-icon round green margin">Search</button>
 {{ Form::close() }}
-<br><br>

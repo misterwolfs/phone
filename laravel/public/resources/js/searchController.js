@@ -125,7 +125,7 @@ var searchController = {
 	},
 	searchLocation: function() {
 		
-		sidebarController.hide();
+		modalController.hide();
 
 		mapController.removeMarkers();
 		

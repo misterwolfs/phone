@@ -37,7 +37,12 @@ var modalController = {
 
 		$.get("embeds/modal/"+arg, function(data){
 			$(".modal-window .content").html(data);
-		})				
+		}).success(function(){
+			if(arg == 'search-location')
+			{
+				mapController.checkLocation();
+			}
+		})			
 
 		$("body").append(modal);
 

@@ -50,12 +50,6 @@ var sidebarController = {
 				$('#long').val(mapController.markerByUser.position.ob);
 				addPhoneController.startForm();
 			}
-
-			if(arg == 'location')
-			{
-				mapController.checkLocation();
-			}
-
 		})
 	},
 	hide: function() {
