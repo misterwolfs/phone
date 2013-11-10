@@ -61,8 +61,6 @@ class SearchController extends BaseController {
 		// 	'phoneID' => $phones['0']['phoneID'], 
 		// 	'model' => 'test'
 		// );
-		
-		// print_r($phonessss->toJSON());
 
 		return $phones->tojson();
 		
@@ -81,6 +79,53 @@ class SearchController extends BaseController {
 		$cafes = Repaircafe::where('cafeID', '=', $cafeID)->get(array('lat', 'long', 'cafeID'));
 
 		return $cafes->tojson();
+	}
+
+	public function showAdvancedForm() {
+
+		$data = FormController::createDropdown();
+
+		$data['brands'] =array('All Brands'=>'All brands')+$data['brands']; 
+		$data['state'] =array('All States'=>'All States')+$data['state']; 
+		$data['usage'] =array('All Usages'=>'All Usages')+$data['usage']; 
+
+	
+		return View::make('embeds/advanced', $data);
+
+	}
+
+	public function getAdvancedSearch() {
+		
+		// var_dump(Input::get());
+
+		$price_min 		= Input::get('min');
+		$price_max 		= Input::get('max');
+		$brand 			= Input::get('brand');
+		$color			= Input::get('color');
+		$year 			= Input::get('year');
+		$usage 			= Input::get('usage');
+		$state 			= Input::get('state');
+
+		if($brand == 'All Brands')
+			$brand = '*';
+
+		if($state == 'All States')
+			$state = '*';
+
+		if($usage == 'All Usages')
+			$usage = '*';
+
+
+		$phones = Phone::whereBetween('price',	array($price_min, $price_max))
+					  ->orWhere('brand', 	'=', 	$brand)
+					  ->orWhere('color', 	'=', 	$color)
+					  ->orWhere('year',	'=', 	$year)
+					  ->orWhere('usage',	'=',	$usage)
+					  ->orWhere('state',	'=',	$state)
+					  ->get();
+
+		return $phones->tojson();
+		
 	}
 
 

@@ -37,7 +37,7 @@
 						<ul class="subnav">
 							<li id="brand"><a class="open-sidebar" href="#bybrand">By brand</a></li>
 							<li id="location"><a class="open-sidebar" href="#bylocation">By location</a></li>
-							<li id="advanded"><a class="open-sidebar" href="#advanced-search">Advanded search</a></li>
+							<li id="advanced"><a class="open-sidebar" href="#advanced-search">Advanded search</a></li>
 							<li id="viewall"><a class="view-all" href="#view-all">View all</a></li>
 						</ul>
 					</li>

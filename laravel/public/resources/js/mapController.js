@@ -70,7 +70,7 @@ var mapController = {
 
 google.maps.event.addListener(mapController.drawingManager, 'markercomplete', function(marker) {
     marker.setOptions({
-        draggable: true,
+        draggable: false,
     });
 
     console.log('marker', marker.position);

@@ -88,6 +88,12 @@ Route::group(array('prefix' => 'search'), function() {
 	Route::group(array('prefix' => 'location'), function() {
 
 	});
+
+	Route::group(array('prefix' => 'advanced'), function() {
+		Route::get('/', 'SearchController@showAdvancedForm');
+
+		Route::post('/get', 'SearchController@getAdvancedSearch');
+	});
 });
 
 
@@ -112,6 +118,10 @@ Route::get('brand', function() {
 
 Route::get('viewall', function() {
 	return Redirect::to('search/brand/all');
+});
+
+Route::get('advanced', function() {
+	return Redirect::to('search/advanced');
 });
 
 

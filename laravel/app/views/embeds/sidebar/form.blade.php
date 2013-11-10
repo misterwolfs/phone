@@ -24,8 +24,8 @@
 	</p>
 
 	<p>
-		{{ Form::label('year', 'Year') }} <br />
-		{{ Form::text('year') }} 
+		{{ Form::label('year', 'Year') }} <br />		
+		{{ Form::select('year', $allyears) }}
 	</p>
 	<button class="btn round green no-icon shadow check-step">Next</button>
 </div>
@@ -33,13 +33,13 @@
 <div id="step2" class="step hidden">
 	<div class="category spacer">Step 2: Condition</div>
 	<p>
-		{{ Form::label('usage', 'Usage') }} <br />
-		{{ Form::text('usage') }} 
+		{{ Form::label('usage', 'Usage') }} <br />		
+		{{ Form::select('usage', $usage) }}
 	</p>
 
 	<p>
-		{{ Form::label('state', 'State') }} <br />
-		{{ Form::text('state') }} 
+		{{ Form::label('state', 'State') }} <br />		
+		{{ Form::select('state', $state) }}
 	</p>
 	<button class="btn round green no-icon shadow check-step">Next</button>
 </div>
@@ -48,7 +48,7 @@
 	<div class="category spacer">Step 3: Price and details</div>
 	<p>
 		{{ Form::label('price', 'Price') }} <br />
-		<input name="price" type="number" step="any" />
+		<input name="price" type="number" step="any" min="0" />
 	</p>
 
 	<p>

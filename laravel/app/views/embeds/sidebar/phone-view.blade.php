@@ -12,7 +12,7 @@
 		<table class="two-column-float">
 			<tr>
 				<td>Name:</td>
-				<td>Nick</td>
+				<td>{{ $firstname . ' ' . $lastname }}</td>
 			</tr>
 		</table>
 		<table class="two-column-float">
@@ -62,8 +62,8 @@
 	</div>
 
 	<div class="wrapper-button">
-		<button onclick="window.location.href='http://www.wherever.com'" class="btn round blue icon facebook shadow">Send message</button>
-		<button onclick="window.location.href='http://www.wherever.com'" class="btn round green icon mail right shadow">Send mail</button>
+		<button onclick="window.location.href='{{ $facebook }}'" class="btn round blue icon facebook shadow">Send message</button>
+		<button onclick="window.location.href='{{ $email }}'" class="btn round green icon mail right shadow">Send mail</button>
 	</div>
 
 	<input type="hidden" name="lat" value="{{ $lat }}">

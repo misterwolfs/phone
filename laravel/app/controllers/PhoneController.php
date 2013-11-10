@@ -17,6 +17,7 @@ class PhoneController extends BaseController {
 
 	public function showForm()
 	{
+		
 		return View::make('embeds/sidebar/form');
 	}	
 
@@ -70,7 +71,12 @@ class PhoneController extends BaseController {
 
 	public function getInfo($id) {
 
-		$phones = Phone::where('phoneID', '=', $id)->first();
+		$phones = Phone::where('phones.phoneID', '=', $id)
+					->join('users_has_phones', 'phones.phoneID', '=', 'users_has_phones.phoneID')
+		            ->join('users', 'users.userID', '=', 'users_has_phones.userID')
+		            ->first();
+
+		$phones = $phones->toArray();
 
 		return View::make('embeds/sidebar/phone-view', $phones);
 	}

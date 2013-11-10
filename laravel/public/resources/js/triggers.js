@@ -16,6 +16,12 @@ $(function() {
 		modalController.hide();
 	});
 
+	$('body').delegate(".phone-added", "click", function() {
+		searchController.all();
+	})
+
+
+
 	/** Sidebar **/
 	$("body").delegate(".close-sidebar", "click", function() {
 		sidebarController.hide();
@@ -81,6 +87,20 @@ $(function() {
 
 		return false; 
 	});
+
+	$("body").delegate('#searchPhone', "submit", function(e) {
+		e.preventDefault();
+
+		searchController.getAdvancedSearch($(this))
+
+		// $.post('search/advanced/get', $(this).serialize(), function($data) {
+		// 	searchController.getAdvancedSearch($data)
+		// }, 'json');
+
+		return false;
+	});
+
+
 
 	/** Facebook login **/
 	$('#login').on('click', function() {
