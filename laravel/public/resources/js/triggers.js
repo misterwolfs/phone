@@ -59,7 +59,7 @@ $(function() {
 		//modalController.create()
 
 		sidebarController.hide();
-
+		masterController.mobileNavigation();
 		searchController.all();
 	})
 
