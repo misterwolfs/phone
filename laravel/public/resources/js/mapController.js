@@ -47,7 +47,7 @@ var mapController = {
 
     },
     markerClickedHandler: function(type, marker) {
-        console.log('clicked', type);
+        // console.log('clicked', type);
         google.maps.event.addListener(marker, 'click', function() {
             switch(type)
             {

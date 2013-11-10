@@ -9,7 +9,7 @@ var searchController = {
 	getData: function($type, $item) {
 		// console.log('getphones');
 
-	
+		mapController.removeMarkers();
 
 		$.get('search/' + $type + '/'+ $item, 
 			function(json)
@@ -162,7 +162,7 @@ var searchController = {
 					 mapController.phoneList.push(mapController.marker);
 					 mapController.markerClickedHandler('brand', mapController.marker);  
 
-					 console.log('logs', mapController.phoneList);
+					 // console.log('logs', mapController.phoneList);
 
 					// 	console.log('markers', mapController.phonelist);
 					//console.log('phonelist', mapController.phoneList);
@@ -194,11 +194,28 @@ var searchController = {
 
 	   
 	      mapController.gmap.setCenter(place.geometry.location);
-	      mapController.gmap.setZoom(13);  // Why 17? Because it looks good.
+	     
+	     var zoom = 0;
+
+	      if(place.types[0] == 'country')
+	      {
+				zoom = 6;
+	      }
+	      else if(place.types[0] == 'route')
+	      {
+				zoom = 17;
+	      }
+	      else if(place.types[0] == 'locality')
+	      {
+	      		zoom = 13;
+	      }
+
+	      mapController.gmap.setZoom(zoom); 
 	 
 
 	},
 	allCafes: function() {
+		// mapController.removeMarkers();
 		searchController.getData('repaircafe', 'all');
 	},
 }
