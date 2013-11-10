@@ -20,6 +20,10 @@ $(function() {
 		searchController.all();
 	})
 
+	$('body').delegate(".try-again-location", "click", function() {
+		modalController.trigger('search-location');
+	})
+
 	$('body').delegate(".open-modal", "click", function() {
 		modalController.trigger($(this).parent().attr("id"));
 	})
