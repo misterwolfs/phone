@@ -1,0 +1,30 @@
+/** FONTS **/
+$proxima: "ProximaNova";
+$proximaBold: "ProximaNovaBold";
+
+/** COLORS **/
+$dark-grey: #252525;
+$light-grey: #373737;
+$font-color: #fafeff;
+$green: #24ac5d;
+$facebook-blue: #36538f;
+$twitter-blue: #00acec;
+
+input:not(.btn), textarea {
+	border: 2px solid #bdc3c7;
+	height: 26px;
+	border-radius: 5px;
+	line-height: 26px;
+	text-indent: 0.5em;
+	font-family: $proxima;
+	color: $dark-grey;
+	margin-top: 0.2em;
+	&:focus {
+		border-color: $green;
+		outline: 0;
+	}
+}
+
+textarea {
+	min-height: 150px;
+}
