@@ -83,7 +83,7 @@ class SearchController extends BaseController {
 		$users = User::where('is_repairder', '=', '1')
 					->join('repair_locations', 'users.userID', '=', 'repair_locations.userID')
 					->get();
-					
+
 		return $users->tojson();
 
 	}
@@ -91,9 +91,10 @@ class SearchController extends BaseController {
 	public function showRepairder($userID) {
 		$users = User::where('users.userID', '=', $userID)
 				->join('repair_locations', 'users.userID', '=', 'repair_locations.userID')
-				->get();
+				->first();
 
-		return $users->tojson();
+					
+		return View::make('embeds/sidebar/repairder', $users->toArray());
 	}
 
 
