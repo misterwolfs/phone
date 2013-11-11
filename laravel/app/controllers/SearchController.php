@@ -81,6 +81,7 @@ class SearchController extends BaseController {
 
 	public function allRepairders() {
 		$users = User::where('is_repairder', '=', '1')
+					->whereNull('repair_locations.deleted_at')
 					->join('repair_locations', 'users.userID', '=', 'repair_locations.userID')
 					->get();
 
@@ -90,10 +91,11 @@ class SearchController extends BaseController {
 
 	public function showRepairder($userID) {
 		$users = User::where('users.userID', '=', $userID)
+				->whereNull('repair_locations.deleted_at')
 				->join('repair_locations', 'users.userID', '=', 'repair_locations.userID')
 				->first();
 
-					
+						
 		return View::make('embeds/sidebar/repairder', $users->toArray());
 	}
 

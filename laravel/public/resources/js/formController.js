@@ -22,9 +22,9 @@ var formController = {
 		mapController.drawingManager.setDrawingMode(google.maps.drawing.OverlayType.MARKER);
 
 		var button = $("<button/>")
-						.attr("id", "ready-repair-location")
-						.attr("class", "btn icon shadow round green ready absolute bounceInDown animated")
-						.text("I'm ready !");
+					.attr("id", "ready-repair-location")
+					.attr("class", "btn icon shadow round green ready absolute bounceInDown animated")
+					.text("I'm ready !");
 
 		$("#main").append(button);
 	},
@@ -41,9 +41,12 @@ var formController = {
 			
 				if(formController.setLocation)
 				{
-
+					$('#lat').val(mapController.markerByUser.position.nb);
+					$('#long').val(mapController.markerByUser.position.ob);
 					console.log('checkbox', $('#repairder'));
 					$('input[name=repairder]').attr('checked', true);
+
+					$('#message').text("Okay! We've got your location. Don't forget to save!").show();
 
 				}	
 

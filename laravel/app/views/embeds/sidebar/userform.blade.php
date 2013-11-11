@@ -36,10 +36,10 @@
 	@if(count($repairder) > 0)
 		<p>You have already set your repair location.</p>
 	@else
-		<p><a id="repair-location" class="underline" href="#set-repair-location">Set repair location</a></p>
+		<p id='message'><a id="repair-location" class="underline" href="#set-repair-location">Set repair location</a></p>
 	@endif
 @else
-<p><a id="repair-location" class="underline hidden" href="#set-repair-location">Set repair location</a></p>
+<p id='message'><a id="repair-location" class="underline hidden" href="#set-repair-location">Set repair location</a></p>
 @endif
 
 	{{ Form::hidden('lat', ' ', array('id' => 'lat')) }}

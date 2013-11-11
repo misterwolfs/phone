@@ -7,14 +7,16 @@ $(function() {
 
 
     $('.parent').on('click', function() {
-    	mapController.markerByUser.setMap(null);
-    	mapController.drawingManager.setDrawingMode(null);
+    	resetMarkers();
     });
 
      $('.brand').on('click', function() {
-    	mapController.markerByUser.setMap(null);
-    	mapController.drawingManager.setDrawingMode(null);
+    	resetMarkers();
     })
+
+     $('.view-profile').on('click', function() {
+    	resetMarkers();
+       })
 
     /** Prevent anchors **/
     $("body").delegate("a:not(.open-menu, .close-menu)", "click", function(e) {
@@ -173,3 +175,10 @@ $(function() {
 	});
 
 })
+
+
+function resetMarkers() {
+	mapController.markerByUser.setMap(null);
+    mapController.drawingManager.setDrawingMode(null);
+   	mapController.removeMarkers(); 
+}
