@@ -38,13 +38,14 @@ var sidebarController = {
 		$.get(arg, function(data){
 			content.html(data);
 		}).success(function() {
+			sidebar.append(content);
+			$("#main").append(sidebar);
+
 			if(arg=='form') {
 				$('#lat').val(mapController.markerByUser.position.nb);
 				$('#long').val(mapController.markerByUser.position.ob);
 				addPhoneController.startForm();
 			}
-			sidebar.append(content);
-			$("#main").append(sidebar);
 
 			sidebarController.open = true;
 			sidebarController.currentOpen = arg;
