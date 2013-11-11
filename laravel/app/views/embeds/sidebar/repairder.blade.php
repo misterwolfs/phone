@@ -9,12 +9,12 @@
 
 	@if($email)
 	<div class="wrapper-button">
-		<button id="{{ $email }}" class="btn round green no-icon shadow new-window">Send Message</button>
+		<button id="mailto:{{ $email }}" class="btn round green icon mail shadow new-window">Send Message</button>
 	</div>
 	@endif
 	
 	<div class="wrapper-button">
-		<button id="{{ $facebook }}" class="btn round blue icon facebook shadow new-window new-window">Send message</button>
+		<button id="{{ $facebook }}" class="btn round blue icon  facebook shadow new-window new-window">Send message</button>
 	</div>
 
 
