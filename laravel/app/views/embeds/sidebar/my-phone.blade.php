@@ -4,7 +4,7 @@
 	
 	<div id="phone-view">
 	<div class="wrapper-phone">
-		<div class="category spacer">The phone</div>
+		<div class="category">The phone</div>
 		<table class="two-column-float">
 			<tr>
 				<td>Brand:</td>

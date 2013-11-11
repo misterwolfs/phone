@@ -10,7 +10,7 @@ $green: #24ac5d;
 $facebook-blue: #36538f;
 $twitter-blue: #00acec;
 
-input:not(.btn), textarea {
+input:not(.btn), textarea, select {
 	border: 2px solid #bdc3c7;
 	height: 26px;
 	border-radius: 5px;
@@ -19,12 +19,25 @@ input:not(.btn), textarea {
 	font-family: $proxima;
 	color: $dark-grey;
 	margin-top: 0.2em;
+	font-size: 0.9em;
+	width: 55%;
 	&:focus {
 		border-color: $green;
 		outline: 0;
+	}
+	&.extend {
+		width: 60%;
+	}
+}
+
+label {
+	font-family: $proximaBold;
+	&:after {
+		content: ':';
 	}
 }
 
 textarea {
 	min-height: 150px;
+	width: 100%;
 }

@@ -4,7 +4,7 @@
 	
 <p>
 	{{	Form::label('location-search', 'Location') }} <br>
-	{{	Form::text('location-search')	}}
+	{{	Form::text('location-search', null, array('class' => 'extend'))	}}
 </p>
 
 <!-- <p>

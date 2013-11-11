@@ -31,7 +31,7 @@
 </div>
 
 <div id="step2" class="step hidden">
-	<div class="category spacer">Step 2: Condition</div>
+	<div class="category">Step 2: Condition</div>
 	<p>
 		{{ Form::label('usage', 'Usage') }} <br />		
 		{{ Form::select('usage', $usage) }}
@@ -45,7 +45,7 @@
 </div>
 
 <div id="step3" class="step hidden">
-	<div class="category spacer">Step 3: Price and details</div>
+	<div class="category">Step 3: Price and details</div>
 	<p>
 		{{ Form::label('price', 'Price') }} <br />
 		<input name="price" type="number" step="any" min="0" />

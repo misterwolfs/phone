@@ -8,7 +8,7 @@
 	</div> -->
 
 	<div class="wrapper-phone">
-		<div class="category spacer">The seller</div>
+		<div class="category">The seller</div>
 		<table class="two-column-float">
 			<tr>
 				<td>Name:</td>
