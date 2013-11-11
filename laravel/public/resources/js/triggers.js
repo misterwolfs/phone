@@ -1,7 +1,7 @@
 $(function() {
 
 	/** PRODUCTION**/
-	// console.log = function(){};
+	console.log = function(){};
 
 	$('#login').on('click', function() {
 		window.location.href = mapController.base_url + "login/fb";
