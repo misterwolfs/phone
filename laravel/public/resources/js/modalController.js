@@ -40,10 +40,12 @@ var modalController = {
 		}).success(function(){
 			if(arg == 'search-location')
 			{
+				mapController.removeMarkers();
 				mapController.checkLocation('location-search');
 			}
 			if(arg == 'nearyou')
 			{
+				mapController.removeMarkers();
 				mapController.checkLocation('location-cafe-search');
 			}
 		})			
