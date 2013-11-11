@@ -31,13 +31,20 @@
 </p>
 <div class="category">Price between : </div>
 <p>
-	{{ Form::label('min', 'Min:') }} <br />
+	{{ Form::label('min', 'Min') }} <br />
 	<input name="min" type="number" step="any" min="0" value="0" />
 </p>
 <p>
-	{{ Form::label('max', 'Max:') }} <br />
+	{{ Form::label('max', 'Max') }} <br />
 	<input name="max" type="number" step="any" min="0" value="900" />
 
+</p>
+
+<br />
+
+<p>
+	{{ Form::label('flexible', 'Do you want a flexible search') }} <br />
+	{{ Form::checkbox('flexible', 'flexible') }}
 </p>
 
 <p>

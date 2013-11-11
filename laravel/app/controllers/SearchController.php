@@ -106,7 +106,8 @@ class SearchController extends BaseController {
 
 		$data = FormController::createDropdown();
 
-		$data['brands'] =array('All Brands'=>'All brands')+$data['brands']; 
+		$data['allyears'] =array('All Years'=>'All Years')+$data['allyears']; 
+		$data['brands'] =array('All Brands'=>'All Brands')+$data['brands']; 
 		$data['state'] =array('All States'=>'All States')+$data['state']; 
 		$data['usage'] =array('All Usages'=>'All Usages')+$data['usage']; 
 
@@ -119,32 +120,47 @@ class SearchController extends BaseController {
 		
 		// var_dump(Input::get());
 
-		$price_min 		= Input::get('min');
-		$price_max 		= Input::get('max');
+		$price_min 		= intval(Input::get('min'));
+		$price_max 		= intval(Input::get('max'));
 		$brand 			= Input::get('brand');
 		$color			= Input::get('color');
 		$year 			= Input::get('year');
 		$usage 			= Input::get('usage');
 		$state 			= Input::get('state');
+		$flexible 		= Input::get('flexible');
 
-		if($brand == 'All Brands')
-			$brand = '*';
+		
+		if($flexible)
+		{
+			$phones = Phone::whereBetween('price',	array($price_min, $price_max));
 
-		if($state == 'All States')
-			$state = '*';
+				if($color != '' ) 			{ 	$phones->orWhere('color', 	'=', 	$color); 	} 
+				if($brand != 'All Brands' ) { 	$phones->orWhere('brand', 	'=', 	$brand); 	} 
+				if($year  != 'All Years' ) 	{ 	$phones->orWhere('year', 	'=', 	$year); 	} 
+				if($usage != 'All Usages' ) { 	$phones->orWhere('usage', 	'=', 	$usage); 	} 
+				if($state != 'All States' ) { 	$phones->orWhere('state', 	'=', 	$state); 	} 
 
-		if($usage == 'All Usages')
-			$usage = '*';
+				$phones = $phones->get();
+
+			
+		}
+		else 
+		{
+			$phones = Phone::whereBetween('price',	array($price_min, $price_max));
+
+				if($color != '' ) 			{ 	$phones->where('color', 	'=', 	$color); 	} 
+				if($brand != 'All Brands' ) { 	$phones->where('brand', 	'=', 	$brand); 	} 
+				if($year  != 'All Years' ) 	{ 	$phones->where('year', 		'=', 	$year); 	} 
+				if($usage != 'All Usages' ) { 	$phones->where('usage', 	'=', 	$usage); 	} 
+				if($state != 'All States' ) { 	$phones->where('state', 	'=', 	$state); 	} 
+
+				$phones = $phones->get();
 
 
-		$phones = Phone::whereBetween('price',	array($price_min, $price_max))
-					  ->orWhere('brand', 	'=', 	$brand)
-					  ->orWhere('color', 	'=', 	$color)
-					  ->orWhere('year',	'=', 	$year)
-					  ->orWhere('usage',	'=',	$usage)
-					  ->orWhere('state',	'=',	$state)
-					  ->get();
+				
+		}
 
+		
 		return $phones->tojson();
 		
 	}
