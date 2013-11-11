@@ -66,7 +66,7 @@ class AddRepaircafes extends Migration {
 			'village' => 'Deurne',
 			'lat' => '51.2091683',
 			'long' => '4.4534356',
-			'website' => 'www.transitiedeurne.be/repaircafe',
+			'website' => 'http://www.transitiedeurne.be/repaircafe',
 			'created_at' => date('Y-m-d H:m:s'),
 			'updated_at' => date('Y-m-d H:m:s')
 		));
@@ -162,7 +162,7 @@ class AddRepaircafes extends Migration {
 			'village' => 'Ranst',
 			'lat' => '51.164399',
 			'long' => '4.5928043',
-			'website' => 'www.repaircaferanst.be',
+			'website' => 'http://www.repaircaferanst.be',
 			'created_at' => date('Y-m-d H:m:s'),
 			'updated_at' => date('Y-m-d H:m:s')
 		));

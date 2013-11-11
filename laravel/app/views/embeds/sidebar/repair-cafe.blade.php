@@ -23,8 +23,11 @@
 		</table>
 	</div>
 
+	@if($website)
 	<div class="wrapper-button">
+		
 		<button id="{{ $website }}" class="btn round green no-icon shadow new-window">Visit website</button>
 	</div>
+	@endif
 
 </div>

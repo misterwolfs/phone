@@ -16,12 +16,12 @@ class FacebookController extends BaseController {
 
 	public function facebookCallback() {
 		$code = Input::get('code');
-		    if (strlen($code) == 0) return Redirect::to('/')->with('message', 'There was an error communicating with Facebook');
+		    if (strlen($code) == 0) return Redirect::to('/')->with('message', 'error');
 		    
 		    $facebook = new Facebook(Config::get('facebook'));
 		    $uid = $facebook->getUser();
 		     
-		    if ($uid == 0) return Redirect::to('/')->with('message', 'There was an error');
+		    if ($uid == 0) return Redirect::to('/')->with('message', 'error');
 		     
 		    $me = $facebook->api('/me');
 

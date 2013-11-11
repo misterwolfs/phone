@@ -10,6 +10,11 @@ $green: #24ac5d;
 $facebook-blue: #36538f;
 $twitter-blue: #00acec;
 
+.facebookwarning {
+	margin : 20px;
+	margin-bottom: 40px;
+}
+
 @mixin boxShadow() {
 	-webkit-box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.1);
 	-moz-box-shadow:    0px 7px 9px rgba(0, 0, 0, 0.1);

@@ -62,7 +62,9 @@
 
 	<div class="wrapper-button">
 		<button id="{{ $facebook }}" class="btn round blue icon facebook shadow new-window new-window">Send message</button>
+		@if($email)
 		<button id="mailto:{{ $email }}" class="btn round green icon mail right shadow new-window">Send mail</button>
+		@endif
 	</div>
 
 	<input type="hidden" name="lat" value="{{ $lat }}">
