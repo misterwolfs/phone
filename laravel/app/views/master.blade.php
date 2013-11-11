@@ -105,7 +105,7 @@
 
 	<!--CDN scripts-->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpx1FOANjsAYRyGTXDYFGjSrwJ42R7-kA&libraries=drawing,places&sensor=false"></script>	
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpx1FOANjsAYRyGTXDYFGjSrwJ42R7-kA&amp;libraries=drawing,places&amp;sensor=false"></script>	
 
 	<!--LOCAL scripts-->
 
