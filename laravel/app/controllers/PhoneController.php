@@ -126,7 +126,7 @@ class PhoneController extends BaseController {
 		            // ->join('images', 'images.imageID', '=', 'phones_has_images.imageID')
 		            ->first();
 
-		// var_dump($phones->toArray());
+		
 		$phones = $phones->toArray();
 
 		return View::make('embeds/sidebar/phone-view', $phones);

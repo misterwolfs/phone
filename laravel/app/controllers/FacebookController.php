@@ -43,7 +43,7 @@ class FacebookController extends BaseController {
 		    		$user->email = "";
 		    	}
 		    	$user->photo = 'https://graph.facebook.com/'.$me['username'].'/picture?type=large';
-		    	
+		    	$user->facebook = $me['link'];
 
 		  
 
