@@ -120,6 +120,8 @@ class SearchController extends BaseController {
 
 		
 		$data = array_add($data, 'colors', $colorArray);
+		
+		$data['colors'] =array('All Colors'=>'All Colors')+$data['colors']; 
 		$data['allyears'] =array('All Years'=>'All Years')+$data['allyears']; 
 		$data['brands'] =array('All Brands'=>'All Brands')+$data['brands']; 
 		$data['state'] =array('All States'=>'All States')+$data['state']; 
@@ -148,9 +150,9 @@ class SearchController extends BaseController {
 		{
 			$phones = Phone::whereBetween('price',	array($price_min, $price_max));
 
-				if($color != '' ) 			{ 	$phones->orWhere('color', 	'=', 	$color); 	} 
+				if($color != 'All Colors' ) { 	$phones->orWhere('color', 	'=', 	$color); 	} 
 				if($brand != 'All Brands' ) { 	$phones->orWhere('brand', 	'=', 	$brand); 	} 
-				if($year  != 'All Years' ) 	{ 	$phones->orWhere('year', 	'=', 	$year); 	} 
+				if($year  != 'All Years'  ) { 	$phones->orWhere('year', 	'=', 	$year); 	} 
 				if($usage != 'All Usages' ) { 	$phones->orWhere('usage', 	'=', 	$usage); 	} 
 				if($state != 'All States' ) { 	$phones->orWhere('state', 	'=', 	$state); 	} 
 
@@ -162,9 +164,9 @@ class SearchController extends BaseController {
 		{
 			$phones = Phone::whereBetween('price',	array($price_min, $price_max));
 
-				if($color != '' ) 			{ 	$phones->where('color', 	'=', 	$color); 	} 
+				if($color != 'All Colors' ) { 	$phones->where('color', 	'=', 	$color); 	} 
 				if($brand != 'All Brands' ) { 	$phones->where('brand', 	'=', 	$brand); 	} 
-				if($year  != 'All Years' ) 	{ 	$phones->where('year', 		'=', 	$year); 	} 
+				if($year  != 'All Years'  ) { 	$phones->where('year', 		'=', 	$year); 	} 
 				if($usage != 'All Usages' ) { 	$phones->where('usage', 	'=', 	$usage); 	} 
 				if($state != 'All States' ) { 	$phones->where('state', 	'=', 	$state); 	} 
 

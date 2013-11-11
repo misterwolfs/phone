@@ -29,7 +29,7 @@ return array(
 	// $local = 'http://localhost';
 	// $online = 'http://misterwolfs.be/phinder/public/';
 
-	'url' => 'http://misterwolfs.be/phinder/public',
+	'url' => 'http://rephone.dev',
 
 	/*
 	|--------------------------------------------------------------------------

@@ -40,37 +40,6 @@ class PhoneController extends BaseController {
 	public function addPhone()
 	{	
 		$phone =  new Phone;
-		// $images = new Images;
-
-		// $file = Input::file('image');
-		
-		
-		
-
-		// $type = $file->getMimeType();
-		// $size = $file->getSize();
-		// $error_message = 'Something went wrong while uploading your file, please try again';
-
-		
-		// if($type == 'image/jpg' || $type == 'image/png' || $type == 'image/gif' || $type == 'image/jpeg') 
-		// {
-		// 	if($size < 4000000)
-		// 	{
-		// 		$filename  = date("Ymd") . '_' . date("His")  . '_' . $file->getClientOriginalName();
-		// 		$image = Image::make($file->getRealPath())->resize(110, 110)->save('storage/uploaded/' . $filename);
-
-				
-
-		// 		$images->name = $filename;
-		// 		$images->save();
-		// 	}
-		// 	else {
-		// 		echo $error_message;
-		// 	}
-		// }
-		// else {
-		// 	echo $error_message;
-		// }
 
 
 		$phone::create(array(
@@ -145,16 +114,30 @@ class PhoneController extends BaseController {
 		            ->get();
 		
 		
+		$myphone = $myphone->toArray();            
 
-		if($myphone != NULL)
+	
+
+		if($myphone)
 		{
-			$myphone = $myphone->toArray();
+			
+			$myphone = $myphone;
 
 			$data = array_add($data, 'phones', $myphone);
-
-			return View::make('embeds/sidebar/my-phone', $data);
+			$data = array_add($data, 'phone', ''); 
+				
 		}
+		else {
 
+			
+			$myphone = 'no-phone';
+
+			$data = array_add($data, 'phone', $myphone);  
+		}
+	
+
+
+		return View::make('embeds/sidebar/my-phone', $data);
 		
 	}
 

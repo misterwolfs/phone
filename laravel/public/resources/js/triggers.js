@@ -136,6 +136,8 @@ $(function() {
 		$.post('phone/deletemyphone', function($data) {
 			console.log('removed', $data);
 			$('.phone' + $data).fadeOut('slow');
+
+			
 		});
 	});
 

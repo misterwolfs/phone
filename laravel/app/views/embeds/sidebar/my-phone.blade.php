@@ -1,3 +1,4 @@
+@if($phone != 'no-phone')
 @foreach($phones as $phone)
 	<div class="phone{{$phone['phoneID'] }}">
 	<h4>{{ $phone['model'] }}</h4>
@@ -53,4 +54,6 @@
 </div>
 <br /> <br />
 @endforeach
-
+@else
+<p>You haven't added any smartphone.</p>
+@endif
