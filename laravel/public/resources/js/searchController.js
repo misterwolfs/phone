@@ -43,17 +43,7 @@ var searchController = {
 					if ($type == 'brand')
 					{	
 
-						  // var image = {
-						  //   url: "/resources/img/icons/phones/" + branditem.brand + ".png", 
-						  //   // This marker is 20 pixels wide by 32 pixels tall.
-						  //   size: new google.maps.Size(42, 79),
-						  //   // The origin for this image is 0,0.
-						  //   origin: new google.maps.Point(0,0),
-						  //   // The anchor for this image is the base of the flagpole at 0,32.
-						  //   anchor: new google.maps.Point(0, 0),
-						  //  };
-
-						  var myIcon = new google.maps.MarkerImage("/resources/img/icons/phones/" + branditem.brand + ".png",  null, null, null, new google.maps.Size(42,79));
+						var myIcon = new google.maps.MarkerImage("/resources/img/icons/phones/" + branditem.brand + ".png",  null, null, null, new google.maps.Size(42,79));
 
 						mapController.marker = new google.maps.Marker({
 					      position: new google.maps.LatLng(branditem.lat, branditem.long),
@@ -135,9 +125,12 @@ var searchController = {
 				      {
 							zoom = 17;
 				      }
-				      else if(place.types[0] == 'locality')
+				      else if(place.types[0] == 'locality' || place.types[0] == 'sublocality')
 				      {
 				      		zoom = 13;
+				      }
+				      else {
+				      		zoom = 15;
 				      }
 
 				      mapController.gmap.setZoom(zoom); 

@@ -128,13 +128,24 @@ $(function() {
 		searchController.getAdvancedSearch($(this));
 
 
-		return false;
+		//return false;
 	});
 
+	
 
 	$("body").delegate('#searchLocation', "submit", function(e) {
 		e.preventDefault();
 
+		
+		//searchController.searchLocation();
+
+		//return false;
+	});
+
+	$("body").delegate('#searchLocationCafe', "submit", function(e) {
+		e.preventDefault();
+
+		
 		//searchController.searchLocation();
 
 		//return false;
