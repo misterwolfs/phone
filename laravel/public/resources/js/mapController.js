@@ -1,4 +1,5 @@
 var mapController = {
+    base_url: document.URL,
 	gmap: null,
 	antwerpLat: 51.214263,
 	antwerpLng: 4.41799,
@@ -47,6 +48,7 @@ var mapController = {
 
     },
     markerClickedHandler: function(type, marker) {
+        console.log('base_url', mapController.base_url);
         // console.log('clicked', type);
         google.maps.event.addListener(marker, 'click', function() {
             switch(type)
