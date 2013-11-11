@@ -31,25 +31,24 @@ var sidebarController = {
 		var close = $("<div/>")
 							.addClass("close-sidebar");
 
-			var content = $("<div/>")
-							.addClass("content");
+		var content = $("<div/>")
+						.addClass("content");
 
-			var sidebar = $("<div/>")
-							.addClass("sidebar sidebarIn animated")
-							.attr("id", arg)
-							.append(close)
-							.append(content);
-
-			$("#main").append(sidebar);
+		var sidebar = $("<div/>")
+						.addClass("sidebar sidebarIn animated")
+						.attr("id", arg)
+						.append(close);
 
 		$.get(arg, function(data){
-			$(".content").html(data);
+			content.html(data);
 		}).success(function() {
 			if(arg=='form') {
 				$('#lat').val(mapController.markerByUser.position.nb);
 				$('#long').val(mapController.markerByUser.position.ob);
 				addPhoneController.startForm();
 			}
+			sidebar.append(content);
+			$("#main").append(sidebar);
 		})
 	},
 	hide: function() {

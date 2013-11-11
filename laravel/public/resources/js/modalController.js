@@ -32,11 +32,10 @@ var modalController = {
 		var modal = $("<div/>")
 						.addClass("modal-window bounceInDown animated")
 						.attr("id", arg)
-						.append(close)
-						.append(content);
+						.append(close);
 
 		$.get("embeds/modal/"+arg, function(data){
-			$(".modal-window .content").html(data);
+			content.html(data);
 		}).success(function(){
 			if(arg == 'search-location')
 			{
@@ -48,9 +47,9 @@ var modalController = {
 				mapController.removeMarkers();
 				mapController.checkLocation('location-cafe-search');
 			}
+			modal.append(content);
+			$("body").append(modal);
 		})			
-
-		$("body").append(modal);
 
 	},
 	hide: function() {
