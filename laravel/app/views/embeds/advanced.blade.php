@@ -32,11 +32,11 @@
 <div class="category">Price between : </div>
 <p>
 	{{ Form::label('min', 'Min') }} <br />
-	<input name="min" type="number" step="any" min="0" value="0" />
+	<input name="min" type="number" step="any" min="0" max='999' value="0" />
 </p>
 <p>
 	{{ Form::label('max', 'Max') }} <br />
-	<input name="max" type="number" step="any" min="0" value="900" />
+	<input name="max" type="number" step="any" min="0" max='999' value="999" />
 
 </p>
 

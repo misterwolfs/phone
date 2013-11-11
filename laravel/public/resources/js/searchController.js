@@ -175,11 +175,14 @@ var searchController = {
 
 					console.log('test', branditem);
 
+					var myIcon = new google.maps.MarkerImage("/resources/img/icons/phones/" + branditem.brand + ".png",  null, null, null, new google.maps.Size(42,79));
+
+
 					mapController.marker = new google.maps.Marker({
 				      position: new google.maps.LatLng(branditem.lat, branditem.long),
 				      map: mapController.gmap,
 				      animation: google.maps.Animation.DROP,
-				      icon: "/resources/img/icons/phones/" + branditem.brand + ".png",
+				      icon: myIcon,
 				      info: branditem.description,
 				      title: branditem.model + ' ' + branditem.brand + ' ' + branditem.description,
 				      url : branditem.phoneID
