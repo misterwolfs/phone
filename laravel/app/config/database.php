@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'default' => 'mysql',
+	'default' => 'online',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -58,6 +58,17 @@ return array(
 			'database'  => 'rephone',
 			'username'  => 'root',
 			'password'  => 'root',
+			'charset'   => 'utf8',
+			'collation' => 'utf8_unicode_ci',
+			'prefix'    => '',
+		),
+
+		'online' => array(
+			'driver'    => 'mysql',
+			'host'      => 'localhost',
+			'database'  => 'robbekg82_phinder',
+			'username'  => 'robbekg82_nick',
+			'password'  => 'ExamenProjecten',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',

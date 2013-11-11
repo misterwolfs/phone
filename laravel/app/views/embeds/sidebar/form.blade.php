@@ -61,7 +61,7 @@
 		{{ Form::hidden('lat', ' ', array('id' => 'lat')) }}
 		{{ Form::hidden('long', ' ', array('id' => 'long')) }}
 
-	{{Form::submit('Submit', ['class' => 'btn no-icon round green margin check-step'])}}
+	{{Form::submit('Submit', array('class' => 'btn no-icon round green margin check-step'))}}
 
 {{ Form::close() }}
 </div>

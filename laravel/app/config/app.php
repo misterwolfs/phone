@@ -26,7 +26,10 @@ return array(
 	|
 	*/
 
-	'url' => 'http://localhost',
+	// $local = 'http://localhost';
+	// $online = 'http://misterwolfs.be/phinder/public/';
+
+	'url' => 'http://misterwolfs.be/phinder/public',
 
 	/*
 	|--------------------------------------------------------------------------

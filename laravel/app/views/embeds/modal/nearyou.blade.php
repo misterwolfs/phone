@@ -7,9 +7,5 @@
 	{{	Form::text('location-cafe-search', null, array('class' => 'extend'))	}}
 </p>
 
-<!-- <p>
-	{{Form::submit('Search', ['class' => 'btn no-icon round green margin'])}}
-</p>
- -->
  
 {{ Form::close() }}

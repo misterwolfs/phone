@@ -1,10 +1,11 @@
 $(function() {
 
 	/** PRODUCTION**/
-	console.log = function(){};
+	// console.log = function(){};
 
 	$('#login').on('click', function() {
-		window.location.href = "http://rephone.dev/login/fb";
+
+		window.location.href = mapController.base_url + "login/fb";
 	});
 
 	$("body").delegate(".new-window", "click", function(e) {

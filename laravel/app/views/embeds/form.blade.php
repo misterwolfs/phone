@@ -54,7 +54,7 @@
 	<input type="hidden" id="long" name="long"  /> -->
 
 <p>
-	{{Form::submit('Submit', ['class' => 'btn no-icon round green margin'])}}
+	{{Form::submit('Submit', array('class' => 'btn no-icon round green margin'))}}
 </p>
 
 {{ Form::close() }}

@@ -43,7 +43,9 @@ var searchController = {
 					if ($type == 'brand')
 					{	
 
-						var myIcon = new google.maps.MarkerImage(mapController.base_url + "/resources/img/icons/phones/" + branditem.brand + ".png",  null, null, null, new google.maps.Size(42,79));
+						var myIcon = new google.maps.MarkerImage(mapController.base_url + "resources/img/icons/phones/" + branditem.brand + ".png",  null, null, null, new google.maps.Size(42,79));
+
+						console.log('icon', myIcon);
 
 						mapController.marker = new google.maps.Marker({
 					      position: new google.maps.LatLng(branditem.lat, branditem.long),
@@ -59,7 +61,9 @@ var searchController = {
 					if ($type == 'repaircafe')
 					{
 					
-						var myIcon = new google.maps.MarkerImage(mapController.base_url + "/resources/img/icons/phones/repaircafe.png",  null, null, null, new google.maps.Size(42,79));
+						var myIcon = new google.maps.MarkerImage(mapController.base_url + "resources/img/icons/phones/repaircafe.png",  null, null, null, new google.maps.Size(42,79));
+
+						console.log('icon', myIcon);
 
 						mapController.marker = new google.maps.Marker({
 					      position: new google.maps.LatLng(branditem.lat, branditem.long),
@@ -72,9 +76,11 @@ var searchController = {
 
 					if ($type == 'repairder')
 					{
-					
-						var myIcon = new google.maps.MarkerImage(mapController.base_url + "/resources/img/icons/phones/repaircafe.png",  null, null, null, new google.maps.Size(42,79));
+						
 
+						var myIcon = new google.maps.MarkerImage(mapController.base_url + "resources/img/icons/phones/repaircafe.png",  null, null, null, new google.maps.Size(42,79));
+
+						console.log('icon', myIcon);
 						mapController.marker = new google.maps.Marker({
 					      position: new google.maps.LatLng(branditem.lat, branditem.long),
 					      map: mapController.gmap,
@@ -175,9 +181,9 @@ var searchController = {
 
 					console.log('test', branditem);
 
-					var myIcon = new google.maps.MarkerImage(mapController.base_url + "/resources/img/icons/phones/" + branditem.brand + ".png",  null, null, null, new google.maps.Size(42,79));
+					var myIcon = new google.maps.MarkerImage(mapController.base_url + "resources/img/icons/phones/" + branditem.brand + ".png",  null, null, null, new google.maps.Size(42,79));
 
-
+					console.log('icon', myIcon);
 					mapController.marker = new google.maps.Marker({
 				      position: new google.maps.LatLng(branditem.lat, branditem.long),
 				      map: mapController.gmap,
