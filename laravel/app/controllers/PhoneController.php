@@ -135,19 +135,24 @@ class PhoneController extends BaseController {
 
 	public function getMyPhone() {
 
+		$data = array();
+
 		$userID = Auth::user()->userID;
 
 		$myphone = Phone::where('users.userID', '=', $userID)
 					->join('users_has_phones', 'phones.phoneID', '=', 'users_has_phones.phoneID')
 		            ->join('users', 'users.userID', '=', 'users_has_phones.userID')
-		            ->first();
+		            ->get();
 		
-		//var_dump($myphone->toArray());
+		
 
 		if($myphone != NULL)
 		{
 			$myphone = $myphone->toArray();
-			return View::make('embeds/sidebar/my-phone', $myphone);
+
+			$data = array_add($data, 'phones', $myphone);
+
+			return View::make('embeds/sidebar/my-phone', $data);
 		}
 
 		
@@ -171,6 +176,8 @@ class PhoneController extends BaseController {
 
 		UserHasPhone::where('users_has_phones.phoneID', '=', $phoneID)
 		             ->delete();
+
+		return $phoneID;             
 
 	}
 	

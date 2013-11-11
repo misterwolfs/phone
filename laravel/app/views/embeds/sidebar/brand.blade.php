@@ -1,5 +1,6 @@
 <h4>Filter by brand</h4>
 
+@if(count($firstLetters) > 0)
 @foreach ($firstLetters as $letter)
    		<div class="category">{{ $letter }}</div>
    		<ul class="brands">
@@ -10,4 +11,7 @@
 			@endforeach
 		</ul>
 @endforeach
+@else
+<p>Er werden jammer genoeg nog geen smartphones verkocht via onze applicatie.</p>
+@endif
 <br><br>

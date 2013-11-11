@@ -5,6 +5,17 @@ $(function() {
 
     mapController.initialize();
 
+
+    $('.parent').on('click', function() {
+    	mapController.markerByUser.setMap(null);
+    	mapController.drawingManager.setDrawingMode(null);
+    });
+
+     $('.brand').on('click', function() {
+    	mapController.markerByUser.setMap(null);
+    	mapController.drawingManager.setDrawingMode(null);
+    })
+
     /** Prevent anchors **/
     $("body").delegate("a:not(.open-menu, .close-menu)", "click", function(e) {
     	e.preventDefault();
@@ -42,6 +53,8 @@ $(function() {
 
 	/** Navivation **/
 	$(".open-sidebar").on("click", function(e) {
+
+
 		var id = $(this).parent().attr("id");
 		addPhoneController.reset();
 
@@ -114,6 +127,7 @@ $(function() {
 
 		searchController.getAdvancedSearch($(this));
 
+
 		return false;
 	});
 
@@ -141,6 +155,8 @@ $(function() {
 
 		$.post('phone/deletemyphone', function($data) {
 			console.log('removed', $data);
+
+			$('.phone' + $data).fadeOut('slow');
 		});
 
 	});

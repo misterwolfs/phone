@@ -24,16 +24,13 @@ class SearchController extends BaseController {
 			 $i++;
 
 			$dataArray = array_add($dataArray, $i, $name);
-
-
 			
 		}
 
-		
-	
-
 		 $data = array_add($data, 'brands', $dataArray);
 		 $data = array_add($data, 'firstLetters', $firstLetters);
+
+
 
 		return View::make('embeds/sidebar/brand', $data);
 	}

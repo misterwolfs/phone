@@ -46,7 +46,7 @@
 						<ul class="subnav">
 							<li id="addphone"><a class="open-sidebar" href="#add-phone">Add a phone</a></li>
 							@if($data['phone'] != 'no-phone')
-							<li id="view-my-phone"><a class="open-sidebar" href="#view-my-phone">View my phone</a></li>
+							<li id="view-my-phone"><a class="open-sidebar" href="#view-my-phone">View my phones</a></li>
 							@endif
 						</ul>
 					</li>

@@ -1,50 +1,56 @@
-<h4>{{ $model }}</h4>
-
-<div id="phone-view">
+@foreach($phones as $phone)
+	<div class="phone{{$phone['phoneID'] }}">
+	<h4>{{ $phone['model'] }}</h4>
+	
+	<div id="phone-view">
 	<div class="wrapper-phone">
 		<div class="category spacer">The phone</div>
 		<table class="two-column-float">
 			<tr>
 				<td>Brand:</td>
-				<td>{{ $brand }}</td>
+				<td>{{ $phone['brand'] }}</td>
 			</tr>
 			<tr>
 				<td>Price:</td>
-				<td>{{ $price }}</td>
+				<td>{{ $phone['price'] }}</td>
 			</tr>
 			<tr>
 				<td>Year:</td>
-				<td>{{ $year }}</td>
+				<td>{{ $phone['year'] }}</td>
 			</tr>
 
 		</table>
 		<table class="two-column-float right">
 			<tr>
 				<td>Usage:</td>
-				<td>{{ $usage }}</td>
+				<td>{{ $phone['usage'] }}</td>
 			</tr>
 			<tr>
 				<td>State:</td>
-				<td>{{ $state }}</td>
+				<td>{{ $phone['state'] }}</td>
 			</tr>
 			<tr>
 				<td>Color:</td>
-				<td>{{ $color }}</td>
+				<td>{{ $phone['color'] }}</td>
 			</tr>
 		</table>
 	</div>
 
 	<div class="wrapper-phone">
 		<div class="category spacer">Description</div>
-		<p>{{ $description }}</p>
+		<p>{{ $phone['description'] }}</p>
 	</div>
 
 	<div class="wrapper-button">
-		<button class="btn round green sold no-icon shadow">Sold</button>
+		<button id="sold{{$phone['phoneID'] }}" class="btn round green sold no-icon shadow">Sold</button>
 	</div>
 
-	<input type="hidden" name="lat" value="{{ $lat }}">
-	<input type="hidden" name="long" value="{{ $long }}">
+	<input type="hidden" name="lat" value="{{ $phone['lat'] }}">
+	<input type="hidden" name="long" value="{{ $phone['long'] }}">
 
 </div>
-<br><br>
+
+</div>
+<br /> <br />
+@endforeach
+
