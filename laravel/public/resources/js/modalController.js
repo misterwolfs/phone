@@ -20,9 +20,6 @@ var modalController = {
 		addPhoneController.reset();
 		formController.reset();
 
-		modalController.open = true;
-		modalController.currentOpen = arg;
-
 		var close = $("<div/>")
 						.addClass("close-modal");
 
@@ -39,6 +36,10 @@ var modalController = {
 		}).success(function(){
 			modal.append(content);
 			$("body").append(modal);
+			
+			modalController.open = true;
+			modalController.currentOpen = arg;
+
 			if(arg == 'search-location')
 			{
 				mapController.removeMarkers();

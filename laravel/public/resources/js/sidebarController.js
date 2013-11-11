@@ -23,10 +23,6 @@ var sidebarController = {
 		modalController.hide();
 		addPhoneController.reset();
 		formController.reset();
-
-			
-		sidebarController.open = true;
-		sidebarController.currentOpen = arg;
 		
 		var close = $("<div/>")
 							.addClass("close-sidebar");
@@ -49,6 +45,10 @@ var sidebarController = {
 			}
 			sidebar.append(content);
 			$("#main").append(sidebar);
+
+			sidebarController.open = true;
+			sidebarController.currentOpen = arg;
+			
 		})
 	},
 	hide: function() {
