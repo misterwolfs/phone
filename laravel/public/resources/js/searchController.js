@@ -59,6 +59,7 @@ var searchController = {
 					if ($type == 'repaircafe')
 					{
 					
+						var myIcon = new google.maps.MarkerImage("/resources/img/icons/phones/repaircafe.png",  null, null, null, new google.maps.Size(42,79));
 
 						mapController.marker = new google.maps.Marker({
 					      position: new google.maps.LatLng(branditem.lat, branditem.long),
