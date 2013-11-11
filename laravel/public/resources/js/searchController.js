@@ -108,7 +108,7 @@ var searchController = {
 
 					console.log('place', place);
 				    if (!place.geometry) {
-				      // Inform the user that the place was not found and return.
+				     	mapController.removeMarkers();
 				     	modalController.trigger('location-not-found');
 				    }
 
