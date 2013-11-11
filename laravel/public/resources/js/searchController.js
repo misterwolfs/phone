@@ -162,6 +162,8 @@ var searchController = {
 		$.post('search/advanced/get', $form.serialize(), 
 			function($data) {
 				
+				console.log('post data', $data);
+
 				sidebarController.hide();
 
 				mapController.removeMarkers();
@@ -171,7 +173,7 @@ var searchController = {
 
 					branditem = $data[objects];	
 
-					console.log(branditem);
+					console.log('test', branditem);
 
 					mapController.marker = new google.maps.Marker({
 				      position: new google.maps.LatLng(branditem.lat, branditem.long),
@@ -186,7 +188,7 @@ var searchController = {
 				 			 
 					mapController.bounds.extend(mapController.marker.position);
 					mapController.phoneList.push(mapController.marker);
-					mapController.markerClickedHandler(mapController.marker);  
+					mapController.markerClickedHandler('brand', mapController.marker);  
 
 					//console.log('phonelist', mapController.phoneList);
 				// mapController.addMarkers(marker);

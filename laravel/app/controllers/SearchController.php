@@ -106,6 +106,18 @@ class SearchController extends BaseController {
 
 		$data = FormController::createDropdown();
 
+		$colors = Phone::distinct()->lists('color');
+
+		$colorArray = array();
+		//var_dump($colors);
+
+		foreach ($colors as $color)
+		{	
+			 $colorArray = array_add($colorArray, $color, $color);	
+		}
+
+		
+		$data = array_add($data, 'colors', $colorArray);
 		$data['allyears'] =array('All Years'=>'All Years')+$data['allyears']; 
 		$data['brands'] =array('All Brands'=>'All Brands')+$data['brands']; 
 		$data['state'] =array('All States'=>'All States')+$data['state']; 
@@ -155,9 +167,6 @@ class SearchController extends BaseController {
 				if($state != 'All States' ) { 	$phones->where('state', 	'=', 	$state); 	} 
 
 				$phones = $phones->get();
-
-
-				
 		}
 
 		

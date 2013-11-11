@@ -12,7 +12,7 @@
 
 <p>
 	{{ Form::label('color', 'Color') }} <br />
-	{{ Form::text('color') }} 
+	{{ Form::select('color', $colors) }}
 </p>
 
 <p>
