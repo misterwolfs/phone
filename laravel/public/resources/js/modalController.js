@@ -37,6 +37,8 @@ var modalController = {
 		$.get("embeds/modal/"+arg, function(data){
 			content.html(data);
 		}).success(function(){
+			modal.append(content);
+			$("body").append(modal);
 			if(arg == 'search-location')
 			{
 				mapController.removeMarkers();
@@ -47,8 +49,6 @@ var modalController = {
 				mapController.removeMarkers();
 				mapController.checkLocation('location-cafe-search');
 			}
-			modal.append(content);
-			$("body").append(modal);
 		})			
 
 	},
