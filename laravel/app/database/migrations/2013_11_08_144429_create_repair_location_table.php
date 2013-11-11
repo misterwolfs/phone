@@ -15,9 +15,10 @@ class CreateRepairLocationTable extends Migration {
 
 			$table->increments('repairderID');
 			$table->integer('userID');
-			$table->string('location');
+			$table->string('lat');
+			$table->string('long');
 			$table->timestamps();
-
+			$table->softDeletes();
 		});
 	}
 

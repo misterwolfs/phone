@@ -78,6 +78,29 @@ class SearchController extends BaseController {
 		return View::make('embeds/sidebar/repair-cafe', $cafes);
 	}
 
+
+	public function allRepairders() {
+		$users = User::where('is_repairder', '=', '1')
+					->join('repair_locations', 'users.userID', '=', 'repair_locations.userID')
+					->get();
+					
+		return $users->tojson();
+
+	}
+
+	public function showRepairder($userID) {
+		$users = User::where('users.userID', '=', $userID)
+				->join('repair_locations', 'users.userID', '=', 'repair_locations.userID')
+				->get();
+
+		return $users->tojson();
+	}
+
+
+
+
+	
+
 	public function showAdvancedForm() {
 
 		$data = FormController::createDropdown();

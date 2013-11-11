@@ -57,6 +57,9 @@ var mapController = {
                 case 'repaircafe' :
                     sidebarController.trigger('search/repaircafe/' + this.url);
                     break;
+                case 'repairder' : 
+                    sidebarController.trigger('search/repairder/' + this.url);
+                    break;    
             }
         });     
     },	    

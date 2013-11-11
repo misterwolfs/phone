@@ -19,7 +19,7 @@ var searchController = {
 		}
 		else if($type == 'location-cafe-search')
 		{
-			$type = 'repaircafe';
+			$type = 'repairder';
 			searchController.location = true;
 		}
 		else {
@@ -65,7 +65,22 @@ var searchController = {
 					      position: new google.maps.LatLng(branditem.lat, branditem.long),
 					      map: mapController.gmap,
 					      animation: google.maps.Animation.DROP,
-					      url : branditem.cafeID
+					      url : branditem.cafeID,
+					      icon : myIcon
+					    });
+					};
+
+					if ($type == 'repairder')
+					{
+					
+						var myIcon = new google.maps.MarkerImage("/resources/img/icons/phones/repaircafe.png",  null, null, null, new google.maps.Size(42,79));
+
+						mapController.marker = new google.maps.Marker({
+					      position: new google.maps.LatLng(branditem.lat, branditem.long),
+					      map: mapController.gmap,
+					      animation: google.maps.Animation.DROP,
+					      url : branditem.userID,
+					      icon : myIcon
 					    });
 					};
 

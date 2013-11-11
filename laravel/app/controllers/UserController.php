@@ -51,13 +51,14 @@ class UserController extends BaseController {
 			$lat = Input::get('lat');
 			$long = Input::get('long');
 
-			$location = $lat . ', ' . $long;
+			
 
 			if($lat != ' ' || $long != ' ')
 			{	
 				$repairder =  new RepairLocation;
 				$repairder->userID = $id;
-				$repairder->location = $location;
+				$repairder->lat = $lat;
+				$repairder->long = $long;
 				
 				$repairder->save();
 			}

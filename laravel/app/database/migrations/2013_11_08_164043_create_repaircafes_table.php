@@ -20,6 +20,7 @@ class CreateRepaircafesTable extends Migration {
 			$table->string('lat');
 			$table->string('long');
 			$table->string('website');
+			$table->timestamps();
 		});
 	}
 

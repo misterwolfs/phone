@@ -106,6 +106,16 @@ Route::group(array('prefix' => 'search'), function() {
 		Route::get('{cafe}', 'SearchController@showCafe');
 
 	});
+
+	Route::group(array('prefix' => 'repairder'), function() {
+
+		Route::get('/all', 'SearchController@allRepairders');
+
+		Route::get('{id}', 'SearchController@showRepairder');
+
+	});
+
+
 });
 
 
