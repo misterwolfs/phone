@@ -86,7 +86,7 @@ var mapController = {
         
         google.maps.event.addListener(mapController.autocomplete, 'place_changed', function() {
             
-            searchController.searchLocation();
+            searchController.searchLocation($arg);
 
         });
 

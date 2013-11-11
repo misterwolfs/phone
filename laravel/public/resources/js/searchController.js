@@ -12,9 +12,14 @@ var searchController = {
 
 	
 
-		if($type == 'location')
+		if($type == 'location-search')
 		{
 			$type = 'brand';
+			searchController.location = true;
+		}
+		else if($type == 'location-cafe-search')
+		{
+			$type = 'repaircafe';
 			searchController.location = true;
 		}
 		else {
@@ -184,11 +189,12 @@ var searchController = {
 
 		
 	},
-	searchLocation: function() {
+	searchLocation: function($arg) {
 		
+		console.log('searchlocation', $arg)
 		modalController.hide();
 
-		searchController.getData('location', 'all');
+		searchController.getData($arg, 'all');
 
 	},
 	allCafes: function() {

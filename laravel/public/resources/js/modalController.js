@@ -44,7 +44,7 @@ var modalController = {
 			}
 			if(arg == 'nearyou')
 			{
-				mapController.checkLocation('cafe');
+				mapController.checkLocation('location-cafe-search');
 			}
 		})			
 
