@@ -42,11 +42,24 @@ var searchController = {
 
 					if ($type == 'brand')
 					{	
+
+						  // var image = {
+						  //   url: "/resources/img/icons/phones/" + branditem.brand + ".png", 
+						  //   // This marker is 20 pixels wide by 32 pixels tall.
+						  //   size: new google.maps.Size(42, 79),
+						  //   // The origin for this image is 0,0.
+						  //   origin: new google.maps.Point(0,0),
+						  //   // The anchor for this image is the base of the flagpole at 0,32.
+						  //   anchor: new google.maps.Point(0, 0),
+						  //  };
+
+						  var myIcon = new google.maps.MarkerImage("/resources/img/icons/phones/" + branditem.brand + ".png",  null, null, null, new google.maps.Size(42,79));
+
 						mapController.marker = new google.maps.Marker({
 					      position: new google.maps.LatLng(branditem.lat, branditem.long),
 					      map: mapController.gmap,
 					      animation: google.maps.Animation.DROP,
-					      icon : "/resources/img/icons/phones/" + branditem.brand + ".png" ,
+					      icon : myIcon,
 					      title : branditem.model + ' ' + branditem.brand + ' ' + branditem.description,
 					      url : branditem.phoneID
 					    });
