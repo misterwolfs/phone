@@ -19,7 +19,7 @@ class UserController extends BaseController {
 
 		
 
-		return View::make('embeds/sidebar/userform', $data-);
+		return View::make('embeds/sidebar/userform', $data);
 	}
 
 	public function userEdit() {

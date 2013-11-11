@@ -76,10 +76,10 @@ var mapController = {
 
         this.phoneList = new Array();
     },
-    checkLocation:function() {
+    checkLocation:function($arg) {
         console.log('checkLocation');
 
-        mapController.input = /** @type {HTMLInputElement} */(document.getElementById('location-search'));
+        mapController.input = /** @type {HTMLInputElement} */(document.getElementById($arg));
         mapController.autocomplete = new google.maps.places.Autocomplete(mapController.input);
         
         mapController.autocomplete.bindTo('bounds', mapController.gmap);

@@ -56,7 +56,7 @@
 					<li class="parent" id="repair-a-hone"><a href="#repair-a-phone" class="toggle-menu">Repair a phone</a>
 						<ul class="subnav">
 							<li id="repaircafe"><a class="repair-cafe-all" href="#find-cafe">Find a repear café</a></li>
-							<li id="nearyou"><a class="open-sidebar" href="#find-cafe-location">Repairder near you</a></li>
+							<li id="nearyou"><a class="open-modal" href="#find-cafe-location">Repairder near you</a></li>
 						</ul>
 					</li>
 				</ul>
