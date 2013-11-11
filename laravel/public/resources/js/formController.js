@@ -1,12 +1,15 @@
 var formController = {
 	started: false,
+	setLocation: false,
 	repairChange: function() {
 		$("body").delegate("#repairder", "change", function()
 		{
 		    if ($(this).is(":checked")) {
 		        $("#repair-location").show();
+		        formController.setLocation = true;
 		    } else {
 		    	$("#repair-location").hide();
+		    	formController.setLocation = false;
 		    }
 		})
 	},
@@ -27,11 +30,27 @@ var formController = {
 	},
 	reset: function() {
 		if(formController.started) 
-		{
+		{			
+
 			mapController.drawingManager.setDrawingMode(null);
-			$("button#ready-repair-location").animateCSS('slideOutUp', function() {
+			
+
+			 $("button#ready-repair-location").animateCSS('slideOutUp', function() {
+					
+				
+			
+				if(formController.setLocation)
+				{
+
+					console.log('checkbox', $('#repairder'));
+					$('input[name=repairder]').attr('checked', true);
+
+				}	
+
 				$(this).remove();
-			});
+
+				
+			 });
 		}
 	}
 }

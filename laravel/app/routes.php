@@ -27,6 +27,10 @@ Route::group(array('prefix' => 'phone'), function() {
 
 	Route::get('all', array('as' => 'all_phones', 'uses' => 'PhoneController@viewPhone'));
 
+	Route::get('/myphone', 'PhoneController@getMyPhone');
+
+	Route::post('/deletemyphone', 'PhoneController@deleteMyPhone');
+
 	Route::get('/{phone}', 'PhoneController@getInfo');
 });
 
@@ -128,6 +132,11 @@ Route::get('advanced', function() {
 
 Route::get('location', function() {
 	return Redirect::to('search/location');
+});
+
+
+Route::get('view-my-phone', function() {
+	return Redirect::to('phone/myphone');
 });
 
 

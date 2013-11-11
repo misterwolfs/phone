@@ -5,6 +5,7 @@ class Phone extends Eloquent {
 	protected $guarded = array('id', 'phoneID');
 	//public $timestamps = false;
 
+	protected $softDelete = true;
 	protected $table = 'phones';
 
 	protected $primaryKey = 'phoneID';

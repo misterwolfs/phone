@@ -135,4 +135,14 @@ $(function() {
 
 
 
+
+	/** SOLD **/
+	$('body').delegate('.sold', 'click', function() {
+
+		$.post('phone/deletemyphone', function($data) {
+			console.log('removed', $data);
+		});
+
+	});
+
 })

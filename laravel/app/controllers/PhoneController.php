@@ -9,8 +9,24 @@ class PhoneController extends BaseController {
 
 		if(Auth::check()) {
 			$data = Auth::user();
+
+			$id = Auth::user()->userID;
+
+			$myphone = Phone::where('users.userID', '=', $id)
+						->join('users_has_phones', 'phones.phoneID', '=', 'users_has_phones.phoneID')
+			            ->join('users', 'users.userID', '=', 'users_has_phones.userID')
+			            ->first(array('phones.phoneID'));
+
+			if($myphone == NULL)
+			{
+				$myphone = 'no-phone';
+			}
+
+			$data = array_add($data, 'phone', $myphone);  
 		}
 		
+		
+
 
 		return View::make('master', array('data' =>$data));
 	}
@@ -117,6 +133,46 @@ class PhoneController extends BaseController {
 	}
 	
 
+	public function getMyPhone() {
+
+		$userID = Auth::user()->userID;
+
+		$myphone = Phone::where('users.userID', '=', $userID)
+					->join('users_has_phones', 'phones.phoneID', '=', 'users_has_phones.phoneID')
+		            ->join('users', 'users.userID', '=', 'users_has_phones.userID')
+		            ->first();
+		
+		//var_dump($myphone->toArray());
+
+		if($myphone != NULL)
+		{
+			$myphone = $myphone->toArray();
+			return View::make('embeds/sidebar/my-phone', $myphone);
+		}
+
+		
+	}
+
+	public function deleteMyPhone() {
+
+		$userID = Auth::user()->userID;
+
+		$phone = Phone::where('users.userID', '=', $userID)
+					->join('users_has_phones', 'phones.phoneID', '=', 'users_has_phones.phoneID')
+		            ->join('users', 'users.userID', '=', 'users_has_phones.userID')
+		            ->first();
+
+		$phone = $phone->toArray();
+
+		$phoneID = $phone['phoneID'];
+
+		Phone::where('phones.phoneID', '=', $phoneID)
+		             ->delete();
+
+		UserHasPhone::where('users_has_phones.phoneID', '=', $phoneID)
+		             ->delete();
+
+	}
 	
 
 	

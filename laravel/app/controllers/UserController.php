@@ -9,12 +9,17 @@ class UserController extends BaseController {
 
 		$repairder = RepairLocation::where('userID', '=', $id)->get();
 
+
+
 		$data = array();
 
 		$data = array_add($data, 'user', $user);
 		$data = array_add($data, 'repairder', $repairder);
+		
 
-		return View::make('embeds/sidebar/userform', $data);
+		
+
+		return View::make('embeds/sidebar/userform', $data-);
 	}
 
 	public function userEdit() {

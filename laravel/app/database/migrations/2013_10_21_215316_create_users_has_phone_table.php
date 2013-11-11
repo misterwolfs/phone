@@ -17,7 +17,7 @@ class CreateUsersHasPhoneTable extends Migration {
 			$table->integer('userID');
 			$table->integer('phoneID');
 			$table->timestamps();
-
+			$table->softDeletes();
 		});
 	}
 

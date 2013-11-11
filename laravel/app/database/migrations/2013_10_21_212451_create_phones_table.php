@@ -25,6 +25,7 @@ class CreatePhonesTable extends Migration {
 			$table->string('lat');
 			$table->string('long');
 			$table->timestamps();
+			$table->softDeletes();
 
 		});
 	}
