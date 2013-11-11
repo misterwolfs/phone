@@ -42,7 +42,7 @@
 	</div>
 
 	<div class="wrapper-button">
-		<button id="sold{{$phone['phoneID'] }}" class="btn round green sold no-icon shadow">Sold</button>
+		<button id="sold{{$phone['phoneID'] }}" class="btn round red sold no-icon shadow">Sold</button>
 	</div>
 
 	<input type="hidden" name="lat" value="{{ $phone['lat'] }}">

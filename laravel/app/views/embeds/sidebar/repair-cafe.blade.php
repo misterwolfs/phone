@@ -24,7 +24,7 @@
 	</div>
 
 	<div class="wrapper-button">
-		<button onclick="window.location.href='{{ $website }}'" class="btn round green no-icon shadow">Visit website</button>
+		<button id="{{ $website }}" class="btn round green no-icon shadow new-window">Visit website</button>
 	</div>
 
 </div>

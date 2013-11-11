@@ -1,22 +1,31 @@
 $(function() {
 
 	/** PRODUCTION**/
-	// console.log = function(){};
+	console.log = function(){};
+
+	$('#login').on('click', function() {
+		window.location.href = "http://rephone.dev/login/fb";
+	});
+
+	$("body").delegate(".new-window", "click", function(e) {
+		e.preventDefault();
+		var url = $(this).attr("id");
+		window.open(url);
+	});
 
     mapController.initialize();
 
-
-    $('.parent').on('click', function() {
-    	resetMarkers();
+    $(".parent, .brand, .view-profile").on('click', function() {
+    	masterController.hideUserMarker();
     });
 
-     $('.brand').on('click', function() {
-    	resetMarkers();
-    })
+	$("body").delegate(".nav", "click", function() {
+		masterController.mobileNavigation();
+	});
 
-     $('.view-profile').on('click', function() {
-    	resetMarkers();
-       })
+	$("body").delegate("#hamburger a", "click", function() {
+		masterController.reset();
+	});
 
     /** Prevent anchors **/
     $("body").delegate("a:not(.open-menu, .close-menu)", "click", function(e) {
@@ -51,12 +60,8 @@ $(function() {
 		mapController.zoom(new google.maps.LatLng($("input[name=lat]").val(),$("input[name=long]").val()));
 	});
 
-
-
 	/** Navivation **/
 	$(".open-sidebar").on("click", function(e) {
-
-
 		var id = $(this).parent().attr("id");
 		addPhoneController.reset();
 
@@ -69,23 +74,15 @@ $(function() {
 			addPhoneController.reset();
 			sidebarController.trigger(id);
 		}
-
-	   	masterController.mobileNavigation();
-
 	});
 
 	$(".view-all").on("click", function(e) {
-		//modalController.create()
-
 		sidebarController.hide();
-		masterController.mobileNavigation();
 		searchController.all();
 	})
 
 	$(".repair-cafe-all").on("click", function(e) {
-		//modalController.create()
 		sidebarController.hide();
-		masterController.mobileNavigation();
 		searchController.allCafes();
 	})
 
@@ -126,59 +123,19 @@ $(function() {
 
 	$("body").delegate('#searchPhone', "submit", function(e) {
 		e.preventDefault();
-
 		searchController.getAdvancedSearch($(this));
-
-
-		//return false;
 	});
 
-	
-
-	$("body").delegate('#searchLocation', "submit", function(e) {
+	$("body").delegate('#searchLocation, #searchLocationCafe', "submit", function(e) {
 		e.preventDefault();
-
-		
-		//searchController.searchLocation();
-
-		//return false;
 	});
-
-	$("body").delegate('#searchLocationCafe', "submit", function(e) {
-		e.preventDefault();
-
-		
-		//searchController.searchLocation();
-
-		//return false;
-	});
-
-
-
-	/** Facebook login **/
-	$('#login').on('click', function() {
-		window.location.href = "http://rephone.dev/login/fb";
-	});
-
-
-
 
 	/** SOLD **/
 	$('body').delegate('.sold', 'click', function() {
-
 		$.post('phone/deletemyphone', function($data) {
 			console.log('removed', $data);
-
 			$('.phone' + $data).fadeOut('slow');
 		});
-
 	});
 
 })
-
-
-function resetMarkers() {
-	mapController.markerByUser.setMap(null);
-    mapController.drawingManager.setDrawingMode(null);
-   	mapController.removeMarkers(); 
-}

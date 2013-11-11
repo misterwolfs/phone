@@ -53,7 +53,7 @@ $twitter-blue: #00acec;
 			overflow: hidden;
 			line-height: 1.4em;
 		}
-		.three-column, .two-column-float {
+		.three-column, .two-column-float, .two-column {
 			width: 100%;
 			tr {
 				td:first-child {
@@ -67,6 +67,14 @@ $twitter-blue: #00acec;
 		.two-column-float {
 			float:left;
 			width: 50%;
+		}
+
+		.two-column {
+			tr {
+				td:first-child {
+					width: 7em;
+				}
+			}
 		}
 
 		.one-column {

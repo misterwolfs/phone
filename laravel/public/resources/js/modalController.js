@@ -82,7 +82,11 @@ $(function() {
 
 	function nextStep(arg) {
 		if(mapController.markerByUser == null) {
-			modalController.trigger("marker-warning");
+			if(arg == 'user/info') {
+				modalController.trigger("location-warning");
+			} else {
+				modalController.trigger("marker-warning");
+			}
 		} else {
 			sidebarController.trigger(arg);
 			mapController.zoom(mapController.markerByUser.position);

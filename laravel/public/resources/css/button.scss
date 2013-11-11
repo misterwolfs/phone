@@ -36,6 +36,13 @@ $twitter-blue: #00acec;
 	}
 } 
 
+.btn.red {
+	background-color: #c0392b;
+	&:hover {
+		background-color: lighten(#c0392b, 5);
+	}
+} 
+
 .btn.round {
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;

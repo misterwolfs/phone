@@ -10,11 +10,18 @@ module.exports = function(grunt) {
          files: {
           'public/resources/js/base.min.js': [
             'public/resources/js/modernizer.js',
-            'public/resources/js/map.js',
+            'public/resources/js/mapstyle.js',
+            'public/resources/js/markerclusterer.js',
             'public/resources/js/callback.js',
             'public/resources/js/navigation.js',
             'public/resources/js/modalController.js',
-            'public/resources/js/sidebarController.js'
+            'public/resources/js/mapController.js',
+            'public/resources/js/addPhoneController.js',
+            'public/resources/js/searchController.js',
+            'public/resources/js/sidebarController.js',
+            'public/resources/js/formController.js',
+            'public/resources/js/triggers.js',
+            'public/resources/js/masterController.js'
             ]
         }
       }

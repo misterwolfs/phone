@@ -46,7 +46,8 @@
 	{{ Form::hidden('long', ' ', array('id' => 'long')) }}
 
 <p>
-	{{ Form::submit('Save', ['class' => 'btn no-icon round green margin']) }}
+	{{ Form::submit('Save', ['class' => 'btn no-icon round green']) }}
+	<button onclick="window.location.href='logout'" class="btn round red no-icon right shadow">Log out</button>
 </p>
 
 {{ Form::close() }}

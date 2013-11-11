@@ -9,13 +9,11 @@
 
 	<div class="wrapper-phone">
 		<div class="category">The seller</div>
-		<table class="two-column-float">
+		<table class="two-column">
 			<tr>
 				<td>Name:</td>
 				<td>{{ $firstname . ' ' . $lastname }}</td>
 			</tr>
-		</table>
-		<table class="two-column-float">
 			<tr>
 				<td>Place:</td>
 				<td><a href="#" id="zoom-phone" class="underline">zoom in</a></td>
@@ -25,22 +23,19 @@
 
 	<div class="wrapper-phone">
 		<div class="category spacer">The phone</div>
-		<table class="two-column-float">
+		<table class="two-column">
 			<tr>
 				<td>Brand:</td>
 				<td>{{ $brand }}</td>
 			</tr>
 			<tr>
 				<td>Price:</td>
-				<td>{{ $price }}</td>
+				<td>€{{ $price }}</td>
 			</tr>
 			<tr>
 				<td>Year:</td>
 				<td>{{ $year }}</td>
 			</tr>
-
-		</table>
-		<table class="two-column-float right">
 			<tr>
 				<td>Usage:</td>
 				<td>{{ $usage }}</td>
@@ -58,12 +53,16 @@
 
 	<div class="wrapper-phone">
 		<div class="category spacer">Description</div>
+		@if($description == '')
+		<p>No description given.</p>
+		@else
 		<p>{{ $description }}</p>
+		@endif
 	</div>
 
 	<div class="wrapper-button">
-		<button onclick="window.location.href='{{ $facebook }}'" class="btn round blue icon facebook shadow">Send message</button>
-		<button onclick="window.location.href='{{ $email }}'" class="btn round green icon mail right shadow">Send mail</button>
+		<button id="{{ $facebook }}" class="btn round blue icon facebook shadow new-window new-window">Send message</button>
+		<button id="mailto:{{ $email }}" class="btn round green icon mail right shadow new-window">Send mail</button>
 	</div>
 
 	<input type="hidden" name="lat" value="{{ $lat }}">

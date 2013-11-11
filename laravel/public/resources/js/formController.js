@@ -36,9 +36,7 @@ var formController = {
 			
 
 			 $("button#ready-repair-location").animateCSS('slideOutUp', function() {
-					
-				
-			
+						
 				if(formController.setLocation)
 				{
 					$('#lat').val(mapController.markerByUser.position.nb);
