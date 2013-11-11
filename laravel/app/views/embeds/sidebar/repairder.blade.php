@@ -3,20 +3,13 @@
 <div id="phone-view">
 	<div class="wrapper-phone">
 		<div class="category">Information</div>
-		<table class="one-column">
-			<tr>
-				<td>Name:</td>
-				<td>{{ $firstname}} {{ $lastname }}</td>
-			</tr>
-			<tr>
-				<img src="{{ $photo }}" alt="{{{ $firstname	}}}">
-			</tr>
-		</table>
+		<img src="{{ $photo }}" alt="{{{ $firstname	}}}" style="max-width: 150px;height:auto;">
+		<p>{{ $firstname}} </p>
 	</div>
 
 	@if($email)
 	<div class="wrapper-button">
-		<button onclick="window.location.href='{{ $email }}'" class="btn round green no-icon shadow">Send Message</button>
+		<button id="{{ $email }}" class="btn round green no-icon shadow new-window">Send Message</button>
 	</div>
 	@endif
 
