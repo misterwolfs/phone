@@ -38,9 +38,11 @@ var formController = {
 			 $("button#ready-repair-location").animateCSS('slideOutUp', function() {
 						
 				if(formController.setLocation)
-				{
-					$('#lat').val(mapController.markerByUser.position.nb);
-					$('#long').val(mapController.markerByUser.position.ob);
+				{	
+
+					console.log('chanced to lat and long');
+					$('#lat').val(mapController.markerByUser.position.lat());
+					$('#long').val(mapController.markerByUser.position.lng());
 					console.log('checkbox', $('#repairder'));
 					$('input[name=repairder]').attr('checked', true);
 

@@ -42,8 +42,9 @@ var sidebarController = {
 			$("#main").append(sidebar);
 
 			if(arg=='form') {
-				$('#lat').val(mapController.markerByUser.position.nb);
-				$('#long').val(mapController.markerByUser.position.ob);
+				console.log('form changed to lat and lng');
+				$('#lat').val(mapController.markerByUser.position.lat());
+				$('#long').val(mapController.markerByUser.position.lng());
 				addPhoneController.startForm();
 			}
 
